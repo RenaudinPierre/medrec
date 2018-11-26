@@ -1,4 +1,6 @@
 class Board < ApplicationRecord
   belongs_to :patient
-  has_many :board_source
+  validates :name, presence: true
+  has_many :board_sources
+  has_many :sources, through: :board_sources
 end
