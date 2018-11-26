@@ -11,7 +11,7 @@ class PatientsController < ApplicationController
     @patient = Patient.new(patient_params)
 
     if @patient.save
-      redirect_to patients_index_path
+      redirect_to patients_path
     else
       render :new
     end

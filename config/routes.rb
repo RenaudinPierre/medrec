@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'patients/index'
-  get 'patients/new'
-  get 'patients/create'
   root to: 'pages#home'
 
 
