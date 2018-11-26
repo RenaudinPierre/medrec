@@ -1,8 +1,24 @@
-<div class="navbar-wagon">
-  <!-- Logo -->
-  <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "logo.png", height: 50 %>
-  <% end %>
+<div class="navbar-wagon navbar-fixed-left navbar-fixed-top">
+  <div class="logo">
+    <%= link_to root_path, class: "navbar-wagon-brand" do %>
+      <%= image_tag "logo.png", height: 50 %>
+    <% end %>
+  </div>
+  <div class="liens">
+    <ul>
+      <li><%= link_to "Patients", "#", class: "navbar-wagon-item navbar-wagon-link" %></li>
+      <li><%= link_to "Se deconnecter", "#", class: "navbar-wagon-item navbar-wagon-link" %></li>
+    </ul>
+
+  </div>
+  <div class="ajout-patient">
+    <%= link_to "+", "#", class: "navbar-create-patient" %>
+  </div>
+</div>
+
+
+
+
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
