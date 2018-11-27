@@ -1,28 +1,54 @@
-<div class="navbar-wagon navbar-fixed-left navbar-fixed-top" id="main-nav">
-  <div class="logo">
-    <%= link_to root_path, class: "navbar-wagon-brand resize-navbar-small" do %>
-      <%= image_tag "logo.png", height: 50 %>
-    <% end %>
-  </div>
-  <div class="liens remove-puces">
-    <div>
-      <div class="align-navbar-card">
-        <%= link_to patients_path, id: "toogle-font-user-hidden", class: "resize-navbar-small-icones" do   %>
-        <i class="fas fa-user"></i>
-        <% end %>
-        <p id="toogle-font-user"><%= link_to "Patients", patients_path , class: "" %></p>
-      </div>
-      <div class="align-navbar-card">
-        <%= link_to destroy_user_session_path, id: "toogle-font-sign-out-hidden", class: "resize-navbar-small-icones" do  %>
-        <i class="fas fa-sign-out-alt"></i>
-        <% end %>
-        <p id="toogle-font-sign-out"><%= link_to "Se deconnecter", destroy_user_session_path , class: "" %></p>
-      </div>
+<%= @patient = Patient.new %>
+<% if user_signed_in? %>
+  <div class="navbar-wagon navbar-fixed-left navbar-fixed-top" id="main-nav">
+    <div class="logo">
+      <%= link_to root_path, class: "navbar-wagon-brand resize-navbar-small" do %>
+        <%= image_tag "logo.png", height: 50 %>
+      <% end %>
     </div>
+    <div class="liens remove-puces">
+      <div>
+        <div class="align-navbar-card">
+          <%= link_to patients_path, id: "toogle-font-user-hidden", class: "resize-navbar-small-icones" do   %>
+          <i class="fas fa-user"></i>
+          <% end %>
+          <p id="toogle-font-user"><%= link_to "Patients", patients_path , class: "" %></p>
+        </div>
+        <div class="align-navbar-card">
+          <%= link_to destroy_user_session_path, id: "toogle-font-sign-out-hidden", class: "resize-navbar-small-icones" do  %>
+          <i class="fas fa-sign-out-alt"></i>
+          <% end %>
+          <p id="toogle-font-sign-out"><%= link_to "Se deconnecter", destroy_user_session_path , class: "" %></p>
+        </div>
+      </div>
 
+    </div>
+    <div class="ajout-patient">
+      <!-- Bouton qui lance la modal: -->
+      <button type="button" class="navbar-create-patient resize-navbar-small" data-toggle="modal" data-target="#exampleModal">+
+      </button>
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <%= render 'patients/form' %>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Fin de la modal -->
+    </div>
+    <a href="" class="fas fa-angle-double-left liens reduct resize-navbar-small-icones" id="toogle-size-navbar"></a>
   </div>
-  <div class="ajout-patient">
-    <%= link_to "+", new_patient_path, class: "navbar-create-patient resize-navbar-small" %>
-  </div>
-  <a href="" class="fas fa-angle-double-left liens reduct resize-navbar-small-icones" id="toogle-size-navbar"></a>
-</div>
+<% end %>
