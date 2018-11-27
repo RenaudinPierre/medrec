@@ -1,0 +1,49 @@
+// Specific CSS for your home-page
+.container {
+  margin-left: 250px;
+}
+
+
+.div-gauche {
+  background-color: gray;
+  height: 100vh;
+
+  .container-gauche {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center !important;
+    height: inherit;
+    padding: 0.2em 2.2em;
+
+  }
+
+  .container-gauche  .div-haut-gauche {
+
+  }
+
+  .container-gauche  .inscription {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-around;
+  }
+
+}
+
+.div-droite {
+  background-color: white;
+  height: 100vh;
+
+  .center {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    margin-right: -15px;
+    margin-left: -15px;
+    justify-content: center !important;
+    height: inherit;
+  }
+}
+
