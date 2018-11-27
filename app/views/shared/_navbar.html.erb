@@ -10,13 +10,13 @@
       <div>
         <div class="align-navbar-card">
           <%= link_to patients_path, id: "toogle-font-user-hidden", class: "resize-navbar-small-icones" do   %>
-          <i class="fas fa-user"></i>
+          <i class="fa fa-user"></i>
           <% end %>
           <p id="toogle-font-user"><%= link_to "Patients", patients_path , class: "" %></p>
         </div>
         <div class="align-navbar-card">
           <%= link_to destroy_user_session_path, id: "toogle-font-sign-out-hidden", class: "resize-navbar-small-icones" do  %>
-          <i class="fas fa-sign-out-alt"></i>
+          <i class="fa fa-sign-out"></i>
           <% end %>
           <p id="toogle-font-sign-out"><%= link_to "Se deconnecter", destroy_user_session_path , class: "" %></p>
         </div>
@@ -49,6 +49,6 @@
       </div>
       <!-- Fin de la modal -->
     </div>
-    <a href="" class="fas fa-angle-double-left liens reduct resize-navbar-small-icones" id="toogle-size-navbar"></a>
+    <a href="" class="fa fa-angle-double-left liens reduct resize-navbar-small-icones" id="toogle-size-navbar"></a>
   </div>
 <% end %>
