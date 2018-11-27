@@ -1,0 +1,36 @@
+<div class="form">
+  <%= simple_form_for(@medicament) do |f| %>
+    <%= f.error_notification %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+    <div class="form-inputs">
+      <%= f.input :name, placeholder: 'Nom Dose Forme', class: "my-button" %>
+      <%= f.input :morning, label: 'Prénom', class: "my-button" %>
+      <%= f.input :lunch, label: 'Prénom', class: "my-button" %>
+      <%= f.input :evening, label: 'Prénom', class: "my-button" %>
+      <%= f.input :night, label: 'Prénom', class: "my-button" %>
+      <%= f.input :comment, placeholder: 'Nom Dose Forme', class: "my-button" %>
+       %>
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit, class: "btn btn-primary" %>
+    </div>
+  <% end %>
+
+</div>
+
+
+
+  create_table "drugs", force: :cascade do |t|
+    t.string "name"
+    t.float "morning"
+    t.float "lunch"
+    t.float "evening"
+    t.float "night"
+    t.text "comment"
+    t.integer "position"
+    t.bigint "source_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["source_id"], name: "index_drugs_on_source_id"
