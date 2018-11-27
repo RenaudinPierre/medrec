@@ -6,3 +6,5 @@ import AddMedicament from  "./card-medicament";
 initNavbar();
 AddSource();
 AddMedicament();
+
+import "./drag-and-drop.js";
