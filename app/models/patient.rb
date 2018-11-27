@@ -13,6 +13,13 @@ class Patient < ApplicationRecord
   after_create :create_conciliation_entree
   after_create :create_conciliation_sortie
 
+  include PgSearch
+  pg_search_scope :search_patients,
+    against: [ :first_name, :last_name, :birthdate, :entrancedate ],
+    using: {
+      tsearch: { prefix: true } # <-- now `superman batm` will return something!
+    }
+
   def create_historique_medicamenteux
     Board.create(patient: self, name: "historique_medicamenteux")
   end
