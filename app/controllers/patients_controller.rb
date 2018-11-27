@@ -1,6 +1,17 @@
 class PatientsController < ApplicationController
   def index
-    @patients = Patient.all
+    if params[:query].present?
+      # sql_query = " \
+      #   patients.first_name @@ :query \
+      #   OR patients.last_name @@ :query \
+      #   OR patients.birthdate @@ :query \
+      #   OR directors.entrancedate @@ :query \
+      # "
+      # @patients = Patient.where(sql_query, query: "%#{params[:query]}%")
+      @patients = Patient.search_patients(params[:query])
+    else
+      @patients = Patient.all
+    end
   end
 
   def new
