@@ -2,86 +2,85 @@
   margin-left: 250px;
 }
 
-
 .landing-page {
   display: flex;
   height: 100vh;
   flex-wrap: wrap;
 
-}
-
-.aside {
-  flex: 1;
-  background-color: grey;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 3em;
-  padding-top: 4em !important;
-}
-
-.form-container {
-  flex: 3;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  padding: 0 15em;
-  background-color: white;
-
-  .simple_form {
-    width: 100%;
-  }
-}
-
-.aside-sign-up {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-end;
-  justify-content: space-around;
-}
-
-.aside-title {
-  display: flex;
-  flex-direction: column;
-
-  h1 {
-    padding-bottom: 2em;
-    color: blue;
-  }
-  // flex-grow: 0.8;
-  // justify-content: end;
-}
-
-.simple_form div.form-inputs {
-  display: flex;
-  justify-content: space-between;
-  padding: 2em 0;
-
-  input {
+  .aside {
+    flex: 1;
     background-color: grey;
-    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 3em;
+    padding-top: 4em !important;
+  }
 
-    &:hover {
-      border: 1px solid purple;
-      background-color: white;
+  .form-container {
+    flex: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 15em;
+    background-color: white;
+
+    .simple_form {
+      width: 100%;
     }
   }
 
-  abbr {
-    color: red;
+  .aside-sign-up {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-around;
   }
 
-  label {
-    padding: 0.5em 0;
+  .aside-title {
+    display: flex;
+    flex-direction: column;
+
+    h1 {
+      padding-bottom: 2em;
+      color: blue;
+    }
+    // flex-grow: 0.8;
+    // justify-content: end;
+  }
+
+  .simple_form div.form-inputs {
+    display: flex;
+    justify-content: space-between;
+    padding: 2em 0;
+
+    input {
+      background-color: grey;
+      border-radius: 4px;
+
+      &:hover {
+        border: 1px solid purple;
+        background-color: white;
+      }
+    }
+
+    abbr {
+      color: red;
+    }
+
+    label {
+      padding: 0.5em 0;
+    }
+  }
+
+  .simple_form div.form-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 }
 
-.simple_form div.form-actions {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
 
 // form {
 
