@@ -7,13 +7,13 @@
   <div class="liens remove-puces">
     <div>
       <div class="align-navbar-card">
-        <%= link_to patients_path, id: "toogle-font-user-hidden" do   %>
+        <%= link_to patients_path, id: "toogle-font-user-hidden", class: "resize-navbar-small-icones" do   %>
         <i class="fas fa-user"></i>
         <% end %>
         <p id="toogle-font-user"><%= link_to "Patients", patients_path , class: "" %></p>
       </div>
       <div class="align-navbar-card">
-        <%= link_to destroy_user_session_path, id: "toogle-font-sign-out-hidden" do  %>
+        <%= link_to destroy_user_session_path, id: "toogle-font-sign-out-hidden", class: "resize-navbar-small-icones" do  %>
         <i class="fas fa-sign-out-alt"></i>
         <% end %>
         <p id="toogle-font-sign-out"><%= link_to "Se deconnecter", destroy_user_session_path , class: "" %></p>
