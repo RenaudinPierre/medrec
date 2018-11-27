@@ -1,8 +1,22 @@
 <div class="container">
 
-<h1>Patients#index</h1>
-<p>Find me in app/views/patients/index.html.erb</p>
+<h2>Mes patients</h2>
 
+
+  <div class="row">
+    <% @patients.each do |patient| %>
+      <div class="col-xs-12 col-sm-3 card-patient">
+          <div ><p id="bold"><%= patient.first_name %> <%= patient.last_name %></p></div>
+          <div><p id="blue"><%= patient.birthdate %></p></div>
+          <% patient.boards.each do |board| %>
+              <p><%= link_to board.name, board %></p>
+          <% end %>
+      </div>
+    <% end %>
+  </div>
 </div>
+
+
+
 
 
