@@ -1,22 +1,28 @@
-<% if user_signed_in? %>
-  <div class="navbar-wagon navbar-fixed-left navbar-fixed-top">
-    <div class="logo">
-      <%= link_to root_path, class: "navbar-wagon-brand" do %>
-        <%= image_tag "logo.png", height: 50 %>
-      <% end %>
-    </div>
-    <div class="liens">
-      <ul>
-        <li><%= link_to "Patients", "#", class: "navbar-wagon-item navbar-wagon-link" %></li>
-        <li><%= link_to "Se deconnecter", "#", class: "navbar-wagon-item navbar-wagon-link" %></li>
-      </ul>
-
-    </div>
-    <div class="ajout-patient">
-      <%= link_to "+", "#", class: "navbar-create-patient" %>
-    </div>
+<div class="navbar-wagon navbar-fixed-left navbar-fixed-top" id="main-nav">
+  <div class="logo">
+    <%= link_to root_path, class: "navbar-wagon-brand resize-navbar-small" do %>
+      <%= image_tag "logo.png", height: 50 %>
+    <% end %>
   </div>
-<% end %>
+  <div class="liens remove-puces">
+    <div>
+      <div class="align-navbar-card">
+        <%= link_to patients_path, id: "toogle-font-user-hidden", class: "resize-navbar-small-icones" do   %>
+        <i class="fas fa-user"></i>
+        <% end %>
+        <p id="toogle-font-user"><%= link_to "Patients", patients_path , class: "" %></p>
+      </div>
+      <div class="align-navbar-card">
+        <%= link_to destroy_user_session_path, id: "toogle-font-sign-out-hidden", class: "resize-navbar-small-icones" do  %>
+        <i class="fas fa-sign-out-alt"></i>
+        <% end %>
+        <p id="toogle-font-sign-out"><%= link_to "Se deconnecter", destroy_user_session_path , class: "" %></p>
+      </div>
+    </div>
 
-
-
+  </div>
+  <div class="ajout-patient">
+    <%= link_to "+", new_patient_path, class: "navbar-create-patient resize-navbar-small" %>
+  </div>
+  <a href="" class="fas fa-angle-double-left liens reduct resize-navbar-small-icones" id="toogle-size-navbar"></a>
+</div>
