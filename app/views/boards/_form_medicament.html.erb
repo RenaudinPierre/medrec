@@ -20,17 +20,3 @@
 
 </div>
 
-
-
-  create_table "drugs", force: :cascade do |t|
-    t.string "name"
-    t.float "morning"
-    t.float "lunch"
-    t.float "evening"
-    t.float "night"
-    t.text "comment"
-    t.integer "position"
-    t.bigint "source_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["source_id"], name: "index_drugs_on_source_id"
