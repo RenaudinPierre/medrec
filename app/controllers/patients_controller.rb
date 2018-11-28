@@ -1,4 +1,6 @@
 class PatientsController < ApplicationController
+  before_action :new_patient, only: [:index]
+
   def index
     if params[:query].present?
       # sql_query = " \
@@ -14,10 +16,6 @@ class PatientsController < ApplicationController
     end
   end
 
-  def new
-    @patient = Patient.new
-  end
-
   def create
     @patient = Patient.new(patient_params)
 
@@ -26,7 +24,6 @@ class PatientsController < ApplicationController
     else
       render :new
     end
-
   end
 
   private
@@ -34,5 +31,4 @@ class PatientsController < ApplicationController
   def patient_params
     params.require(:patient).permit(:first_name, :last_name, :birthdate, :entrancedate)
   end
-
 end

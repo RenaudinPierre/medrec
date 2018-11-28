@@ -1,6 +1,7 @@
 class BoardsController < ApplicationController
+  before_action :new_patient, only: [:index]
+
   def show
-    @patient = Patient.find(params[:id])
     @board = Board.find(params[:id])
   end
 end

@@ -7,4 +7,10 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(resource)
     patients_path
   end
+
+  private
+
+  def new_patient
+    @patient = Patient.new
+  end
 end
