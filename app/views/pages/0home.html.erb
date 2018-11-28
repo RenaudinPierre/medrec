@@ -1,0 +1,47 @@
+<div class="row">
+  <div class="col-xs-12 col-sm-4 div-gauche" >
+    <div class="container-gauche ">
+      <div class="div-haut-gauche">
+        <div class="logo">
+          <%= link_to root_path, class: "navbar-wagon-brand" do %>
+            <%= image_tag "logo.png", height: 50 %>
+          <% end %>
+        </div>
+        <div class="title">
+          <h1>MedRec</h1>
+          <h2>
+            Outil d'aide à la réalisation de la conciliation médicamenteuse
+          </h2>
+        </div>
+      </div>
+      <div class="inscription">
+        <p>Pas encore de compte?</p>
+        <a href="#" class="btn-medium">INSCRIPTION</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-8 div-droite">
+    <div class="center">
+      <p>Connectez-vous</p>
+      <%= simple_form_for(@user, url: user_session_path) do |f| %>
+        <div class="form-inputs">
+          <%= f.input :email,
+                      required: false,
+                      autofocus: true,
+                      input_html: { autocomplete: "email" },
+                      label: "Identifiant" %>
+          <%= f.input :password,
+                      required: false,
+                      input_html: { autocomplete: "current-password" },
+                      label: "Mot de passe" %>
+          <%= f.input :remember_me, as: :boolean %>
+        </div>
+
+        <div class="form-actions">
+          <%= f.button :submit, "Connexion", :class => "btn-treehouse"%>
+        </div>
+      <% end %>
+      <%= render "devise/shared/links" %>
+    </div>
+  </div>
+</div>

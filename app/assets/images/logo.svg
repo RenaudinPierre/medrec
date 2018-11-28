@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="956px" height="257px" viewBox="0 0 956 257" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.4 (67378) - http://www.bohemiancoding.com/sketch -->
+    <title>MedRecLogo</title>
+    <desc>Created with Sketch.</desc>
+    <g id="MedRecLogo" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <text id="MedRec" font-family="LucidaGrande-Bold, Lucida Grande" font-size="200" font-weight="bold" fill="#9B9B9B">
+            <tspan x="163" y="215">MedRec</tspan>
+        </text>
+        <g id="MedRecIcon" transform="translate(0.000000, 17.000000)">
+            <g id="Group">
+                <polygon id="Rectangle" fill="#1058FB" points="0.438311688 35.875 38.5714286 0 38.5714286 198.625 0 198.625 0 35.875"></polygon>
+                <polygon id="Rectangle" fill="#1058FB" points="77.5811688 0 94.9383117 17.5 116.152597 38.5 116.152597 84.875 102.696429 89.90625 87.8814935 105.4375 77.5811688 105.4375"></polygon>
+                <polygon id="Rectangle" fill="#1058FB" transform="translate(79.490252, 153.522210) rotate(-34.000000) translate(-79.490252, -153.522210) " points="62.6381585 95.9971599 96.3423454 88.4396434 95.6752684 218.604777 80.2680896 208.212503 62.8260004 196.447665"></polygon>
+                <polygon id="Rectangle" fill="#1993FC" transform="translate(77.362013, 104.125000) rotate(90.000000) translate(-77.362013, -104.125000) " points="58.112013 65.3344156 71.455763 78.7733394 96.612013 102.217266 96.612013 142.915584 58.112013 142.915584"></polygon>
+                <polygon id="Rectangle" fill="#1993FC" transform="translate(77.362013, 19.250000) rotate(90.000000) translate(-77.362013, -19.250000) " points="77.362013 -0.739319891 96.612013 -19.5405844 96.612013 58.0405844 58.112013 58.0405844 58.112013 17.9350649"></polygon>
+            </g>
+        </g>
+        <g id="Group" transform="translate(812.000000, 189.000000)">
+            <rect id="Rectangle" fill="#FFFFFF" x="0" y="0" width="26" height="30"></rect>
+            <g id="Rectangle-2" transform="translate(4.000000, 8.000000)" fill="#1058FB">
+                <rect id="Rectangle" x="0" y="0" width="20" height="20"></rect>
+            </g>
+        </g>
+        <rect id="Rectangle" fill="#1058FB" x="816" y="197" width="20" height="20"></rect>
+        <g id="Group" transform="translate(424.000000, 189.000000)">
+            <rect id="Rectangle" fill="#FFFFFF" x="0" y="0" width="26" height="30"></rect>
+            <g id="Rectangle-2" transform="translate(4.000000, 8.000000)" fill="#1058FB">
+                <rect id="Rectangle" x="0" y="0" width="20" height="20"></rect>
+            </g>
+        </g>
+        <rect id="Rectangle" fill="#1058FB" x="428" y="197" width="20" height="20"></rect>
+        <rect id="Rectangle" fill="#FFFFFF" x="609" y="0" width="43" height="15"></rect>
+    </g>
+</svg>
