@@ -18,7 +18,45 @@
 
   .align-navbar-card {
     display: flex;
-    justify-content: center;
+    justify-content: left;
+    text-decoration: none;
+    color: $blue;
+    border-radius: 4px;
+    margin: 5px 0;
+
+    p {
+      padding-top: 10px;
+    }
+
+    a {
+      text-decoration: none;
+      padding-top: 10px;
+      padding-left: 5px;
+    }
+
+  }
+
+
+  .align-navbar-card:hover {
+    display: flex;
+    justify-content: left;
+    background-color: $blue;
+    font-color: white;
+    text-decoration: none;
+
+    p {
+      color: white;
+      padding-top: 10px;
+
+
+    }
+
+    a {
+      color:white;
+      padding-left: 5px;
+      padding-top: 10px;
+    }
+
   }
 
   #toogle-size-navbar {
@@ -35,6 +73,8 @@
 
     .resize-navbar-small {
       margin-left: -25px;
+
+
     }
 
   }

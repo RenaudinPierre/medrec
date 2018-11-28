@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="295px" height="454px" viewBox="0 0 295 454" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.4 (67378) - http://www.bohemiancoding.com/sketch -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="MedRecIcon">
+            <g id="Group">
+                <polygon id="Rectangle" fill="#1058FB" points="1 82 88 0 88 454 0 454 0 82"></polygon>
+                <polygon id="Rectangle" fill="#1058FB" points="177 0 216.6 40 265 88 265 194 234.3 205.5 200.5 241 177 241"></polygon>
+                <polygon id="Rectangle" fill="#1058FB" transform="translate(181.437142, 350.813767) rotate(-34.000000) translate(-181.437142, -350.813767) " points="142.959683 219.469561 219.914601 202.139103 218.136372 499.488431 182.985179 475.778652 143.191376 448.937393"></polygon>
+                <polygon id="Rectangle" fill="#1993FC" transform="translate(176.500000, 238.000000) rotate(90.000000) translate(-176.500000, -238.000000) " points="132.5 149.5 163 180.160656 220.5 233.647541 220.5 326.5 132.5 326.5"></polygon>
+                <polygon id="Rectangle" fill="#1993FC" transform="translate(176.500000, 44.000000) rotate(90.000000) translate(-176.500000, -44.000000) " points="176.5 -1.60526316 220.5 -44.5 220.5 132.5 132.5 132.5 132.5 41"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>
