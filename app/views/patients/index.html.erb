@@ -20,9 +20,14 @@
               <p id="bold"><%= patient.first_name %> <%= patient.last_name %></p>
               <p id="blue"><%= patient.birthdate %></p>
             </div>
+            <div >
+              <p> Date d'hospitalisation</p>
+              <p id="blue"><%= patient.birthdate %></p>
+            </div>
             <% patient.boards.each do |board| %>
                 <div class="board-name">
                   <p><%= link_to board.name, board %></p>
+                  <i class="fa fa-file-text" aria-hidden="true"></i>
                 </div>
             <% end %>
         </div>
