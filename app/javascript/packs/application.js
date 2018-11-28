@@ -1,13 +1,12 @@
 import "bootstrap";
 import initNavbar from "../components/navbar";
-import AddSource from  "./card-source";
-import AddMedicament from  "./card-medicament";
-// import calendarpickr from "../components/calendar";
-
+import InitSource from  "./card-source";
+import InitMedicament from  "./card-medicament"
+import InitDragula from "./card-dragula";
 
 initNavbar();
-AddSource();
-AddMedicament();
-// calendarpickr();
+InitSource(InitDragula);
+InitMedicament(InitDragula);
 
 import "./drag-and-drop.js";
+import "./card-dragula.js";

@@ -2,10 +2,12 @@
   <h1><%= @board.name %></h1>
 
   <div class="board-container">
-    <div class="card-source">
+    <div class="card-source" id="source_1">
       <div class="card-source-invisible">
-        <div class="card-medicament">
-          Je suis un médicament
+        <div class="card-medicament" id="source_1_card_1">
+          <div class = "card">
+            Je suis un médicament
+          </div>
         </div>
       </div>
       <%= link_to "+", '', class: "btn-add-medicament" %>
@@ -19,9 +21,4 @@
 
 
 </div>
-
-
-
-
-
 

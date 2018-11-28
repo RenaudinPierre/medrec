@@ -4,6 +4,7 @@
   "dependencies": {
     "@rails/webpacker": "3.5",
     "bootstrap": "3",
+    "dragula": "^3.7.2",
     "flatpickr": "^4.5.2",
     "interact.js": "^1.2.8",
     "jquery": "^3.3.1"
