@@ -2,7 +2,7 @@
   <div class="navbar-wagon navbar-fixed-left navbar-fixed-top navbar-small" id="main-nav">
     <div class="logo">
       <%= link_to root_path, class: "navbar-wagon-brand resize-navbar-small" do %>
-        <%= image_tag "logo.png", height: 50 %>
+        <%= image_tag "icon.svg", height: 50 %>
       <% end %>
     </div>
     <div class="liens remove-puces">
@@ -24,7 +24,8 @@
     </div>
     <div class="ajout-patient">
       <!-- Bouton qui lance la modal: -->
-      <button type="button" class="navbar-create-patient resize-navbar-small" data-toggle="modal" data-target="#exampleModal">+
+      <button type="button" class="navbar-create-patient resize-navbar-small" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-plus" aria-hidden="true"></i>
+
       </button>
       <%= render 'patients/modal'  %>
     </div>
