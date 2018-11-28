@@ -1,40 +1,48 @@
 <div class="landing-page">
   <div class="aside">
     <div class="aside-logo">
-      <%= link_to root_path, class: "navbar-wagon-brand" do %>
-        <%= image_tag "logo.png", height: 50 %>
-      <% end %>
+        <%= image_tag "logo.svg", height: 50 %>
     </div>
     <div class="aside-title">
-      <h1>MedRec</h1>
-      <h2>
+      <h2>Connexion</h2>
+      <p>
         Outil d'aide à la réalisation de la conciliation médicamenteuse
-      </h2>
+      </p>
     </div>
     <div class="aside-sign-up">
       <p>Pas encore de compte?</p>
-      <a href="#" class="btn-medium">INSCRIPTION</a>
+      <a href="#" class="btn-medium" style="color:gray;">INSCRIPTION</a>
     </div>
   </div>
+
+
   <div class="form-container">
-    <%= simple_form_for(@user, url: user_session_path) do |f| %>
-      <div class="form-inputs">
-        <%= f.input :email,
-                    required: true,
-                    autofocus: true,
-                    input_html: { autocomplete: "email" },
-                    label: "Identifiant",
-                    placeholder: "Identifiant" %>
-        <%= f.input :password,
-                    required: true,
-                    input_html: { autocomplete: "current-password" },
-                    label: "Mot de passe",
-                    placeholder: "Mot de passe" %>
-      </div>
-      <div class="form-actions">
-        <%= f.button :submit, "Connexion", :class => "btn-treehouse"%>
-        <%= render "devise/shared/links" %>
-      </div>
-    <% end %>
+    <div class="content-form-container">
+      <h2>Connectez-vous</h2>
+
+      <%= simple_form_for(@user, url: user_session_path) do |f| %>
+        <div class="form-inputs">
+          <div class="margin-form-home">
+          <%= f.input :email,
+                      required: true,
+                      autofocus: true,
+                      input_html: { autocomplete: "email" },
+                      label: "Identifiant",
+                      placeholder: "Identifiant" %>
+          </div>
+          <div class="margin-form-home">
+          <%= f.input :password,
+                      required: true,
+                      input_html: { autocomplete: "current-password" },
+                      label: "Mot de passe",
+                      placeholder: "Mot de passe" %>
+          </div>
+        </div>
+        <div class="form-actions">
+          <%= f.button :submit, "Connexion", :class => "btn-treehouse"%>
+          <%= render "devise/shared/links" %>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
