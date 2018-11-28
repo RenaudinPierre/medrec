@@ -1,5 +1,5 @@
 <% if user_signed_in? %>
-  <div class="navbar-wagon navbar-fixed-left navbar-fixed-top" id="main-nav">
+  <div class="navbar-wagon navbar-fixed-left navbar-fixed-top navbar-small" id="main-nav">
     <div class="logo">
       <%= link_to root_path, class: "navbar-wagon-brand resize-navbar-small" do %>
         <%= image_tag "logo.png", height: 50 %>
@@ -8,16 +8,16 @@
     <div class="liens remove-puces">
       <div>
         <div class="align-navbar-card">
-          <%= link_to patients_path, id: "toogle-font-user-hidden", class: "resize-navbar-small-icones" do   %>
+          <%= link_to patients_path do   %>
           <i class="fa fa-user"></i>
           <% end %>
-          <p id="toogle-font-user"><%= link_to "Patients", patients_path , class: "" %></p>
+          <p id="toogle-font-user" class="hidden"><%= link_to "Patients", patients_path %></p>
         </div>
         <div class="align-navbar-card">
-          <%= link_to destroy_user_session_path, id: "toogle-font-sign-out-hidden", class: "resize-navbar-small-icones" do  %>
+          <%= link_to destroy_user_session_path do  %>
           <i class="fa fa-sign-out"></i>
           <% end %>
-          <p id="toogle-font-sign-out"><%= link_to "Se deconnecter", destroy_user_session_path , class: "" %></p>
+          <p id="toogle-font-sign-out" class="hidden"><%= link_to "Se deconnecter", destroy_user_session_path %></p>
         </div>
       </div>
 
@@ -28,6 +28,8 @@
       </button>
       <%= render 'patients/modal'  %>
     </div>
-    <a href="" class="fa fa-angle-double-left liens reduct resize-navbar-small-icones" id="toogle-size-navbar"></a>
+    <div class="reduct">
+      <a href="" class="fa fa-angle-double-left arrow resize-navbar-small" id="toogle-size-navbar"></a>
+    </div>
   </div>
 <% end %>
