@@ -1,19 +1,29 @@
 <div class="container">
-  <h2>Mes patients</h2>
-  <%= form_tag patients_path, method: :get do %>
-    <%= text_field_tag :query,
-        params[:query],
-        class: "form-control",
-        placeholder: "Find a Patient"
-      %>
-  <% end %>
+
+
+    <div class="recherche">
+        <span class="glyphicon glyphicon-search"></span>
+        <span>
+          <%= form_tag patients_path, method: :get do %>
+            <%= text_field_tag :query,
+              params[:query],
+              placeholder: "Rechercher un patient"
+          %>
+          <% end %>
+        </span>
+    </div>
+
   <div class="row ">
       <% @patients.each do |patient| %>
-        <div class="col-xs-12 col-sm-3 card-patient">
-            <div ><p id="bold"><%= patient.first_name %> <%= patient.last_name %></p></div>
-            <div><p id="blue"><%= patient.birthdate %></p></div>
+        <div class="col-xs-12 col-sm-10 card-patient">
+            <div >
+              <p id="bold"><%= patient.first_name %> <%= patient.last_name %></p>
+              <p id="blue"><%= patient.birthdate %></p>
+            </div>
             <% patient.boards.each do |board| %>
-                <p><%= link_to board.name, board %></p>
+                <div class="board-name">
+                  <p><%= link_to board.name, board %></p>
+                </div>
             <% end %>
         </div>
       <% end %>
