@@ -4,9 +4,6 @@ const toogleSizeElem  = document.getElementById('toogle-size-navbar');
 const toogleFontUser = document.getElementById('toogle-font-user');
 const toogleFontSignOut = document.getElementById('toogle-font-sign-out');
 
-console.log(toogleFontUser);
-console.log(toogleFontSignOut);
-
 const toogleNavbar = (e) => {
   e.preventDefault();
   navbarElem.classList.toggle('navbar-small');
