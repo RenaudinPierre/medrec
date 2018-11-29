@@ -1,17 +1,21 @@
-<div class="form">
+<div class="form create-patient">
   <%= simple_form_for(@patient) do |f| %>
     <%= f.error_notification %>
     <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
     <div class="form-inputs">
-      <%= f.input :last_name, label: 'Nom', class: "my-button" %>
-      <%= f.input :first_name, label: 'Prénom', class: "my-button" %>
-      <%= f.input :birthdate, as: :date, html5: true, label: 'Date de naissance' %>
-      <%= f.input :entrancedate, as: :date, html5: true, label: 'Date entrée hospitalisation' %>
+      <div class="premiere-ligne">
+        <%= f.input :last_name, label: 'Nom'%>
+        <%= f.input :first_name, label: 'Prénom', class: "my-button" %>
+      </div>
+      <div class="deuxieme-ligne">
+       <%= f.input :birthdate, as: :date, html5: true, label: 'Date de naissance' %>
+      <%= f.input :entrancedate, as: :date, html5: true, label: "Date d'entrée du patient" %>
+      </div>
     </div>
 
-    <div class="form-actions">
-      <%= f.button :submit, class: "btn btn-primary" %>
+    <div class="form-actions new-patient">
+      <%= f.button :submit, "CREER", class: "btn-treehouse" %>
     </div>
   <% end %>
 
