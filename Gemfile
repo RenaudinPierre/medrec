@@ -18,7 +18,8 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 gem "pg_search"
-
+gem 'wicked_pdf', '~> 1.1'
+gem 'wkhtmltopdf-binary'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
