@@ -1,29 +1,33 @@
-.board-container {
-  display:flex
-}
 
 
-.btn-add-source {
-  background-color: blue;
-  color: white;
-  padding: 1px 6px;
-  border-radius: 5px;
-  margin: 5px;
-}
 
-.btn-add-medicament {
-  background-color: green;
-  color: white;
-  padding: 1px 6px;
-  border-radius: 5px;
-  margin: 5px;
-}
+  .board-container {
+    display:flex
+  }
 
-.card-invisible {
-  background-color: $black;
-  opacity: 1;
-  border-radius: 8px;
-  height: 15vh;
-  margin: 5px;
-}
+
+  .btn-add-source {
+    background-color: blue;
+    color: white;
+    padding: 1px 6px;
+    border-radius: 5px;
+    margin: 5px;
+  }
+
+  .btn-add-medicament {
+    background-color: green;
+    color: white;
+    padding: 1px 6px;
+    border-radius: 5px;
+    margin: 5px;
+  }
+
+  .card-invisible {
+    background-color: $black;
+    opacity: 1;
+    border-radius: 8px;
+    height: 15vh;
+    margin: 5px;
+  }
+
 
