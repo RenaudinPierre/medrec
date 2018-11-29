@@ -1,3 +1,80 @@
+.create-patient {
+  margin: 50px auto;
+}
+
+.modal-body {
+  padding: 0 40px;
+
+  h3 {
+    text-align: left;
+    font-weight: bold;
+  }
+}
+
 .form-new-patient {
   width: 400px;
+}
+
+.premiere-ligne {
+  display: flex;
+  align-item: center;
+  flex-direction: row;
+  margin: auto;
+  justify-content: space-between;
+  padding-bottom: 30px;
+
+  abbr {
+    color: red;
+    font-size: 15px;
+    text-decoration: none;
+  }
+
+
+  .form-group {
+    text-align: left;
+  }
+
+}
+
+
+.deuxieme-ligne {
+  display: flex;
+  align-item: center;
+  flex-direction: row;
+  margin: auto;
+  justify-content: space-between;
+  margin-bottom: 50px;
+
+  abbr {
+    color: red;
+    font-size: 15px;
+    text-decoration: none;
+  }
+
+  .form-group {
+    text-align: left;
+  }
+}
+
+#patient_last_name {
+  width: 35vh;
+
+}
+
+#patient_first_name {
+  width: 35vh;
+}
+
+#patient_entrancedate {
+  width: 35vh;
+}
+
+#patient_birthdate {
+  width: 35vh;
+}
+
+.new-patient {
+  text-align: left
+
+
 }

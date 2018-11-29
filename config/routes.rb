@@ -9,6 +9,5 @@ Rails.application.routes.draw do
   resources :boards, only: [ :show ]
 
   get "drugs/search"
-
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :drugs, only: [ :create]
 end

@@ -9,5 +9,4 @@ initNavbar();
 InitSource(InitDragula);
 InitMedicament(InitDragula);
 
-import "./drag-and-drop.js";
 import "./card-dragula.js";
