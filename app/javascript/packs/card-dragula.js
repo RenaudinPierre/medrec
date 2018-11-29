@@ -3,7 +3,7 @@ import dragula from 'dragula';
 function InitDragula() {
   const card_drugs_sources = document.querySelectorAll('.card-source-invisible');
   const number_sources = card_drugs_sources.length ;
-  const max_card_source = card_drugs_sources[0].querySelectorAll('.card-medicament').length;
+  const max_card_source = card_drugs_sources[0].querySelectorAll('.card-invisible').length;
   console.log("je suis dans InitDragula");
   console.log(`${number_sources}`);
 
@@ -36,9 +36,19 @@ function InitDragula() {
       let drug_cards = [];
       let source_number = 0;
       for ( source_number = 1; source_number < number_sources + 1; source_number++) {
-        drug_cards.push(document.querySelector(`#source_${source_number}_card_${card_number}`));
+        drug_cards.push(document.getElementById(`source_${source_number}_card_${card_number}`));
       }
-    dragula(drug_cards, options);
+    dragula(drug_cards).on('drag', function (el) {
+      el.className = el.className.replace('ex-moved', '');
+    }).on('drop', function (el) {
+      el.className += ' ex-moved';
+    }).on('over', function (el, container) {
+      container.className += ' ex-over';
+    }).on('out', function (el, container) {
+      container.className = container.className.replace('ex-over', '');
+    });
+
+
     console.log(drug_cards);
     }
   };
