@@ -1,22 +1,25 @@
-<div class="form">
-  <%= simple_form_for(@medicament) do |f| %>
+<div class="form-medicament">
+  <%= simple_form_for(@drug) do |f| %>
     <%= f.error_notification %>
     <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
     <div class="form-inputs">
-      <%= f.input :name, placeholder: 'Nom Dose Forme', class: "my-button" %>
-      <%= f.input :morning, label: 'Prénom', class: "my-button" %>
-      <%= f.input :lunch, label: 'Prénom', class: "my-button" %>
-      <%= f.input :evening, label: 'Prénom', class: "my-button" %>
-      <%= f.input :night, label: 'Prénom', class: "my-button" %>
-      <%= f.input :comment, placeholder: 'Nom Dose Forme', class: "my-button" %>
-       %>
+      <%= f.input :name, placeholder: 'Nom Dose Forme', label: false, class: "name-medicament" %>
+      <div class="inline-medicament">
+        <%= f.input :morning, as: :string, label: false, class: "my-button" %>
+        <%= f.input :lunch, as: :string, label: false, class: "my-button" %>
+        <%= f.input :evening, as: :string, label: false, class: "my-button" %>
+        <%= f.input :night, as: :string, label: false, class: "my-button" %>
+        </div>
+      <%= f.input :comment, label: false, placeholder: 'Commentaire...', class: "my-button" %>
+
     </div>
 
-    <div class="form-actions">
+<!--     <div class="form-actions">
       <%= f.button :submit, class: "btn btn-primary" %>
-    </div>
+    </div> -->
   <% end %>
 
 </div>
+
 
