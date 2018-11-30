@@ -1,11 +1,11 @@
 <div class="container container-board-show">
-  <h1><%= @board.name %></h1>
+  <h3><%= @board.name %></h3>
 
   <div class="board-container">
     <div class="card-source" id="source_1">
       <div class="card-source-invisible">
         <div class="card-invisible" id="source_1_card_1">
-          <div class = "card-medicament">
+          <div class = "card-medicament" style="background-color: blue;">
             <%= render "shared/form_medicament" %>
           </div>
         </div>
@@ -17,11 +17,12 @@
   <%= link_to "+", '', class: "btn-add-source" %>
 
   <div class="bouton-show">
-    <a onclick='window.print(); return false;' class='btn btn-treehouse generer-pdf'>Générer un pdf</a>
+    <a onclick='window.print(); return false;' class='btn btn-treehouse-small generer-pdf fa fa-file-pdf-o'></a>
+    <i class="fa fa-floppy-o btn btn-treehouse-small generer-pdf" aria-hidden="true"></i>
+
+    <%= link_to '', patients_path, class: 'btn btn-treehouse-small fa fa-sign-out generer-pdf' %>
   </div>
 
 
 
 </div>
-
-

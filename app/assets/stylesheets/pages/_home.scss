@@ -1,5 +1,6 @@
 .container {
-  margin-left: 100px;
+  margin-left: 80px;
+
 }
 
 .landing-page {
@@ -32,16 +33,18 @@
   }
 
   .aside-sign-up {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+    // display: flex;
+    // flex-direction: row;
+    // align-items: left;
+    text-align: left;
     justify-content: space-around;
     padding-top: 15em;
 
-    p {
+    a {
       font-size: 16px;
       padding-top: 10px;
       color: $gray;
+      text-decoration: none;
     }
   }
 
@@ -105,8 +108,20 @@
 
 }
 
-// .content-form-container {
-//   margin: 0 50px;
-// }
+.form-actions {
+  a {
+      font-size: 16px;
+      padding-top: 20px;
+      color: $gray;
+      text-decoration: none;
+    }
+}
+
+hr {
+  border-top:1px solid $black;
+  width: 95%;
+  align:left;
+  margin: 0px;
+}
 
 
