@@ -31,7 +31,19 @@ function AddSource(btn_source) {
     last_card.querySelector('.card-source-invisible').insertAdjacentHTML("beforeend", element);
   }
     InitDragula();
+
     // POST /boards/2/sources => body: { source: { name: 'fdsjklfdsjl' }
+    const board_id = document.querySelector('.board-container').dataset.id;
+    fetch(`/boards/${board_id}/sources`, {
+       method: "POST",
+       headers: {
+         "Content-Type": "application/json"
+       },
+       body: JSON.stringify({ source: { name: 'hello', final_source: false, type: 'SourceDrug' }})
+     })
+       .then((data) => {
+         console.log(data); // Look at local_names.default
+       });
 }
 
 
