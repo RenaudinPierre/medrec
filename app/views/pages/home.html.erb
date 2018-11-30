@@ -10,8 +10,8 @@
       </p>
     </div>
     <div class="aside-sign-up">
-      <p>Pas encore de compte?</p>
-      <a href="#" class="btn-medium" style="color:gray;">INSCRIPTION</a>
+      <!-- <p>Pas encore de compte?</p> -->
+      <a href="#" class="" style="color:gray;">Pas encore de compte ?</a>
     </div>
   </div>
 
@@ -38,8 +38,8 @@
                       placeholder: "Mot de passe" %>
           </div>
         </div>
+        <%= f.button :submit, "Connexion", :class => "btn btn-treehouse"%>
         <div class="form-actions">
-          <%= f.button :submit, "Connexion", :class => "btn-treehouse"%>
           <%= render "devise/shared/links" %>
         </div>
       <% end %>

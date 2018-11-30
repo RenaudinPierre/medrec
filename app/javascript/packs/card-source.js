@@ -1,4 +1,6 @@
-function InitSource(callbackMed, callbackDragula) {
+import InitDragula from "./card-dragula";
+
+function InitSource(callbackMed) {
   const btn_source = document.querySelector('.btn-add-source');
 
   if (btn_source) {
@@ -7,7 +9,7 @@ function InitSource(callbackMed, callbackDragula) {
       AddSource(btn_source);
       console.log("je suis ici");
 
-      callbackMed(callbackDragula);
+      callbackMed();
     });
   }
 
@@ -20,7 +22,6 @@ function AddSource(btn_source) {
   console.log(`${max_card_in_source}`);
   const element_source = `<div class="card-source"><div class="card-source-invisible"></div><a class="btn-add-medicament" id="btn_source_${number + 1}" href="">+</a></div>`; //${number + 1}</div>`;
   card_sources[card_sources.length-1].insertAdjacentHTML("afterend", element_source);
-  // Add eventlistener to the new set of buttons
   card_sources = document.querySelectorAll('.card-source');
   const last_card = card_sources[card_sources.length-1]
   last_card.setAttribute("id", `source_${number + 1}`);
@@ -29,7 +30,8 @@ function AddSource(btn_source) {
     let element = `<div class="card-invisible" id="source_${number + 1}_card_${pas + 1}"></div>`;
     last_card.querySelector('.card-source-invisible').insertAdjacentHTML("beforeend", element);
   }
-  // POST /boards/2/sources => body: { source: { name: 'fdsjklfdsjl' }}
+    InitDragula();
+    // POST /boards/2/sources => body: { source: { name: 'fdsjklfdsjl' }
 }
 
 

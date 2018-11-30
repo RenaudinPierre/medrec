@@ -15,7 +15,7 @@
 }
 .btn-treehouse {
   color: white;
-  padding: 10px 50px;
+  padding: 8px 25px;
   border-radius: 4px;
   font-weight: regular;
   text-align: left;
@@ -32,4 +32,22 @@
   }
 }
 
+.btn-treehouse-small {
+  color: white;
+  padding: 8.5px 15px;
+  border-radius: 4px;
+  font-weight: regular;
+  text-align: left;
+  background: $blue;
+  opacity: 1;
+  transition: background 0.3s ease;
+
+  &:hover {
+    opacity: 1;
+    background: white;
+    text-decoration: none;
+    color: $blue;
+    border-color: $blue;
+  }
+}
 
