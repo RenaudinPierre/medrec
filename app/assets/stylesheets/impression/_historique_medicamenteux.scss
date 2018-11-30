@@ -1,9 +1,19 @@
+@page {
+  size: A4 landscape;
+  margin: 0;
+}
+
+.container {
+  margin: 0;
+  background: steelblue;
+}
+
 .navbar-wagon {
   display: none;
 }
 
 .board-container {
-  display:flex
+  display: flex;
 }
 
 
@@ -24,7 +34,7 @@
 }
 
 .card-invisible {
-  background-color: $black;
+  background-color: black;
   opacity: 1;
   border-radius: 8px;
   height: 15vh;
@@ -37,7 +47,7 @@ display: none;
 
 
 .card-medicament {
-  background-color: $gray-light;
+  background-color: $gray-light !important;
   color: white;
   opacity: 1;
   border-radius: 8px;
