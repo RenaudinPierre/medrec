@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   resources :patients, except: [ :show, :edit, :update, :destroy ]
   resources :boards, only: [ :show ]
+  resources :drugs, only: [ :create , :create ]
 
   get "drugs/search"
-  resources :drugs, only: [ :create]
 end
