@@ -22,6 +22,18 @@ const AddMedicaments = (event) => {
     card_drugs_sources[pas - 1].insertAdjacentHTML("beforeend", element);
   }
   InitDragula();
+
+  // const board_id = document.querySelector('.board-container').dataset.id;
+  // fetch(`/boards/${board_id}/drugs`, {
+  //    method: "POST",
+  //    headers: {
+  //      "Content-Type": "application/json"
+  //    },
+  //    body: JSON.stringify({ source: { name: "", morning: "", lunch: "", evening: "", night: "", comment: "", position: "" }})
+  //  })
+  //    .then((data) => {
+  //      console.log(data); // Look at local_names.default
+  //    });
 };
 
 const btnClick = (btn) => {
