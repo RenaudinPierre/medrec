@@ -10,7 +10,17 @@ class DrugsController < ApplicationController
       d["id"] = d.delete("codeCIS")
       d["text"] = d.delete("denomination")
     end
-
     render json: { results: data }
+  end
+
+  def create
+    @board = Board.find(params[:id])
+    @drug = Drug.new(drug_params)
+    @drug.save
+    render board_path(@board)
+  end
+
+  def drug_params
+    params.require(:drug).permit(:name, :morning, :lunch, :evening, :night, :comment, :position)
   end
 end
