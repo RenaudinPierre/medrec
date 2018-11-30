@@ -36,3 +36,14 @@ display: none;
 }
 
 
+.card-medicament {
+  background-color: $gray-light;
+  color: white;
+  opacity: 1;
+  border-radius: 8px;
+  padding: 2px;
+  height: 15vh;
+  margin: auto;
+  font-size: 10px;
+  z-index: 4;
+}
