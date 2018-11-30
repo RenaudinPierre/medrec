@@ -4,7 +4,8 @@
     <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
     <div class="form-inputs">
-      <%= f.input :name, placeholder: 'Nom Dose Forme', label: false, class: "name-medicament" %>
+<!--       <%= f.input :name, placeholder: 'Nom Dose Forme', label: false, class: "name-medicament" %> -->
+      <select class="api-card-drugs name-medicament" style="width: 100%"></select>
       <div class="inline-medicament">
         <%= f.input :morning, as: :string, label: false, class: "my-button" %>
         <%= f.input :lunch, as: :string, label: false, class: "my-button" %>
