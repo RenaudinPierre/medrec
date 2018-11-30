@@ -1,4 +1,6 @@
 import InitDragula from "./card-dragula";
+import ejs from 'ejs';
+import 'select2';
 
 function InitMedicament() {
   document.querySelectorAll('.btn-add-medicament').forEach(btnClick);
@@ -13,14 +15,26 @@ const AddMedicaments = (event) => {
   let pas =0;
   for (pas = 1; pas < number_sources + 1 ; pas++) {
     let element = "";
-    if (pas ==  my_btn_id ) {
-      element = `<div class="card-invisible" id="source_${pas}_card_${max_card_in_source + 1}"><div class="card-medicament" style="background-color: blue;">Medicament</div></div>`;
+    if (pas ==  my_btn_id) {
+      const template = require('./../templates/new_card.ejs');
+      element = template({
+        pas: pas,
+        max_card_in_source: max_card_in_source
+      });
+      // element = `<div class="card-invisible" id="source_${pas}_card_${max_card_in_source + 1}"><div class="card-medicament" style="background-color: blue;">Medicament</div></div>`;
     } else {
       element = `<div class="card-invisible" id="source_${pas}_card_${max_card_in_source + 1}"></div>`;
     }
     console.log(`${element}`);
     card_drugs_sources[pas - 1].insertAdjacentHTML("beforeend", element);
   }
+  $('.api-card-drugs').select2({
+    ajax: {
+      url: '/drugs/search',
+      dataType: 'json'
+    }
+  });
+
   InitDragula();
 };
 

@@ -9,4 +9,9 @@ environment.plugins.prepend('Provide',
   })
 )
 
+environment.loaders.append('ejs', {
+  test: /\.ejs$/,
+  loader: 'ejs-compiled-loader'
+})
+
 module.exports = environment
