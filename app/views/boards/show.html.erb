@@ -3,6 +3,12 @@
 
   <div class="board-container" data-id="<%= @board.id %>">
     <div class="card-source" id="source_1">
+      <% if @board.name == "Historique médicamenteux" %>
+        <p>Patient</p>
+        <%=  %>
+      <% else %>
+        <p>BMO</p>
+      <% end %>
       <div class="card-source-invisible">
         <div class="card-invisible" id="source_1_card_1">
           <div class="card-medicament">
