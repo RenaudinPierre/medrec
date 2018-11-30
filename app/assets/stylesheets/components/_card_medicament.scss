@@ -10,6 +10,18 @@
   z-index: 4;
 }
 
+.card-medicament-final {
+  background-color: $gray-light;
+  color: white;
+  opacity: 1;
+  border-radius: 8px;
+  padding: 2px;
+  height: 15vh;
+  margin: auto;
+  font-size: 10px;
+  z-index: 4;
+}
+
 #drug_name {
   font-size: 10px;
   height: 2.5em;

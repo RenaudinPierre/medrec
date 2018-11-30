@@ -20,6 +20,15 @@
   margin: 5px;
 }
 
+.btn-add-medicament-final {
+  background-color: green;
+  color: white;
+  padding: 1px 6px;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+
 .card-invisible {
   background-color: $black;
   opacity: 1;
@@ -29,6 +38,14 @@
   z-index: 3;
 }
 
+.card-invisible-final {
+  background-color: $black;
+  opacity: 1;
+  border-radius: 8px;
+  height: 15vh;
+  margin: 5px;
+  z-index: 3;
+}
 
 .container-board-show {
   position: relative;
