@@ -29,6 +29,7 @@ function AddSource(btn_source) {
     let element = `<div class="card-invisible" id="source_${number + 1}_card_${pas + 1}"></div>`;
     last_card.querySelector('.card-source-invisible').insertAdjacentHTML("beforeend", element);
   }
+  // POST /boards/2/sources => body: { source: { name: 'fdsjklfdsjl' }}
 }
 
 

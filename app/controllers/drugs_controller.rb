@@ -17,7 +17,10 @@ class DrugsController < ApplicationController
     @board = Board.find(params[:id])
     @drug = Drug.new(drug_params)
     @drug.save
-    render board_path(@board)
+    respond_to do |format|
+      format.html { render board_path(@board) }
+      format.js
+    end
   end
 
   def drug_params
