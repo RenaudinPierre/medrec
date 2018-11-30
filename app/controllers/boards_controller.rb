@@ -5,5 +5,4 @@ class BoardsController < ApplicationController
     @board = Board.find(params[:id])
     @drug = Drug.new
   end
-
 end
