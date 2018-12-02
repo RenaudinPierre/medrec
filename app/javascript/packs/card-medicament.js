@@ -43,7 +43,7 @@ const AddMedicaments = (event) => {
   //    headers: {
   //      "Content-Type": "application/json"
   //    },
-  //    body: JSON.stringify({ source: { name: "", morning: "", lunch: "", evening: "", night: "", comment: "", position: "" }})
+  //    body: JSON.stringify({ source: { name: "", morning: "1", lunch: "1", evening: "1", night: "0", comment: ""}})
   //  })
   //    .then((data) => {
   //      console.log(data); // Look at local_names.default
