@@ -18,20 +18,20 @@
         <div class="card-patient">
           <div >
             <span id="bold-resize"><%= patient.first_name %> <%= patient.last_name %>     </span>
-            <span id="gray-resize"><%= patient.birthdate %></span>
+            <span id="gray-resize"><%= l(patient.birthdate, format: '%d %B %Y') %></span>
           </div>
           <div class="row">
             <div class="col-xs-12 col-sm-6 padding-card-patient">
               <div >
                 <p> Date d'hospitalisation</p>
-                <p id="blue-resize"><%= patient.birthdate %></p>
+                <p id="blue-resize"><%= l(patient.entrancedate, format: '%d %B %Y') %></p>
               </div>
             </div>
             <% patient.boards.each do |board| %>
               <div class="col-xs-12 col-sm-6 padding-card-patient">
                 <div class="board-name">
                   <p><%= link_to board.name, board %></p>
-                  <p id="blue-resize"><%= board.updated_at %></p>
+                  <p id="blue-resize"><%= l(board.updated_at, format: '%d / %M / %Y') %></p>
                 </div>
               </div>
             <% end %>
