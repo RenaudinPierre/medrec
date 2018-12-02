@@ -13,7 +13,7 @@
   </div>
 
   <div class="row ">
-    <% @patients.each do |patient| %>
+    <% @patients.sort_by{ |patient| patient.entrancedate }.reverse.each do |patient| %>
       <div class="col-xs-12 col-sm-6 padding-none">
         <div class="card-patient">
           <div >
@@ -40,7 +40,5 @@
       </div>
     <% end %>
   </div>
-
-
 </div>
 
