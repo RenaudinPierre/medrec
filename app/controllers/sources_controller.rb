@@ -5,7 +5,7 @@ class SourcesController < ApplicationController
   def create
     @board = Board.find(params[:board_id])
     @board.sources.create(source_params)
-    head :created
+    render json: @board.to_json
   end
 
   def source_params

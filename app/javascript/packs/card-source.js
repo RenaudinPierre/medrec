@@ -6,21 +6,24 @@ function InitSource(callbackMed) {
   if (btn_source) {
     btn_source.addEventListener('click', function(e) {
       e.preventDefault();
-      AddSource(btn_source);
-      console.log("je suis ici");
+      var sourceName = prompt("Nom de la source?");
+      if (sourceName != null) {
+        AddSource(sourceName);
+        console.log("je suis ici");
 
-      callbackMed();
+        callbackMed();
+        }
     });
   }
 
 }
 
-function AddSource(btn_source) {
+function AddSource(sourceName) {
   let card_sources = document.querySelectorAll('.card-source');
   const number = card_sources.length;
   const max_card_in_source = card_sources[0].querySelectorAll('.card-invisible').length;
   console.log(`${max_card_in_source}`);
-  const element_source = `<div class="card-source"><div class="card-source-invisible"></div><a class="btn-add-medicament" id="btn_source_${number + 1}" href="">+</a></div>`; //${number + 1}</div>`;
+  const element_source = `<div class="card-source"><p>${sourceName}</p><div class="card-source-invisible"></div><a class="btn-add-medicament" id="btn_source_${number + 1}" href="">+</a></div>`; //${number + 1}</div>`;
   card_sources[card_sources.length-1].insertAdjacentHTML("afterend", element_source);
   card_sources = document.querySelectorAll('.card-source');
   const last_card = card_sources[card_sources.length-1]
@@ -39,7 +42,7 @@ function AddSource(btn_source) {
        headers: {
          "Content-Type": "application/json"
        },
-       body: JSON.stringify({ source: { name: 'hello', final_source: false, type: 'SourceDrug' }})
+       body: JSON.stringify({ source: { name: `${sourceName}`, final_source: false, type: 'SourceDrug' }})
      })
        .then((data) => {
          console.log(data); // Look at local_names.default
