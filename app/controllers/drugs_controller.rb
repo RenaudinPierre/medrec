@@ -13,11 +13,15 @@ class DrugsController < ApplicationController
     render json: { results: data }
   end
 
-  # def create
-  #   @board = Board.find(params[:board_id])
-  #   @board.drugs.create(drug_params)
-  #   head :created
-  # end
+  def create
+    @board = Board.find(params[:board_id])
+    # @source = @board.source.find([:source_id])
+    @board.source.find([:source_id]).drugs.create(drug_params)
+    head :created
+  end
+
+  def update
+  end
 
   def drug_params
     params.require(:drug).permit(:name, :morning, :lunch, :evening, :night, :comment, :position)

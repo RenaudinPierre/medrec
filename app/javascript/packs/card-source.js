@@ -5,22 +5,26 @@ function InitSource(callbackMed) {
 
   if (btn_source) {
     btn_source.addEventListener('click', function(e) {
-      e.preventDefault();
-      AddSource(btn_source);
+    e.preventDefault();
+    var sourceName = prompt("Quelle est la source?", "Nom de la source");
+    if (sourceName != null) {
+      AddSource(sourceName);
       console.log("je suis ici");
 
       callbackMed();
+    }
+
     });
   }
 
 }
 
-function AddSource(btn_source) {
+function AddSource(sourceName) {
   let card_sources = document.querySelectorAll('.card-source');
   const number = card_sources.length;
   const max_card_in_source = card_sources[0].querySelectorAll('.card-invisible').length;
   console.log(`${max_card_in_source}`);
-  const element_source = `<div class="card-source"><div class="card-source-invisible"></div><a class="btn-add-medicament" id="btn_source_${number + 1}" href="">+</a></div>`; //${number + 1}</div>`;
+  const element_source = `<div class="card-source"><p>${source_name}</p><div class="card-source-invisible"></div><a class="btn-add-medicament" id="btn_source_${number + 1}" href="">+</a></div>`; //${number + 1}</div>`;
   card_sources[card_sources.length-1].insertAdjacentHTML("afterend", element_source);
   card_sources = document.querySelectorAll('.card-source');
   const last_card = card_sources[card_sources.length-1]
