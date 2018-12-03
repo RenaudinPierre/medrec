@@ -11,6 +11,9 @@ Rails.application.routes.draw do
   resources :sources, only: [] do
     resources :drugs, only: [ :create ]
   end
+
+  resources :divergences, only: [ :create ]
+
   resources :drugs, only: [ :update ]
 
   get "drugs/search"
