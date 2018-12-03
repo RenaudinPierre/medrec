@@ -7,9 +7,11 @@ class BoardsController < ApplicationController
     @divergence = Divergence.new
   end
 
+
   def print
     @board = Board.find(params[:board_id])
     @drug = Drug.new
     @divergence = Divergence.new
   end
+
 end
