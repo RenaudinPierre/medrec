@@ -16,8 +16,7 @@ function InitSource(callbackMed) {
 
 }
 
-function AddSource(sourceNa✗ git commit "affichage dynamique et route médicament et seeds"
-me) {
+function AddSource(sourceName) {
   let card_sources = document.querySelectorAll('.card-source');
   const number = card_sources.length;
   const max_card_in_source = card_sources[0].querySelectorAll('.card-invisible').length;

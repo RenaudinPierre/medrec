@@ -21,7 +21,9 @@ class Patient < ApplicationRecord
     }
 
   def create_historique_medicamenteux
-    Board.create(patient: self, name: "Historique médicamenteux")
+    board = Board.create(patient: self, name: "Historique médicamenteux")
+    source = SourceDrug.create!(name: 'Patient', final_source: false)
+    BoardSource.create!(board: board, source: source)
   end
 
   def create_conciliation_entree

@@ -27,13 +27,13 @@ patient8 = Patient.create!(first_name: 'Mark', last_name: 'Hamil', birthdate: '1
 patient9 = Patient.create!(first_name: 'Carrie', last_name: 'Fisher', birthdate: '1977-11-14', entrancedate: '2018-11-26')
 puts 'Finished patients!'
 
-# puts 'Creating sources...'
+puts 'Creating sources...'
 sources1 = SourceDrug.create!(name: 'famille', final_source: false)
 sources2 = SourceDrug.create!(name: 'famille', final_source: false)
 sources3 = SourceDrug.create!(name: 'medecin de famille', final_source: false)
 sources4 = SourceDrug.create!(name: "pharmacie d'officine", final_source: false)
 sources5 = SourceDrug.create!(name: 'patient', final_source: false)
-# puts 'Finished sources!'
+puts 'Finished sources!'
 
 puts 'Creating drugs...'
 drugs1 = Drug.create!(name: 'Doliprane', source: sources2 , morning: '1', lunch: '1', evening: '1', night: '0', comment: 'Le patient ne le prend pas', position: 1)
@@ -55,7 +55,6 @@ puts 'Finished drugs!'
 # puts 'Finished boards'
 
 puts 'Creating board_sources...'
-# debugger
 board_sources1 = BoardSource.create!(board: patient1.boards.first, source: sources2)
 board_sources2 = BoardSource.create!(board: patient1.boards.first, source: sources3)
 board_sources3 = BoardSource.create!(board: patient1.boards.first, source: sources4)
