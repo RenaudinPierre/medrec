@@ -1,0 +1,12 @@
+<div class="form-medicament">
+  <%= simple_form_for(@divergence) do |f| %>
+    <%= f.error_notification %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+    <div class="form-inputs">
+        <%= f.input :error_type, as: :select, label: false, placeholder: 'status', collection: ['poursuivi', 'suspendu', 'médicament arrêté documenté', 'médicament modifié documenté', 'médicament substitué documenté', 'médicament ajouté documenté', 'médicament arrêté non documenté', 'médicament modifié non documenté', 'médicament substitué non documenté', 'médicament ajouté non documenté'] %>
+        <%= f.input :correction, as: :select, label: false, placeholder: 'divergence', collection: ['Divergence intentionnelle', 'Erreur médicamenteuse'] %>
+        <%= f.input :character, as: :select, label: false, placeholder: 'décision', collection: ['Pris en compte et corrigé', 'Non pris en compte'] %>
+    </div>
+  <% end %>
+</div>
