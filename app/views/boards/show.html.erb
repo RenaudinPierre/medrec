@@ -1,34 +1,100 @@
 <div class="container container-board-show">
   <h3><%= @board.name %></h3>
-
-  <div class="board-container" data-id="<%= @board.id %>">
-    <div class="card-source" id="source_1">
-      <% if @board.name == "Historique médicamenteux" %>
-        <p>Patient</p>
-        <%=  %>
-      <% else %>
-        <p>BMO</p>
-      <% end %>
-      <div class="card-source-invisible">
-        <div class="card-invisible" id="source_1_card_1">
-          <div class="card-medicament">
-            <%= render "shared/form_medicament" %>
+  <div class="row ">
+    <% if @board.name == "Historique médicamenteux" %>
+      <div class="col-xs-9 padding-none">
+        <div class="board-container" data-id="<%= @board.id %>">
+          <% @board.sources.each_with_index do |source, index| %>
+            <div class="card-source" id="source_<%= index + 1 %>">
+              <p><%= source.name %></p>
+              <% source.drugs.each do |drug| %>
+                <div class="card-source-invisible">
+                  <div class="card-invisible" id="source_<%= index + 1 %>_card_<%= drug.position %>">
+                    <div class="card-medicament">
+                      <%= render "shared/form_medicament", drug: drug %>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+              <%= link_to "+", "", class: "btn-add-medicament", id:"btn_source_1" %>
+            </div>
+          <% end %>
+        </div>
+        <%= link_to "+", '', class: "btn-add-source" %>
+      </div>
+    <% else %>
+      <div class="col-xs-7 padding-none">
+        <div class="board-container" data-id="<%= @board.id %>">
+          <% @board.sources.each_with_index do |source, index| %>
+            <div class="card-source" id="source_<%= index%>">
+              <p><%= source.name %></p>
+              <% source.drugs.each do |drug| %>
+                <div class="card-source-invisible">
+                  <div class="card-invisible" id="source_<%= index %>_card_<%= drug.position %>">
+                    <div class="card-medicament">
+                      <%= render "shared/form_medicament" %>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+              <%= link_to "+", "", class: "btn-add-medicament", id:"btn_source_1" %>
+            </div>
+          <% end %>
+        </div>
+        <%= link_to "+", '', class: "btn-add-source" %>
+      </div>
+      <div class="col-xs-2 padding-none">
+        <div class="board-container-final">
+          <div class="card-final" id="source_<%= @board.sources.length%>">
+            <% if @board.name == "Historique médicamenteux" %>
+              <p>BMO</p>
+              <%=  %>
+            <% else %>
+              <p>Consultation finale</p>
+            <% end %>
+            <div class="card-source-invisible">
+              <div class="card-invisible">
+                <div class="card-medicament-final" id="source_<%= @board.sources.length%>_card_finale">
+                  <p>Final</p>
+                </div>
+              </div>
+            </div>
+            <%= link_to "+", "", class: "btn-add-medicament", id:"btn_source_final" %>
           </div>
         </div>
       </div>
-      <%= link_to "+", "", class: "btn-add-medicament", id:"btn_source_1" %>
-    </div>
+    <% end %>
+      <div class="col-xs-3 padding-none">
+        <div class="board-container-final">
+          <div class="card-final" id="source_<%= @board.sources.length%>">
+            <% if @board.name == "Historique médicamenteux" %>
+              <p>BMO</p>
+              <%=  %>
+            <% else %>
+              <p>Consultation finale</p>
+            <% end %>
+            <div class="card-source-invisible">
+              <div class="card-invisible">
+                <div class="card-medicament-final" id="source_<%= @board.sources.length%>_card_finale">
+                  <p>Final</p>
+                </div>
+              </div>
+            </div>
+            <%= link_to "+", "", class: "btn-add-medicament", id:"btn_source_final" %>
+          </div>
+        </div>
+        <div class="bouton-show">
+          <a onclick='window.print(); return false;' class='btn btn-treehouse-small generer-pdf fa fa-file-pdf-o'></a>
+          <i class="fa fa-floppy-o btn btn-treehouse-small generer-pdf" aria-hidden="true"></i>
+
+          <%= link_to '', patients_path, class: 'btn btn-treehouse-small fa fa-sign-out generer-pdf' %>
+        </div>
+      </div>
   </div>
 
-  <%= link_to "+", '', class: "btn-add-source" %>
-
-  <div class="bouton-show">
-    <a onclick='window.print(); return false;' class='btn btn-treehouse-small generer-pdf fa fa-file-pdf-o'></a>
-    <i class="fa fa-floppy-o btn btn-treehouse-small generer-pdf" aria-hidden="true"></i>
-
-    <%= link_to '', patients_path, class: 'btn btn-treehouse-small fa fa-sign-out generer-pdf' %>
-  </div>
 
 
   <%= render "shared/form_divergence" %>
+
+
 </div>
