@@ -28,8 +28,8 @@ patient9 = Patient.create!(first_name: 'Carrie', last_name: 'Fisher', birthdate:
 puts 'Finished patients!'
 
 # puts 'Creating sources...'
-sources1 = SourceDrug.create!(name: 'famille', final_source: false)
-sources2 = SourceDrug.create!(name: 'famille', final_source: false)
+sources1 = SourceDrug.create!(name: 'medecin', final_source: false)
+sources2 = SourceDrug.create!(name: 'famille', final_source: true)
 sources3 = SourceDrug.create!(name: 'medecin de famille', final_source: false)
 sources4 = SourceDrug.create!(name: "pharmacie d'officine", final_source: false)
 sources5 = SourceDrug.create!(name: 'patient', final_source: false)
