@@ -3,6 +3,18 @@
   margin: 0;
 }
 
+
+
+.container::before {
+    content: "Fiche de recueil des informations par source pour concilier";
+    text-align: center;
+    margin: 0 auto;
+}
+
+
+
+// A enlever par defaut lors de l'impression
+
 .container {
   margin: 0;
   background: steelblue;
@@ -12,26 +24,19 @@
   display: none;
 }
 
+.btn-add-medicament {
+  display: none;
+}
+
+.btn-add-source {
+  display: none;
+}
+
 .board-container {
   display: flex;
 }
 
 
-.btn-add-source {
-  background-color: blue;
-  color: white;
-  padding: 1px 6px;
-  border-radius: 5px;
-  margin: 5px;
-}
-
-.btn-add-medicament {
-  background-color: green;
-  color: white;
-  padding: 1px 6px;
-  border-radius: 5px;
-  margin: 5px;
-}
 
 .card-invisible {
   background-color: black;
