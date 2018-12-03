@@ -3,7 +3,7 @@
 }
 
 .modal-body {
-  padding: 0 40px;
+  padding: 0 30px;
 
   h3 {
     text-align: left;
@@ -56,21 +56,21 @@
   }
 }
 
-#patient_last_name {
-  width: 35vh;
+.patient_last_name {
+  width: 45%;
 
 }
 
-#patient_first_name {
-  width: 35vh;
+.patient_first_name {
+  width: 45%;
 }
 
-#patient_entrancedate {
-  width: 35vh;
+.patient_entrancedate {
+  width: 45%;
 }
 
-#patient_birthdate {
-  width: 35vh;
+.patient_birthdate {
+  width: 45%;
 }
 
 .new-patient {

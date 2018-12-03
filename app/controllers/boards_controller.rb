@@ -6,4 +6,9 @@ class BoardsController < ApplicationController
     @drug = Drug.new
     @divergence = Divergence.new
   end
+
+
+  def compare
+
+  end
 end
