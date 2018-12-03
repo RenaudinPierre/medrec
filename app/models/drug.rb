@@ -1,7 +1,7 @@
 class Drug < ApplicationRecord
   belongs_to :source
 
-  validates :name, presence: true
+  # validates :name, presence: true
   validates :morning, presence: true
   validates :lunch, presence: true
   validates :evening, presence: true
