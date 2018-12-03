@@ -26,6 +26,7 @@ class Patient < ApplicationRecord
     final_source = SourceDrug.create!(name: 'BMO', final_source: true)
     BoardSource.create!(board: board, source: source)
     BoardSource.create!(board: board, source: final_source)
+    Drug.create!(source_id: source.id, morning: 1, lunch: 1, evening: 1, night: 0, position: 1)
   end
 
   def create_conciliation_entree
