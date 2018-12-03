@@ -27,21 +27,21 @@ patient8 = Patient.create!(first_name: 'Mark', last_name: 'Hamil', birthdate: '1
 patient9 = Patient.create!(first_name: 'Carrie', last_name: 'Fisher', birthdate: '1977-11-14', entrancedate: '2018-11-26')
 puts 'Finished patients!'
 
-# puts 'Creating sources...'
-sources1 = SourceDrug.create!(name: 'medecin', final_source: false)
-sources2 = SourceDrug.create!(name: 'famille', final_source: true)
-sources3 = SourceDrug.create!(name: 'medecin de famille', final_source: false)
-sources4 = SourceDrug.create!(name: "pharmacie d'officine", final_source: false)
-sources5 = SourceDrug.create!(name: 'patient', final_source: false)
-# puts 'Finished sources!'
+puts 'Creating sources...'
+sources1 = SourceDrug.create!(name: 'Seedfamille', final_source: false)
+sources2 = SourceDrug.create!(name: 'Seedfamille', final_source: false)
+sources3 = SourceDrug.create!(name: 'Seedmedecin de famille', final_source: false)
+sources4 = SourceDrug.create!(name: "Seedpharmacie d'officine", final_source: false)
+sources5 = SourceDrug.create!(name: 'Seedpatient', final_source: false)
+puts 'Finished sources!'
 
 puts 'Creating drugs...'
-drugs1 = Drug.create!(name: 'Doliprane', source: sources2 , morning: '1', lunch: '1', evening: '1', night: '0', comment: 'Le patient ne le prend pas', position: 1)
-drugs2 = Drug.create!(name: 'Ibuprofene', source: sources3 , morning: '1.5', lunch: '1', evening: '2', night: '1', comment: '', position: 2)
-drugs3 = Drug.create!(name: 'dafalgan', source: sources4 , morning: '1.5', lunch: '1', evening: '2', night: '1', comment: 'Le patient ne prend pas le matin', position: 1)
-drugs4 = Drug.create!(name: 'Levothyrox', source: sources5 , morning: '1.5', lunch: '1.5', evening: '2', night: '1', comment: '', position: 4)
-drugs5 = Drug.create!(name: 'Imodium', source: sources4 , morning: '1.5', lunch: '1', evening: '3', night: '1', comment: '', position: 3)
-drugs6 = Drug.create!(name: 'Kardegic', source: sources3 , morning: '1.5', lunch: '1', evening: '1', night: '1', comment: '', position: 3)
+drugs1 = Drug.create!(name: 'SeedDoliprane', source: sources2 , morning: '1', lunch: '1', evening: '1', night: '0', comment: 'Le patient ne le prend pas', position: 1)
+drugs2 = Drug.create!(name: 'SeedIbuprofene', source: sources3 , morning: '1.5', lunch: '1', evening: '2', night: '1', comment: '', position: 2)
+drugs3 = Drug.create!(name: 'Seeddafalgan', source: sources4 , morning: '1.5', lunch: '1', evening: '2', night: '1', comment: 'Le patient ne prend pas le matin', position: 1)
+drugs4 = Drug.create!(name: 'SeedLevothyrox', source: sources5 , morning: '1.5', lunch: '1.5', evening: '2', night: '1', comment: '', position: 4)
+drugs5 = Drug.create!(name: 'SeedImodium', source: sources4 , morning: '1.5', lunch: '1', evening: '3', night: '1', comment: '', position: 3)
+drugs6 = Drug.create!(name: 'SeedKardegic', source: sources3 , morning: '1.5', lunch: '1', evening: '1', night: '1', comment: '', position: 3)
 puts 'Finished drugs!'
 
 # puts 'Creating boards...'
@@ -55,7 +55,6 @@ puts 'Finished drugs!'
 # puts 'Finished boards'
 
 puts 'Creating board_sources...'
-# debugger
 board_sources1 = BoardSource.create!(board: patient1.boards.first, source: sources2)
 board_sources2 = BoardSource.create!(board: patient1.boards.first, source: sources3)
 board_sources3 = BoardSource.create!(board: patient1.boards.first, source: sources4)

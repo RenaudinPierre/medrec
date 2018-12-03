@@ -21,14 +21,22 @@ class Patient < ApplicationRecord
     }
 
   def create_historique_medicamenteux
-    Board.create(patient: self, name: "Historique médicamenteux")
+    board = Board.create(patient: self, name: "Historique médicamenteux")
+    source = SourceDrug.create!(name: 'Patient', final_source: false)
+    final_source = SourceDrug.create!(name: 'BMO', final_source: true)
+    BoardSource.create!(board: board, source: source)
+    BoardSource.create!(board: board, source: final_source)
   end
 
   def create_conciliation_entree
-    Board.create(patient: self, name: "Conciliation d'entrée")
+    board = Board.create(patient: self, name: "Conciliation d'entrée")
+    final_source = SourceDrug.create!(name: 'Ordonnance Final', final_source: true)
+    BoardSource.create!(board: board, source: final_source)
   end
 
   def create_conciliation_sortie
-    Board.create(patient: self, name: "Conciliation de sortie")
+    board = Board.create(patient: self, name: "Conciliation de sortie")
+    final_source = SourceDrug.create!(name: 'Ordonnance Final', final_source: true)
+    BoardSource.create!(board: board, source: final_source)
   end
 end
