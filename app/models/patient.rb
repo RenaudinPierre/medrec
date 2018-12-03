@@ -15,7 +15,7 @@ class Patient < ApplicationRecord
 
   include PgSearch
   pg_search_scope :search_patients,
-    against: [ :first_name, :last_name, :birthdate, :entrancedate ],
+    against: [:first_name, :last_name, :birthdate, :entrancedate ],
     using: {
       tsearch: { prefix: true } # <-- now `superman batm` will return something!
     }
@@ -31,12 +31,16 @@ class Patient < ApplicationRecord
 
   def create_conciliation_entree
     board = Board.create(patient: self, name: "Conciliation d'entrée")
+    divergence_source = SourceDivergence.create!(name: 'Divergences', final_source: false)
+    BoardSource.create!(board: board, source: divergence_source)
     final_source = SourceDrug.create!(name: 'Ordonnance Final', final_source: true)
     BoardSource.create!(board: board, source: final_source)
   end
 
   def create_conciliation_sortie
     board = Board.create(patient: self, name: "Conciliation de sortie")
+    divergence_source = SourceDivergence.create!(name: 'Divergences', final_source: false)
+    BoardSource.create!(board: board, source: divergence_source)
     final_source = SourceDrug.create!(name: 'Ordonnance Final', final_source: true)
     BoardSource.create!(board: board, source: final_source)
   end

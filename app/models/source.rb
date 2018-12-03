@@ -11,6 +11,10 @@ class Source < ApplicationRecord
     return self.drugs.where(position: position).exists?
   end
 
+  def have_divergence?(position)
+    return self.divergences.where(position: position).exists?
+  end
+
   def find_drug(position)
     return self.drugs.where(position: position).to_ary
   end
