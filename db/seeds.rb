@@ -33,7 +33,7 @@ sources2 = SourceDrug.create!(name: 'Seed Famille', final_source: false)
 sources3 = SourceDrug.create!(name: 'Seed Medecin de famille', final_source: false)
 sources4 = SourceDrug.create!(name: "Seed Pharmacie d'officine", final_source: false)
 sources5 = SourceDrug.create!(name: 'Seed Patient', final_source: false)
-source6 =  SourceDrug.Create!(name: 'BMO', final_source: true )
+source6 =  SourceDrug.create!(name: 'BMO', final_source: true )
 puts 'Finished sources!'
 
 puts 'Creating drugs...'
