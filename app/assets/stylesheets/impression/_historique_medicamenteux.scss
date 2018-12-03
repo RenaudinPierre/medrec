@@ -1,24 +1,30 @@
 @page {
-  size: A4 landscape;
-  margin: 0;
+  size: A4;
+
+  @top-left {
+    content: "Hamlet";
+  }
+
 }
 
 
 
 .container::before {
-    content: "Fiche de recueil des informations par source pour concilier";
+    content: "Fiche de recueil des informations";
     text-align: center;
-    margin: 0 auto;
+    margin: 10px auto;
+    font-size: 1.25em;
+    font-weight: bold;
 }
 
-
+// @page :top-left {
+//   content: "Hospice Civil de Lyon";
+//   text-align: left;
+// }
 
 // A enlever par defaut lors de l'impression
 
-.container {
-  margin: 0;
-  background: steelblue;
-}
+
 
 .navbar-wagon {
   display: none;
@@ -36,7 +42,33 @@
   display: flex;
 }
 
+.name-board {
+  display: none;
+}
 
+.generer-pdf {
+display: none;
+}
+
+
+.form-divergence {
+  display: none;
+}
+
+.print-none {
+  display: none;
+}
+
+
+
+
+.container {
+  margin-top: 20px;
+  position: relative;
+  min-width: 90vw;
+  min-height: 90vh;
+  background-color: red !important;
+}
 
 .card-invisible {
   background-color: black;
@@ -46,9 +78,7 @@
   margin: 5px;
 }
 
-.generer-pdf {
-display: none;
-}
+
 
 
 .card-medicament {
@@ -60,5 +90,17 @@ display: none;
   height: 15vh;
   margin: auto;
   font-size: 10px;
-  z-index: 4;
+  // z-index: 4;
+}
+
+.board-container {
+  display: none;
+}
+
+
+.board-container-final {
+  position: absolute;
+  left: 0px;
+  background-color: black !important;
+  width: 100vw;
 }

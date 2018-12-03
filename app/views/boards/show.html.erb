@@ -1,8 +1,8 @@
 <div class="container container-board-show">
-  <h3><%= @board.name %></h3>
+  <h3 class="name-board"><%= @board.name %></h3>
   <div class="row ">
     <% if @board.name == "Historique médicamenteux" %>
-      <div class="col-xs-9 padding-none">
+      <div class="col-xs-9 padding-none print-none">
         <div class="board-container" data-id="<%= @board.id %>">
           <% @board.sources.each_with_index do |source, index| %>
             <% if source.final_source == false %>
@@ -90,7 +90,7 @@
         </div>
       </div>
       <div class="bouton-show">
-        <a onclick='window.print(); return false;' class='btn btn-treehouse-small generer-pdf fa fa-file-pdf-o'></a>
+        <a class='btn btn-treehouse-small generer-pdf fa fa-file-pdf-o' target="_blank" href="<%= board_print_path(@board) %>"></a>
         <i class="fa fa-floppy-o btn btn-treehouse-small generer-pdf" aria-hidden="true"></i>
         <%= link_to '', patients_path, class: 'btn btn-treehouse-small fa fa-sign-out generer-pdf' %>
       </div>
