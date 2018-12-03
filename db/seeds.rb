@@ -28,24 +28,24 @@ patient9 = Patient.create!(first_name: 'Carrie', last_name: 'Fisher', birthdate:
 puts 'Finished patients!'
 
 # puts 'Creating sources...'
-# sources1 = Source.create!(name: 'divergence', final_source: false, type: '')
-# sources2 = Source.create!(name: 'historique medicamenteux', final_source: true, type: '')
-# sources3 = Source.create!(name: 'medecin de famille', final_source: false, type: '')
-# sources4 = Source.create!(name: "pharmacie d'officine", final_source: false, type: '')
-# sources5 = Source.create!(name: 'patient', final_source: false, type: '')
+sources1 = SourceDrug.create!(name: 'famille', final_source: false)
+sources2 = SourceDrug.create!(name: 'famille', final_source: false)
+sources3 = SourceDrug.create!(name: 'medecin de famille', final_source: false)
+sources4 = SourceDrug.create!(name: "pharmacie d'officine", final_source: false)
+sources5 = SourceDrug.create!(name: 'patient', final_source: false)
 # puts 'Finished sources!'
 
-# puts 'Creating drugs...'
-# drugs1 = Drug.create!(name: 'Doliprane', source: sources2 , morning: '1', lunch: '1', evening: '1', night: '0', comment: 'Le patient ne le prend pas')
-# drugs2 = Drug.create!(name: 'Ibuprofene', source: sources3 , morning: '1.5', lunch: '1', evening: '2', night: '1', comment: '')
-# drugs3 = Drug.create!(name: 'dafalgan', source: sources4 , morning: '1.5', lunch: '1', evening: '2', night: '1', comment: 'Le patient ne prend pas le matin')
-# drugs4 = Drug.create!(name: 'Levothyrox', source: sources5 , morning: '1.5', lunch: '1.5', evening: '2', night: '1', comment: '')
-# drugs5 = Drug.create!(name: 'Imodium', source: sources4 , morning: '1.5', lunch: '1', evening: '3', night: '1', comment: '')
-# drugs6 = Drug.create!(name: 'Kardegic', source: sources3 , morning: '1.5', lunch: '1', evening: '1', night: '1', comment: '')
-# puts 'Finished drugs!'
+puts 'Creating drugs...'
+drugs1 = Drug.create!(name: 'Doliprane', source: sources2 , morning: '1', lunch: '1', evening: '1', night: '0', comment: 'Le patient ne le prend pas', position: 1)
+drugs2 = Drug.create!(name: 'Ibuprofene', source: sources3 , morning: '1.5', lunch: '1', evening: '2', night: '1', comment: '', position: 2)
+drugs3 = Drug.create!(name: 'dafalgan', source: sources4 , morning: '1.5', lunch: '1', evening: '2', night: '1', comment: 'Le patient ne prend pas le matin', position: 1)
+drugs4 = Drug.create!(name: 'Levothyrox', source: sources5 , morning: '1.5', lunch: '1.5', evening: '2', night: '1', comment: '', position: 4)
+drugs5 = Drug.create!(name: 'Imodium', source: sources4 , morning: '1.5', lunch: '1', evening: '3', night: '1', comment: '', position: 3)
+drugs6 = Drug.create!(name: 'Kardegic', source: sources3 , morning: '1.5', lunch: '1', evening: '1', night: '1', comment: '', position: 3)
+puts 'Finished drugs!'
 
 # puts 'Creating boards...'
-# board1 = Board.create!(name: "historique medicamenteux", patient: patient1)
+# board1 = Board.create!(name: "Historique médicamenteux", patient: patient1)
 # board2 = Board.create!(name: "conciliation d'entrée", patient: patient1)
 # board3 = Board.create!(name: "conciliation de sortie", patient: patient1)
 # board4 = Board.create!(name: "historique medicamenteux", patient: patient2)
@@ -54,12 +54,13 @@ puts 'Finished patients!'
 # board7 = Board.create!(name: "conciliation d'entrée", patient: patient4)
 # puts 'Finished boards'
 
-# puts 'Creating board_sources...'
-# board_sources1 = BoardSource.create!(board: board1, source: sources2)
-# board_sources2 = BoardSource.create!(board: board3, source: sources1)
-# board_sources3 = BoardSource.create!(board: board6, source: sources4)
-# board_sources4 = BoardSource.create!(board: board7, source: sources5)
-# puts 'Finished board_sources!'
+puts 'Creating board_sources...'
+# debugger
+board_sources1 = BoardSource.create!(board: patient1.boards.first, source: sources2)
+board_sources2 = BoardSource.create!(board: patient1.boards.first, source: sources3)
+board_sources3 = BoardSource.create!(board: patient1.boards.first, source: sources4)
+board_sources4 = BoardSource.create!(board: patient1.boards.first, source: sources5)
+puts 'Finished board_sources!'
 
 # puts 'Creating ivergences...'
 # divergences1 = Divergence.create!(position: '3', error_type: '' ,correction: '' , character: '' ,source: sources1 )

@@ -36,9 +36,9 @@ const AddMedicaments = (event) => {
   });
 
   InitDragula();
-
   // const board_id = document.querySelector('.board-container').dataset.id;
-  // fetch(`/boards/${board_id}/drugs`, {
+  // const board_sourcesid = document.querySelector('.board-container').dataset.id;
+  // fetch(`/boards/${board_id}/sources/drugs`, {
   //    method: "POST",
   //    headers: {
   //      "Content-Type": "application/json"

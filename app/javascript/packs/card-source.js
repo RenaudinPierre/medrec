@@ -9,8 +9,6 @@ function InitSource(callbackMed) {
       var sourceName = prompt("Nom de la source?");
       if (sourceName != null) {
         AddSource(sourceName);
-        console.log("je suis ici");
-
         callbackMed();
         }
     });
@@ -18,7 +16,8 @@ function InitSource(callbackMed) {
 
 }
 
-function AddSource(sourceName) {
+function AddSource(sourceNa✗ git commit "affichage dynamique et route médicament et seeds"
+me) {
   let card_sources = document.querySelectorAll('.card-source');
   const number = card_sources.length;
   const max_card_in_source = card_sources[0].querySelectorAll('.card-invisible').length;
