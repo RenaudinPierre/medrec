@@ -6,13 +6,17 @@ var drake = null;
 function InitDragula() {
   const card_drugs_sources = document.querySelectorAll('.card-source-invisible');
   const number_sources = card_drugs_sources.length ;
-  const max_card_source = card_drugs_sources[0].querySelectorAll('.card-invisible').length;
+  console.log(card_drugs_sources)
+  if (card_drugs_sources.length !== 0) {
+   const max_card_source = card_drugs_sources[0].querySelectorAll('.card-invisible').length;
+   createSelectors(number_sources, max_card_source);
+  }
   // console.log(card_drugs_sources);
   // console.log("je suis dans InitDragula");
   // console.log(max_card_source);
   // console.log(number_sources);
 
-  createSelectors(number_sources, max_card_source);
+
 
   function createSelectors(number_sources, max_card_source) {
     if (drake !== null) {

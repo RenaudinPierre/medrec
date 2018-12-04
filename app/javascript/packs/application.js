@@ -11,4 +11,4 @@ initNavbar();
 InitMedicament();
 InitSource(InitMedicament);
 InitDragula();
-// saveAll();
+saveAll();
