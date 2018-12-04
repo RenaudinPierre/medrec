@@ -39,8 +39,24 @@
   height: 15vh;
   margin: 5px;
   z-index: 3;
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
+  // width: 100%;
 }
 
+.card-invisible-divergence {
+  background-color: $gray-light;
+  opacity: 1;
+  border-radius: 8px;
+  height: 15vh;
+  margin: 5px;
+  z-index: 3;
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
+  // width: 100%;
+}
 .card-invisible-final {
   background-color: $black;
   opacity: 1;

@@ -30,29 +30,9 @@ class Board < ApplicationRecord
 
   def nb_source_final
     if self.name == "Historique médicamenteux"
-      return self.sources.length - 1
+      return self.sources.length
     else
-      return self.sources.length - 2
+      return self.sources.length - 1
     end
-  end
-
-  def update_divergence
-    self.divergence.destroy_all
-    divergences.each_with_index do |divergence, index|
-      Divergence.create!(position: index, error_type: '', correction: '', character: 'Non pris en compte', source: self.divergence) if divergence
-    end
-  end
-
-  private
-
-  def divergences
-    result_divergence = []
-    sources = self.sources
-    (1..self.height).each do |n|
-      drugs_instances = sources.map { |source| source.drugs.where(position: n) }.reject { |c| c.empty? }
-      array_of_drugs = drugs_instances.map { |drug| [drug.name, drug.morning, drug.lunch, drug.evening, drug.night] }
-      array_of_drugs.uniq.length == 1 ? result_divergence << true : result_divergence << false
-    end
-    return result_divergence
   end
 end
