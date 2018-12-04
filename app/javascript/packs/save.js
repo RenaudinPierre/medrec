@@ -1,3 +1,5 @@
+export default saveAll;
+
 const boardId = () => {
   document.querySelector('.board-container').dataset.id;
 };
@@ -40,7 +42,8 @@ const saveSource = (allSources) => {
     });
     data.sources.push({ id: sourceId, name: sourceName, final_source: sourceFinal, type: 'SourceDrug', drugs: drugs });
   })
-  console.log(data);
+}
+  // console.log(data);
 
   //   fetch(`/boards/${boardId()}/sync`, {
   //      method: "PUT",
@@ -62,5 +65,3 @@ const saveAll = () => {
     saveSource(allSources);
   });
 }
-
-export default saveAll;
