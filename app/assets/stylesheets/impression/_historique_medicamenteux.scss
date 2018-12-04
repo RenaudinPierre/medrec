@@ -45,23 +45,14 @@ display: none;
 }
 
 
-
-
-.container {
-  margin-top: 20px;
-  position: relative;
-  min-width: 90vw;
+.container-print {
+  margin: 50px auto;
+  width: 90vw;
   min-height: 90vh;
-  background-color: red !important;
+  border: 1px solid red;
 }
 
-.card-invisible {
-  background-color: $gray !important;
-  opacity: 1;
-  border-radius: 8px;
-  height: 15vh;
-  margin: 5px;
-}
+
 
 
 .board-container {
@@ -70,17 +61,26 @@ display: none;
 
 
 .card-medicament-print {
-  background-color: $gray-light !important;
+  background-color: white !important;
   color: white;
   opacity: 1;
-  border-radius: 8px;
+  border-radius: 2px;
   padding: 2px;
-  height: 15vh;
+  height: 3vh;
   margin: auto;
   font-size: 10px;
   z-index: 4;
+  border: 1px solid black;
 }
 
+.card-invisible-print {
+  background-color: white !important;
+  opacity: 1;
+  border-radius: 2px;
+  height: 3vh;
+  margin: 5px;
+  z-index: 3;
+}
 
 .card-source-final-print {
   text-align: center;
@@ -92,3 +92,114 @@ display: none;
   z-index: 1;
 
 }
+
+
+
+
+
+// format des carte medicament
+
+.card-medicament-final {
+  background-color: $gray-light;
+  color: white;
+  opacity: 1;
+  border-radius: 2px;
+  padding: 2px;
+  height: 15vh;
+  margin: auto;
+  font-size: 10px;
+  z-index: 4;
+}
+
+.form-inputs {
+  display: flex;
+  // justify-content: space-between;
+}
+
+
+
+// Classe liés au nom du médicament (select2)
+
+#drug_name {
+  font-size: 10px;
+  height: 2.5em;
+  border: none;
+}
+
+.select2-container {
+  width: 30% !important;
+}
+
+.select2-selection__arrow {
+  display: none;
+}
+
+.select2-selection.select2-selection--single {
+  border: none !important;
+}
+
+
+
+#drug_morning {
+  width: 35px;
+  margin: 0 0.2em;
+  font-size: 10px;
+  height: 2.5em;
+  // border-radius: 2px;
+  box-shadow: none;
+  border: none;
+}
+
+#drug_lunch {
+  width: 35px;
+  margin: 0 0.2em;
+  font-size: 10px;
+  height: 2.5em;
+  border-radius: 2px;
+  box-shadow: none;
+  border: none;
+}
+
+#drug_evening {
+  width: 35px;
+  margin: 0 0.2em;
+  font-size: 10px;
+  height: 2.5em;
+  border-radius: 2px;
+  box-shadow: none;
+  border: none;
+}
+
+#drug_night {
+  width: 35px;
+  margin: 0 0.2em;
+  font-size: 10px;
+  height: 2.5em;
+  border-radius: 2px;
+  box-shadow: none;
+  border: none;
+
+}
+
+.inline-medicament {
+  display: flex;
+  flex-direction: row;
+  height: 2.8em;
+  align-items: center;
+}
+
+#drug_comment {
+  font-size: 10px;
+  border-radius: 2px;
+  box-shadow: none;
+  border: none;
+
+}
+
+.text.optional.drug_comment {
+  width: 40%
+}
+
+
+
+

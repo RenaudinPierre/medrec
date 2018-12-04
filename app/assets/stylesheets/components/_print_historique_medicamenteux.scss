@@ -20,7 +20,7 @@
 }
 
 .card-medicament-print {
-  background-color: $gray-light !important;
+  background-color: $gray-light;
   color: white;
   opacity: 1;
   border-radius: 8px;
@@ -31,16 +31,24 @@
   z-index: 4;
 }
 
+.card-invisible-print {
+  background-color: $gray-light;
+  opacity: 1;
+  border-radius: 8px;
+  height: 15vh;
+  margin: 5px;
+  z-index: 3;
+}
+
 
 .card-source-final-print {
-  text-align: center;
-  // border: 1px solid black;
-  border-radius: 2px;
+  background-color: $green;
+  border-radius: 8px;
   min-height: 80vh;
-  width: 80vw;
-  margin: 0px auto;
+  width: 17vw;
+  margin: 0px 2px;
   z-index: 1;
-
+  box-shadow: -2px 0px 4px #32B796;
 }
 
 .bas-page {

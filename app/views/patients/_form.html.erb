@@ -5,8 +5,8 @@
 
     <div class="form-inputs">
       <div class="premiere-ligne">
+        <%= f.input :first_name, label: 'Prénom' %>
         <%= f.input :last_name, label: 'Nom'%>
-        <%= f.input :first_name, label: 'Prénom', class: "my-button" %>
       </div>
       <div class="deuxieme-ligne">
        <%= f.input :birthdate, as: :date, html5: true, label: 'Date de naissance' %>
