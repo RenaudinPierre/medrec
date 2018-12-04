@@ -1,4 +1,3 @@
-export default saveAll;
 
 const boardId = () => {
   document.querySelector('.board-container').dataset.id;
@@ -60,8 +59,12 @@ const saveSource = (allSources) => {
 const saveAll = () => {
   const btnSave = document.querySelector('#save-all');
   const allSources = document.querySelectorAll(".card-source");
-  btnSave.addEventListener('click', function(e) {
-    e.preventDefault();
-    saveSource(allSources);
-  });
+  if (btnSave) {
+    btnSave.addEventListener('click', function(e) {
+      e.preventDefault();
+      saveSource(allSources);
+    });
+  }
 }
+
+export default saveAll;
