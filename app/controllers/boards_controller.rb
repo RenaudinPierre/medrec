@@ -6,8 +6,20 @@ class BoardsController < ApplicationController
     @board.patient.update if (@board.name != "Historique médicamenteux")
     @drug = Drug. new
     @divergence = Divergence.new
+    @collection_error_type = [
+      ['', 0],
+      ['poursuivi', 1],
+      ['suspendu', 2],
+      ['médicament arrêté documenté', 3],
+      ['médicament modifié documenté', 4],
+      ['médicament substitué documenté', 5],
+      ['médicament ajouté documenté', 6],
+      ['médicament arrêté non documenté', 7],
+      ['médicament modifié non documenté', 8],
+      ['médicament substitué non documenté', 9],
+      ['médicament ajouté non documenté', 10]
+    ]
   end
-
 
   def print
     @board = Board.find(params[:board_id])
@@ -22,5 +34,4 @@ class BoardsController < ApplicationController
       render "print_conciliation_sortie"
     end
   end
-
 end
