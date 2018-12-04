@@ -3,7 +3,8 @@ class BoardsController < ApplicationController
 
   def show
     @board = Board.find(params[:id])
-    @drug = Drug.new
+    @board.patient.update if (@board.name != "Historique médicamenteux")
+    @drug = Drug. new
     @divergence = Divergence.new
   end
 
