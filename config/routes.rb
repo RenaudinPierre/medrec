@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :boards, only: [ :show ] do
     get 'print'
     resources :sources, only: [ :create]
+    resources :sync, only: [ :create ]
   end
   resources :sources, only: [] do
     resources :drugs, only: [ :create ]
