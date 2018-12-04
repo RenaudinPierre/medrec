@@ -18,4 +18,5 @@ class Source < ApplicationRecord
   def find_drug(position)
     return self.drugs.where(position: position).to_ary
   end
+
 end

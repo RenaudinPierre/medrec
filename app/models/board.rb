@@ -28,7 +28,7 @@ class Board < ApplicationRecord
     return self.sources.where(type: "SourceDrug", final_source: false)
   end
 
-  def equal?
+  def divergences
     result_divergence = []
     sources = self.sources
     (1..self.height).each do |n|
@@ -41,9 +41,9 @@ class Board < ApplicationRecord
 
   def nb_source_final
     if self.name == "Historique médicamenteux"
-      return self.sources.length
-    else
       return self.sources.length - 1
+    else
+      return self.sources.length - 2
     end
   end
 end
