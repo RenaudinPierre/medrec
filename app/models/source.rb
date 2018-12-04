@@ -16,7 +16,10 @@ class Source < ApplicationRecord
   end
 
   def find_drug(position)
-    return self.drugs.where(position: position).to_ary
+    return self.drugs.find_by(position: position)
   end
 
+  def find_drug_id(position)
+    return self.drugs.find_by(position: position).id
+  end
 end
