@@ -8,6 +8,7 @@ const saveSource = (allSources) => {
   let data = { sources: []};
   let allDrugs = document.querySelectorAll(".card-medicament");
   allSources.forEach((sourceElem) => {
+    console.log(allSources)
     let sourceName = sourceElem.querySelector('p').innerText;
     let sourceFinal = null;
     let drugs = [];
@@ -16,7 +17,6 @@ const saveSource = (allSources) => {
       sourceFinal = false;
     } else {
       sourceFinal = true;
-      console.log('je suis final !')
     }
 
     let invisibleCards = sourceElem.querySelectorAll(".card-invisible");
@@ -41,24 +41,23 @@ const saveSource = (allSources) => {
     data.sources.push({ name: sourceName, final_source: sourceFinal, type: 'SourceDrug', drugs: drugs });
     console.log(data)
   })
-  // const boardId = document.querySelector('.board-container').dataset.id;
-  // fetch(`/boards/${boardId}/sync`, {
-  //    method: "POST",
-  //    headers: {
-  //      "Content-Type": "application/json"
-  //    },
-  //    body: JSON.stringify({ sources: { data }})
-  //    })
-  //    .then((data) => {
-  //      console.log(data);
-  //    });
+  const boardId = document.querySelector('.board-container').dataset.id;
+  fetch(`/boards/${boardId}/syncs`, {
+     method: "POST",
+     headers: {
+       "Content-Type": "application/json"
+     },
+     body: JSON.stringify(data)
+     })
+     .then((data) => {
+     });
    }
 
 const saveAll = () => {
   const btnSave = document.querySelector('#save-all');
-  const allSources = document.querySelectorAll(".card-source");
   if (btnSave) {
     btnSave.addEventListener('click', function(e) {
+    const allSources = document.querySelectorAll(".card-source");
       e.preventDefault();
       saveSource(allSources);
     });
