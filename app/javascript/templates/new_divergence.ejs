@@ -1,0 +1,37 @@
+<div class="form-medicament form-divergence">
+  <p>Divergence</p>
+  <form class="simple_form new_divergence" novalidate="novalidate" action="/divergences" accept-charset="UTF-8" method="post">
+    <!-- <input name="utf8" type="hidden" value="✓"> -->
+    <!-- <input type="hidden" name="authenticity_token" value="DNbiHRmyW55hpdo84q4BP2h1SbJXQNJwAaeB1ZsVepyYpvIMfhVPFb6bJ4rkA9eZChJwKgjidJdm6ACjsPEzzw=="> -->
+    <div class="form-inputs">
+      <div class="form-group select optional divergence_error_type"><label class="form-control-label select optional" for="divergence_error_type">Status</label>
+        <select class="form-control select optional" name="divergence[error_type]" id="divergence_error_type">
+          <option selected="selected" value="0"></option>
+          <option value="1">poursuivi</option>
+          <option value="2">suspendu</option>
+          <option value="3">médicament arrêté documenté</option>
+          <option value="4">médicament modifié documenté</option>
+          <option value="5">médicament substitué documenté</option>
+          <option value="6">médicament ajouté documenté</option>
+          <option value="7">médicament arrêté non documenté</option>
+          <option value="8">médicament modifié non documenté</option>
+          <option value="9">médicament substitué non documenté</option>
+          <option value="10">médicament ajouté non documenté</option>
+        </select>
+      </div>
+      <div class="form-group select optional divergence_correction"><label class="form-control-label select optional" for="divergence_correction">Divergence</label>
+        <select class="form-control select optional" name="divergence[correction]" id="divergence_correction">
+          <option selected="selected" value="0"></option>
+          <option value="1">Divergence intentionnelle</option>
+          <option value="2">Erreur médicamenteuse</option>
+        </select>
+      </div>
+      <div class="form-group select required divergence_character"><label class="form-control-label select required" for="divergence_character">Décision <abbr title="required">*</abbr></label>
+        <select class="form-control select required" name="divergence[character]" id="divergence_character">
+          <option value="true">Pris en compte et corrigé</option>
+          <option selected="selected" value="false">Non pris en compte</option>
+        </select>
+      </div>
+    </div>
+  </form>
+</div>
