@@ -37,6 +37,15 @@ class BoardComponentsCreator
           source: source
         )
       end
+      source_params[:divergences].each do |divergences_params|
+        divergence.create!(
+          error_type: divergences_params[:error_type],
+          character: divergences_params[:character],
+          correction: divergences_params[:correction],
+          position: divergences_params[:position],
+          source: source
+        )
+      end
     end
   end
 
