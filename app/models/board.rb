@@ -24,6 +24,10 @@ class Board < ApplicationRecord
     return self.sources.where(type: "SourceDivergence").first
   end
 
+  def sourcedrugs
+    return self.sources.where(type: "SourceDrug", final_source: false)
+  end
+
   def equal?
     result_divergence = []
     sources = self.sources
