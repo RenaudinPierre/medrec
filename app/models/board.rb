@@ -28,6 +28,23 @@ class Board < ApplicationRecord
     return self.sources.where(type: "SourceDrug", final_source: false)
   end
 
+  def nb_source_final
+    if self.name == "Historique médicamenteux"
+      return self.sources.length - 1
+    else
+      return self.sources.length - 2
+    end
+  end
+
+  def update_divergence
+    self.divergence.destroy_all
+    divergences.each_with_index do |divergence, index|
+      Divergence.create!(position: index, error_type: '', correction: '', character: 'Non pris en compte', source: self.divergence) if divergence
+    end
+  end
+
+  private
+
   def divergences
     result_divergence = []
     sources = self.sources
@@ -37,13 +54,5 @@ class Board < ApplicationRecord
       array_of_drugs.uniq.length == 1 ? result_divergence << true : result_divergence << false
     end
     return result_divergence
-  end
-
-  def nb_source_final
-    if self.name == "Historique médicamenteux"
-      return self.sources.length - 1
-    else
-      return self.sources.length - 2
-    end
   end
 end

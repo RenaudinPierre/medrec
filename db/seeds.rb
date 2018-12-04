@@ -28,6 +28,7 @@ patient1 = Patient.create!(first_name: 'John', last_name: 'Doe', birthdate: '195
 
 
 board_history_patient1 = patient1.boards.find_by(name: "Historique médicamenteux")
+board_conciliation_open = patient1.boards.find_by(name: "Conciliation d'entrée")
 puts 'Finished patients!'
 
 puts 'Creating sources...'
@@ -68,7 +69,7 @@ board_sources2 = BoardSource.create!(board: board_history_patient1, source: sour
 puts 'Finished board_sources!'
 
 # puts 'Creating ivergences...'
-# divergences1 = Divergence.create!(position: '3', error_type: '' ,correction: '' , character: '' ,source: sources1 )
+divergences1 = Divergence.create!(position: 2, error_type: '' ,correction: '' , character: 'Non pris en compte' ,source: board_conciliation_open.divergence )
 # divergences2 = Divergence.create!(position: '4', error_type: '' ,correction: '' , character: '' ,source: sources1 )
 # divergences3 = Divergence.create!(position: '1', error_type: '' ,correction: '' , character: '' ,source: sources1 )
 # puts 'Finished divergences!'

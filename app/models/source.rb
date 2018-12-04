@@ -22,4 +22,12 @@ class Source < ApplicationRecord
   def find_drug_id(position)
     return self.drugs.find_by(position: position).id
   end
+
+  def find_divergence(position)
+    return self.divergences.find_by(position: position)
+  end
+
+  def find_divergence_id(position)
+    return self.divergences.find_by(position: position).id
+  end
 end
