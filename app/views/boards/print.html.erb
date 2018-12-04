@@ -1,0 +1,30 @@
+<div class="container">
+  <h3 class="name-board"><%= @board.name %></h3>
+  <div class="row">
+    <div class="col-xs-12 padding-none">
+
+        <div class="card-source-final" id="source_<%= @board.sources.length %>">
+          <p><%= @board.final.name %></p>
+          <div class="card-source-invisible">
+            <% for p in (1..@board.height) %>
+              <div class="card-invisible" id="source_<%= @board.sources.length %>_card_<%= p %>">
+                <% if @board.final.have_drug?(p) %>
+                  <div class="card-medicament">
+                    <%= render "shared/form_medicament", drug: @board.final.find_drug(p) %>
+                  </div>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+
+
+
+      <div class="bouton-show">
+        <a onclick='window.print(); return false;' class='btn btn-treehouse-small generer-pdf fa fa-file-pdf-o'></a>
+        <i class="fa fa-floppy-o btn btn-treehouse-small generer-pdf" aria-hidden="true"></i>
+        <%= link_to '', patients_path, class: 'btn btn-treehouse-small fa fa-sign-out generer-pdf' %>
+      </div>
+    </div>
+  </div>
+</div>

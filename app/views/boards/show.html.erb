@@ -1,95 +1,95 @@
 <div class="container container-board-show">
-  <h3><%= @board.name %></h3>
+  <h3 class="name-board"><%= @board.name %></h3>
   <div class="row ">
     <% if @board.name == "Historique médicamenteux" %>
-      <div class="col-xs-9 padding-none">
+      <div class="col-xs-9 padding-none print-none">
         <div class="board-container" data-id="<%= @board.id %>">
-          <% @board.sources.each_with_index do |source, index| %>
+          <% @board.sourcedrugs.each_with_index do |source, index| %>
             <div class="card-source" id="source_<%= index + 1 %>" data-id="<%= source.id %>">
               <p><%= source.name %></p>
-              <% source.drugs.each do |drug| %>
-                <div class="card-source-invisible">
-                  <div class="card-invisible" id="source_<%= index + 1 %>_card_<%= drug.position %>">
-                    <div class="card-medicament" data-id="<%= drug.id %>">
-                      <%= render "shared/form_medicament", drug: drug %>
-                    </div>
+              <div class="card-source-invisible">
+                <% for p in (1..@board.height) %>
+                  <div class="card-invisible" id="source_<%= index + 1 %>_card_<%= p %>">
+                    <% if source.have_drug?(p) %>
+                      <div class="card-medicament" data-id="<%= drug.id %>">
+                        <%= render "shared/form_medicament", drug: source.find_drug(p) %>
+                      </div>
+                    <% end %>
                   </div>
-                </div>
-              <% end %>
-              <%= link_to "+", "", class: "btn-add-medicament", id:"btn_source_1" %>
+                <% end %>
+              </div>
+              <%= link_to "+", "", class: "btn-add-medicament", id:"btn_source_#{index + 1}" %>
             </div>
           <% end %>
         </div>
         <%= link_to "+", '', class: "btn-add-source" %>
       </div>
     <% else %>
-      <div class="col-xs-7 padding-none">
+      <div class="col-xs-6 padding-none">
         <div class="board-container" data-id="<%= @board.id %>">
-          <% @board.sources.each_with_index do |source, index| %>
-            <div class="card-source" id="source_<%= index%>" data-id="<%= source.id %>">
+          <% @board.sourcedrugs.each_with_index do |source, index| %>
+            <div class="card-source" id="source_<%= index + 1 %>"  data-id="<%= source.id %>">
               <p><%= source.name %></p>
-              <% source.drugs.each do |drug| %>
-                <div class="card-source-invisible">
-                  <div class="card-invisible" id="source_<%= index %>_card_<%= drug.position %>">
-                    <div class="card-medicament" data-id="<%= drug.id %>">
-                      <%= render "shared/form_medicament" %>
-                    </div>
+              <div class="card-source-invisible">
+                <% for p in (1..@board.height) %>
+                  <div class="card-invisible" id="source_<%= index + 1 %>_card_<%= p %>">
+                    <% if source.have_drug?(p) %>
+                      <div class="card-medicament" data-id="<%= drug.id %>">
+                        <%= render "shared/form_medicament", drug: source.find_drug(p) %>
+                      </div>
+                    <% end %>
                   </div>
-                </div>
-              <% end %>
-              <%= link_to "+", "", class: "btn-add-medicament", id:"btn_source_1" %>
+                <% end %>
+              </div>
+              <%= link_to "+", "", class: "btn-add-medicament", id:"btn_source_#{index + 1}" %>
             </div>
           <% end %>
         </div>
         <%= link_to "+", '', class: "btn-add-source" %>
       </div>
-      <div class="col-xs-2 padding-none">
-        <div class="board-container-final">
-          <div class="card-final" id="source_<%= @board.sources.length%>">
-            <% if @board.name == "Historique médicamenteux" %>
-              <p>BMO</p>
-              <%=  %>
-            <% else %>
-              <p>Consultation finale</p>
-            <% end %>
+      <div class="col-xs-3 padding-none">
+        <div class="board-container-divergence">
+          <div class="card-source-divergence">
+            <p><%= @board.divergence.name %></p>
             <div class="card-source-invisible">
-              <div class="card-invisible">
-                <div class="card-medicament-final" id="source_<%= @board.sources.length%>_card_finale">
-                  <p>Final</p>
+              <% for p in (1..@board.height) %>
+                <div class="card-invisible">
+                  <% if @board.divergence.have_divergence?(p) %>
+                    <div class="card-medicament">
+                      <%= render "shared/form_medicament", drug: @board.divergence.find_drug(p) %>
+                    </div>
+                  <% end %>
                 </div>
-              </div>
+              <% end %>
             </div>
-            <%= link_to "+", "", class: "btn-add-medicament", id:"btn_source_final" %>
           </div>
         </div>
       </div>
     <% end %>
-      <div class="col-xs-3 padding-none">
-        <div class="board-container-final">
-          <div class="card-final" id="source_<%= @board.sources.length%>">
-            <% if @board.name == "Historique médicamenteux" %>
-              <p>BMO</p>
-              <%=  %>
-            <% else %>
-              <p>Consultation finale</p>
-            <% end %>
-            <div class="card-source-invisible">
-              <div class="card-invisible">
-                <div class="card-medicament-final" id="source_<%= @board.sources.length%>_card_finale">
-                  <p>Final</p>
-                </div>
+    <div class="col-xs-3 padding-none">
+      <div class="board-container-final">
+        <div class="card-source card-final" id="source_<%= @board.nb_source_final %>">
+          <p><%= @board.final.name %></p>
+          <div class="card-source-invisible">
+            <% for p in (1..@board.height) %>
+              <div class="card-invisible" id="source_<%= @board.nb_source_final %>_card_<%= p %>">
+                <% if @board.final.have_drug?(p) %>
+                  <div class="card-medicament">
+                    <%= render "shared/form_medicament", drug: @board.final.find_drug(p) %>
+                  </div>
+                <% end %>
               </div>
-            </div>
-            <%= link_to "+", "", class: "btn-add-medicament", id:"btn_source_final" %>
+            <% end %>
           </div>
-        </div>
-        <div class="bouton-show">
-          <a onclick='window.print(); return false;' class='btn btn-treehouse-small generer-pdf fa fa-file-pdf-o'></a>
-          <i class="fa fa-floppy-o btn btn-treehouse-small generer-pdf" id="save-all" aria-hidden="true"></i>
-
-          <%= link_to '', patients_path, class: 'btn btn-treehouse-small fa fa-sign-out generer-pdf' %>
+          <%= link_to "+", "", class: "btn-add-medicament", id:"btn_source_#{@board.sources.length }" %>
         </div>
       </div>
+      <div class="bouton-show">
+        <a class='btn btn-treehouse-small generer-pdf fa fa-file-pdf-o' target="_blank" href="<%= board_print_path(@board) %>"></a>
+        <i class="fa fa-floppy-o btn btn-treehouse-small generer-pdf" aria-hidden="true"></i>
+        <%= link_to '', patients_path, class: 'btn btn-treehouse-small fa fa-sign-out generer-pdf' %>
+      </div>
+    </div>
   </div>
 
 

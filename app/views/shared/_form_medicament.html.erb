@@ -4,13 +4,14 @@
     <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
     <div class="form-inputs">
-<!--       <%= f.input :name, placeholder: 'Nom Dose Forme', label: false, class: "name-medicament" %> -->
-      <select class="api-card-drugs name-medicament" style="width: 100%"></select>
+      <select class="api-card-drugs name-medicament" style="width: 100%">
+        <option><%= f.object.name %></option>
+      </select>
       <div class="inline-medicament">
-        <%= f.input :morning, as: :string, label: false, input_html: {value: f.object.morning || '0'}, class: "my-button " %>
-        <%= f.input :lunch, as: :string, label: false, input_html: {value: f.object.morning || '0'}, class: "my-button drug_lunch" %>
-        <%= f.input :evening, as: :string, label: false, input_html: {value: f.object.morning || '0'}, class: "my-button drug_evening" %>
-        <%= f.input :night, as: :string, label: false, input_html: {value: f.object.morning || '0'}, class: "my-button drug_night" %>
+        <%= f.input :morning, as: :string, label: false, input_html: {value: f.object.morning || '0'}, class: "my-button" %>
+        <%= f.input :lunch, as: :string, label: false, input_html: {value: f.object.lunch || '0'}, class: "my-button" %>
+        <%= f.input :evening, as: :string, label: false, input_html: {value: f.object.evening || '0'}, class: "my-button" %>
+        <%= f.input :night, as: :string, label: false, input_html: {value: f.object.night || '0'}, class: "my-button" %>
       </div>
       <%= f.input :comment, label: false, placeholder: 'Commentaire...', class: "my-button" %>
 

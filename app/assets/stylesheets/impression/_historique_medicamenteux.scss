@@ -1,14 +1,40 @@
 @page {
-  size: A4 landscape;
-  margin: 0;
+  size: A4;
+
+  @top-left {
+    content: "Hamlet";
+  }
+
 }
 
-.container {
-  margin: 0;
-  background: steelblue;
+
+
+.container::before {
+    content: "Fiche de recueil des informations";
+    text-align: center;
+    margin: 10px auto;
+    font-size: 1.25em;
+    font-weight: bold;
 }
+
+// @page :top-left {
+//   content: "Hospice Civil de Lyon";
+//   text-align: left;
+// }
+
+// A enlever par defaut lors de l'impression
+
+
 
 .navbar-wagon {
+  display: none;
+}
+
+.btn-add-medicament {
+  display: none;
+}
+
+.btn-add-source {
   display: none;
 }
 
@@ -16,21 +42,32 @@
   display: flex;
 }
 
-
-.btn-add-source {
-  background-color: blue;
-  color: white;
-  padding: 1px 6px;
-  border-radius: 5px;
-  margin: 5px;
+.name-board {
+  display: none;
 }
 
-.btn-add-medicament {
-  background-color: green;
-  color: white;
-  padding: 1px 6px;
-  border-radius: 5px;
-  margin: 5px;
+.generer-pdf {
+display: none;
+}
+
+
+.form-divergence {
+  display: none;
+}
+
+.print-none {
+  display: none;
+}
+
+
+
+
+.container {
+  margin-top: 20px;
+  position: relative;
+  min-width: 90vw;
+  min-height: 90vh;
+  background-color: red !important;
 }
 
 .card-invisible {
@@ -41,9 +78,7 @@
   margin: 5px;
 }
 
-.generer-pdf {
-display: none;
-}
+
 
 
 .card-medicament {
@@ -55,5 +90,17 @@ display: none;
   height: 15vh;
   margin: auto;
   font-size: 10px;
-  z-index: 4;
+  // z-index: 4;
+}
+
+.board-container {
+  display: none;
+}
+
+
+.board-container-final {
+  position: absolute;
+  left: 0px;
+  background-color: black !important;
+  width: 100vw;
 }

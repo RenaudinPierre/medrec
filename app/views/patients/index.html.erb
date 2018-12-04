@@ -14,25 +14,25 @@
 
   <div class="row ">
     <% @patients.sort_by{ |patient| patient.entrancedate }.reverse.each do |patient| %>
-      <div class="col-xs-12 col-sm-6 padding-none">
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 padding-none">
         <div class="card-patient">
           <div >
             <i class="fa fa-user"></i>
             <span id="bold-resize"><%= patient.first_name %> <%= patient.last_name %>     </span>
-            <span id="gray-resize"><%= l(patient.birthdate, format: '%d %B %Y') %></span>
+            <span id="gray-resize"><%= l(patient.birthdate, format: '%d / %M / %Y') %></span>
           </div>
           <div class="row">
-            <div class="col-xs-12 col-sm-6 padding-card-patient">
+            <div class="col-xs-12 col-sm-6 col-ml-6 padding-card-patient">
               <div >
                 <p> Date d'hospitalisation</p>
-                <p id="blue-resize"><%= l(patient.entrancedate, format: '%d %B %Y') %></p>
+                <p id="blue-resize"><%= l(patient.entrancedate, format: '%A %d %B %Y') %></p>
               </div>
             </div>
             <% patient.boards.each do |board| %>
               <div class="col-xs-12 col-sm-6 padding-card-patient">
                 <div class="board-name">
                   <p><%= link_to board.name, board %></p>
-                  <p id="blue-resize"><%= l(board.updated_at, format: '%d / %M / %Y') %></p>
+                  <p id="blue-resize"><%= l(board.updated_at, format: ' %A %d %B %Y') %></p>
                 </div>
               </div>
             <% end %>

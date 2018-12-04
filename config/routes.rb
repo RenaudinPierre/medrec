@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   resources :patients, except: [ :show, :edit, :update, :destroy ]
   resources :boards, only: [ :show ] do
+    get 'print'
     resources :sources, only: [ :create]
     resources :sync, only: [ :create ]
   end
