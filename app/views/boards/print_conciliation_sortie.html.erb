@@ -1,0 +1,33 @@
+<div class="container-print">
+  <div class="haut-page">
+    <div class="haut-page-left">
+      <%= image_tag "aphm.png", height: 100 %>
+    </div>
+    <div class="haut-page-right">
+      <p>Centre hospitalier universitaire</p>
+      <p>Courrier de conciliation des traitements médicamenteux</p>
+    </div>
+  </div>
+  <div class="presentation-patient">
+    <p>Cher confrère</p>
+    <p>Votre patient(e) <%= @board.patient.first_name %> <%= @board.patient.last_name %>, née le <%= @board.patient.birthdate %>, a été hospitalisé dans le service de traumatologie. Nous avons établi la liste des médicaments pris en routine à son domicile. Vous trouverez ci-dessous les modifications de traitements instauré par l'équipe médicale hospitalières ainsi que d'éventuelles explications.</p>
+
+  </div>
+
+  <div class="bas-page">
+    <div class="bas-page-gauche">
+      <p>Docteur Bernard Roy</p>
+      <p>Service de Traumatologie</p>
+    </div>
+    <div class="bas-page-right">
+      <p>Docteur Pierre Renaudin</p>
+      <p>Service Pharmacie</p>
+    </div>
+
+  </div>
+
+  <div class="bouton-show">
+        <a onclick='window.print(); return false;' class='btn btn-treehouse-small generer-pdf fa fa-file-pdf-o'></a>
+        <%= link_to '', patients_path, class: 'btn btn-treehouse-small fa fa-sign-out generer-pdf' %>
+      </div>
+</div>

@@ -1,5 +1,5 @@
 <div class="container container-board-show">
-  <h3 class="name-board"><%= @board.name %></h3>
+  <p class="name-board"><%= @board.name %> | <span class="name-board-gray"><%= @board.patient.first_name %> <%= @board.patient.last_name %></span></p>
   <div class="row ">
     <% if @board.name == "Historique médicamenteux" %>
       <div class="col-xs-9 padding-none print-none">

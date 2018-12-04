@@ -1,0 +1,61 @@
+.haut-page {
+    text-align: center;
+    font-size: 1.25em;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.haut-page-right {
+  text-align: center;
+
+}
+
+.container-print {
+  margin: 50px auto;
+  width: 80vw;
+  min-height: 90vh;
+  border: 1px solid red;
+}
+
+.card-medicament-print {
+  background-color: $gray-light !important;
+  color: white;
+  opacity: 1;
+  border-radius: 8px;
+  padding: 2px;
+  height: 15vh;
+  margin: auto;
+  font-size: 10px;
+  z-index: 4;
+}
+
+
+.card-source-final-print {
+  text-align: center;
+  // border: 1px solid black;
+  border-radius: 2px;
+  min-height: 80vh;
+  width: 80vw;
+  margin: 0px auto;
+  z-index: 1;
+
+}
+
+.bas-page {
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  bottom: 50px;
+  width: 60%;
+  margin: 0 10%;
+}
+
+.bas-page-left {
+  text-align: left;
+}
+
+.bas-page-right {
+  text-align: left;
+}
