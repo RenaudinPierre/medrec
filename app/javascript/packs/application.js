@@ -7,7 +7,7 @@ import InitDivergences from  "./update-divergences";
 import '../components/select2';
 import InitDragula from  "./card-dragula";
 import saveAll from "./save";
-
+import calendarPickr from "../components/calendar"
 
 initNavbar();
 InitMedicament();
@@ -15,3 +15,4 @@ InitSource(InitMedicament);
 InitDivergences();
 InitDragula();
 saveAll();
+calendarPickr();
