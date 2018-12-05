@@ -25,28 +25,29 @@
         <%= link_to "+", '', class: "btn-add-source" %>
       </div>
     <% else %>
-      <div class="col-xs-6 padding-none">
-        <div class="board-container" data-id="<%= @board.id %>">
-          <% @board.sourcedrugs.each_with_index do |source, index| %>
-            <div class="card-source" id="source_<%= index + 1 %>"  >
-              <p class="source-name"><%= source.name %></p>
-              <div class="card-source-invisible">
-                <% for p in (1..@board.height) %>
-                  <div class="card-invisible" id="source_<%= index + 1 %>_card_<%= p %>">
-                    <% if source.have_drug?(p) %>
-                      <div class="card-medicament" >
-                        <%= render "shared/form_medicament", drug: source.find_drug(p) %>
-                      </div>
-                    <% end %>
-                  </div>
-                <% end %>
+      <div class="col-xs-7 padding-none">
+          <div class="board-container" data-id="<%= @board.id %>">
+            <% @board.sourcedrugs.each_with_index do |source, index| %>
+              <div class="card-source" id="source_<%= index + 1 %>"  >
+                <p class="source-name"><%= source.name %></p>
+                <div class="card-source-invisible">
+                  <% for p in (1..@board.height) %>
+                    <div class="card-invisible" id="source_<%= index + 1 %>_card_<%= p %>">
+                      <% if source.have_drug?(p) %>
+                        <div class="card-medicament" >
+                          <%= render "shared/form_medicament", drug: source.find_drug(p) %>
+                        </div>
+                      <% end %>
+                    </div>
+                  <% end %>
+                </div>
+                <%= link_to "+", "", class: "btn-add-medicament", id:"btn_source_#{index + 1}" %>
               </div>
-              <%= link_to "+", "", class: "btn-add-medicament", id:"btn_source_#{index + 1}" %>
-            </div>
-          <% end %>
-        </div>
+            <% end %>
+          </div>
       </div>
-      <div class="col-xs-3 padding-none">
+
+      <div class="col-xs-2 padding-none">
         <div class="board-container-divergence">
           <div class="card-source-divergence">
             <a class='btn btn-check-divergence'>Analyse des divergences</a>
@@ -65,7 +66,7 @@
         </div>
       </div>
     <% end %>
-    <div class="col-xs-3 padding-none">
+    <div class="col-xs-2 padding-none">
       <div class="board-container-final">
         <div class="card-source" id="source_<%= @board.nb_source_final %>" >
           <p class="card-final"><%= @board.final.name %></p>

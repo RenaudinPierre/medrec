@@ -1,10 +1,14 @@
 .board-container {
   display:flex;
   overflow-x:scroll;
+  justify-content: center;
 }
 
 .board-container-divergence {
   background-color: white;
+  width: 90%;
+  display: flex;
+  justify-content: center;
 }
 
 .btn-add-source {
@@ -113,6 +117,21 @@
 }
 
 .source-name {
+  text-align: center;
+  padding: 0px 10px;
+  width: 100%;
+  margin: 0;
+  color: white;
+  border-radius: 4px;
+  font-weight: regular;
+  text-align: left;
+  background: $blue;
+  opacity: 1;
+  transition: background 0.3s ease;
+  text-align: center;
+}
+
+.card-final {
   text-align: center;
   padding: 0px 10px;
   width: 100%;
