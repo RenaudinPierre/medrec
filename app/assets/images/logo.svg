@@ -16,20 +16,5 @@
                 <polygon id="Rectangle" fill="#1993FC" transform="translate(77.362013, 19.250000) rotate(90.000000) translate(-77.362013, -19.250000) " points="77.362013 -0.739319891 96.612013 -19.5405844 96.612013 58.0405844 58.112013 58.0405844 58.112013 17.9350649"></polygon>
             </g>
         </g>
-        <g id="Group" transform="translate(812.000000, 189.000000)">
-            <rect id="Rectangle" fill="#FFFFFF" x="0" y="0" width="26" height="30"></rect>
-            <g id="Rectangle-2" transform="translate(4.000000, 8.000000)" fill="#1058FB">
-                <rect id="Rectangle" x="0" y="0" width="20" height="20"></rect>
-            </g>
-        </g>
-        <rect id="Rectangle" fill="#1058FB" x="816" y="197" width="20" height="20"></rect>
-        <g id="Group" transform="translate(424.000000, 189.000000)">
-            <rect id="Rectangle" fill="#FFFFFF" x="0" y="0" width="26" height="30"></rect>
-            <g id="Rectangle-2" transform="translate(4.000000, 8.000000)" fill="#1058FB">
-                <rect id="Rectangle" x="0" y="0" width="20" height="20"></rect>
-            </g>
-        </g>
-        <rect id="Rectangle" fill="#1058FB" x="428" y="197" width="20" height="20"></rect>
-        <rect id="Rectangle" fill="#FFFFFF" x="609" y="0" width="43" height="15"></rect>
     </g>
 </svg>
