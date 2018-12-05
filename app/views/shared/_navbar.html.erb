@@ -15,9 +15,9 @@
         </div>
         <div class="align-navbar-card">
           <%= link_to destroy_user_session_path, method: :delete do  %>
-          <i class="fa fa-sign-out"></i>
+            <i class="fa fa-sign-out"></i>
           <% end %>
-          <p id="toogle-font-sign-out" class="hidden"><%= link_to "Se deconnecter", destroy_user_session_path %></p>
+          <p id="toogle-font-sign-out" class="hidden"><%= link_to "Se deconnecter", destroy_user_session_path, method: :delete %></p>
         </div>
       </div>
 

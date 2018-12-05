@@ -1,27 +1,49 @@
-<div class="container">
-
-
-
-
-  <h2>Log in</h2>
-
-  <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="form-inputs">
-      <%= f.input :email,
-                  required: false,
-                  autofocus: true,
-                  input_html: { autocomplete: "email" } %>
-      <%= f.input :password,
-                  required: false,
-                  input_html: { autocomplete: "current-password" } %>
-      <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+<div class="landing-page">
+  <div class="aside">
+    <div class="aside-logo">
+        <%= image_tag "logo.svg", height: 80 %>
     </div>
-
-    <div class="form-actions">
-      <%= f.button :submit, "Log in" %>
+    <div class="aside-title">
+      <h2>Connexion</h2>
+      <p>
+        Outil d'aide à la réalisation de la conciliation médicamenteuse
+      </p>
     </div>
-  <% end %>
+    <div class="aside-sign-up">
+      <!-- <p>Pas encore de compte?</p> -->
+      <a href="#" class="" style="color:gray;">Pas encore de compte ?</a>
+    </div>
+  </div>
 
-  <%= render "devise/shared/links" %>
 
+  <div class="form-container">
+    <div class="content-form-container">
+      <h2>Connectez-vous</h2>
+      <hr>
+      <%= simple_form_for(@user, url: user_session_path) do |f| %>
+        <div class="form-inputs">
+          <div class="margin-form-home">
+          <%= f.input :email,
+                      required: true,
+                      autofocus: true,
+                      input_html: { autocomplete: "email" },
+                      label: "Identifiant",
+                      placeholder: "Identifiant" %>
+          </div>
+          <div class="margin-form-home">
+          <%= f.input :password,
+                      required: true,
+                      input_html: { autocomplete: "current-password" },
+                      label: "Mot de passe",
+                      placeholder: "Mot de passe" %>
+          </div>
+        </div>
+        <%= f.button :submit, "Connexion", :class => "btn btn-treehouse"%>
+        <div class="form-actions">
+          <%= render "devise/shared/links" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>
+

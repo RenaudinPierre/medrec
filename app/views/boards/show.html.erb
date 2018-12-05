@@ -6,7 +6,7 @@
         <div class="board-container" data-id="<%= @board.id %>">
           <% @board.sourcedrugs.each_with_index do |source, index| %>
             <div class="card-source" id="source_<%= index + 1 %>" >
-              <p><%= source.name %></p>
+              <p class="source-name"><%= source.name %></p>
               <div class="card-source-invisible">
                 <% for p in (1..@board.height) %>
                   <div class="card-invisible" id="source_<%= index + 1 %>_card_<%= p %>">
@@ -29,7 +29,7 @@
         <div class="board-container" >
           <% @board.sourcedrugs.each_with_index do |source, index| %>
             <div class="card-source" id="source_<%= index + 1 %>"  >
-              <p><%= source.name %></p>
+              <p class="source-name"><%= source.name %></p>
               <div class="card-source-invisible">
                 <% for p in (1..@board.height) %>
                   <div class="card-invisible" id="source_<%= index + 1 %>_card_<%= p %>">
@@ -50,7 +50,7 @@
       <div class="col-xs-3 padding-none">
         <div class="board-container-divergence">
           <div class="card-source-divergence">
-            <p><%= @board.divergence.name %></p>
+            <a class='btn btn-check-divergence'>Analyse des divergences</a>
             <div class="card-source-invisible-divergence">
               <% for p in (1..@board.height) %>
                 <div class="card-invisible-divergence">
@@ -85,7 +85,7 @@
         </div>
       </div>
       <div class="bouton-show">
-        <a class='btn btn-treehouse-small btn-check-divergence'>Check</a>
+
         <a class='btn btn-treehouse-small generer-pdf fa fa-file-pdf-o' target="_blank" href="<%= board_print_path(@board) %>"></a>
         <i class="fa fa-floppy-o btn btn-treehouse-small generer-pdf" aria-hidden="true" id="save-all" ></i>
         <%= link_to '', patients_path, class: 'btn btn-treehouse-small fa fa-sign-out generer-pdf' %>
