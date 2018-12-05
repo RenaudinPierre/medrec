@@ -9,8 +9,8 @@
         <%= f.input :last_name, label: 'Nom'%>
       </div>
       <div class="deuxieme-ligne">
-       <%= f.input :birthdate, as: :date, html5: true, label: 'Date de naissance' %>
-      <%= f.input :entrancedate, as: :date, html5: true, label: "Date d'entrée du patient" %>
+        <%= f.input :birthdate, as: :date, html5: true, label: 'Date de naissance', input_html: { class: "calendar" } %>
+        <%= f.input :entrancedate, as: :date, html5: true, label: "Date d'entrée du patient", input_html: { class: "calendar" } %>
       </div>
     </div>
 

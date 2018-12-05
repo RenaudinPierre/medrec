@@ -1,17 +1,13 @@
-// import Flatpickr from 'flatpickr';
+import Flatpickr from 'flatpickr';
+import "flatpickr/dist/flatpickr.css";
 
-// const calendarpickr = () => {
-//   const calendar = document.querySelector(".calendar")
-//   flatpickr(calendar, {
-//     enableTime: true,
-//     dateFormat: "Y-m-d H:i",
-//   });
-//   console.log(calendar)
-// };
+const calendarPickr = () => {
+  const calendar = document.querySelectorAll(".calendar")
+  flatpickr(calendar, {
+    enableTime: false,
+    dateFormat: "Y-m-d",
+    allowInput: true
+  });
+};
 
-// $(".calendar").flatpickr({
-//     enableTime: true,
-//     dateFormat: "Y-m-d H:i",
-//   });
-
-// export default calendarpickr
+export default calendarPickr;
