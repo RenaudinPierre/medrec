@@ -1,12 +1,17 @@
 .board-container {
   display:flex;
   overflow-x:scroll;
-  justify-content: center;
+  justify-content: left;
 }
 
+.board-container-final {
+  display:flex;
+  justify-content: center;
+}
 .board-container-divergence {
   background-color: white;
-  width: 90%;
+  // width: 90%;
+  max-width: 17vw;
   display: flex;
   justify-content: center;
 }
