@@ -10,9 +10,9 @@ const saveSource = (allSources) => {
   allSources.forEach((sourceElem) => {
     let sourceType = sourceElem.querySelector('p').innerText;
     if (sourceType === "Divergences") {
-      sourceType = "sourceDivergence"
+      sourceType = "SourceDivergence"
     } else {
-      sourceType = "sourceDrug"
+      sourceType = "SourceDrug"
     }
 
 
@@ -26,7 +26,7 @@ const saveSource = (allSources) => {
       sourceFinal = true;
     }
 
-    if (sourceType === "sourceDrug") {
+    if (sourceType === "SourceDrug") {
       let invisibleCards = sourceElem.querySelectorAll(".card-invisible");
       invisibleCards.forEach((invisibleCard, i) => {
         let medicamentCard = invisibleCard.querySelector('.card-medicament');
@@ -37,12 +37,13 @@ const saveSource = (allSources) => {
           let drugEvening = medicamentCard.querySelector('#drug_evening').value;
           let drugNight = medicamentCard.querySelector('#drug_night').value;
           let drugName = null;
-          if (document.querySelector('.select2-selection__rendered').getAttribute('title') != null) {
-            drugName = document.querySelector('.select2-selection__rendered').getAttribute('title');
+          let drugComment = medicamentCard.querySelector('#drug_comment').value;
+          if (medicamentCard.querySelector('.select2-selection__rendered').getAttribute('title') != null) {
+            drugName = medicamentCard.querySelector('.select2-selection__rendered').getAttribute('title');
           } else {
             drugName = "";
           }
-          drugs.push({ name: drugName, morning: drugMorning, lunch: drugLunch, evening: drugEvening, night: drugNight, position: position });
+          drugs.push({ name: drugName, morning: drugMorning, lunch: drugLunch, evening: drugEvening, night: drugNight, comment: drugComment, position: position });
 
         }
       });
@@ -52,10 +53,10 @@ const saveSource = (allSources) => {
         let medicamentCard = invisibleCard.querySelector('.card-medicament');
         if (medicamentCard) {
           let position = (i + 1);
-          let divErrorType = medicamentCard.querySelector('#divergence_error_type').value;
-          let divCorrection = medicamentCard.querySelector('#divergence_correction').value;
-          let divCharacter = medicamentCard.querySelector('#divergence_character').value;
-          divergences.push({ error_type: divErrorType, correction: divCorrection, character: divCharacter })
+          let divErrorType = medicamentCard.querySelector('#divergence_error_type').innerText;
+          let divCorrection = medicamentCard.querySelector('#divergence_correction').innerText;
+          let divCharacter = medicamentCard.querySelector('#divergence_character').innerText;
+          divergences.push({ error_type: divErrorType, correction: divCorrection, character: divCharacter, position: position })
         }
       })
     };
