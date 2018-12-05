@@ -99,7 +99,6 @@ drugs35 = Drug.create!(name: 'BISOPROLOL QUIVER 1,25 mg, comprimé', source: boa
 
 puts 'Finished drugs!'
 
-
 puts 'Creating boards...'
 # board1 = Board.create!(name: "Historique médicamenteux", patient: patient1)
 # board2 = Board.create!(name: "conciliation d'entrée", patient: patient1)
@@ -119,8 +118,6 @@ board_sources2 = BoardSource.create!(board: board_history_patient1, source: sour
 board_sources6 = BoardSource.create!(board: board_history_patient10, source: sources7)
 board_sources6 = BoardSource.create!(board: board_history_patient10, source: sources8)
 board_sources8 = BoardSource.create!(board: board_conciliation_sortie_patient11, source: board_conciliation_sortie_patient11.sources.find_by(name: "BMO"))
-board_sources9 = BoardSource.create!(board: board_ordonnance_hopital_sortie, source: board_ordonnance_hopital_sortie.sources.find_by(name: "Ordonnance Hôpital"))
-board_sources10 = BoardSource.create!(board: board_ordonnance_hopital_sortie, source: board_ordonnance_hopital_sortie.sources.find_by(name: "Ordonnance de sortie"))
 
 puts 'Finished board_sources!'
 
