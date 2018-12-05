@@ -8,15 +8,15 @@ const saveSource = (allSources) => {
   let data = { sources: []};
   let allDrugs = document.querySelectorAll(".card-medicament");
   allSources.forEach((sourceElem) => {
-    let sourceType = sourceElem.querySelector('p').innerText;
-    if (sourceType === "Divergences") {
+    let sourceType = sourceElem.querySelector('.source-title').innerText;
+    if (sourceType === "Analyse des divergences") {
       sourceType = "SourceDivergence"
     } else {
       sourceType = "SourceDrug"
     }
 
 
-    let sourceName = sourceElem.querySelector('p').innerText;
+    let sourceName = sourceElem.querySelector('.source-title').innerText;
     let sourceFinal = null;
     let drugs = [];
     let divergences = [];
