@@ -33,8 +33,8 @@ puts 'Finished patients!'
 
 puts 'Creating sources...'
 # sources1 = SourceDrug.create!(name: 'Seed Famille', final_source: false)
-sources2 = SourceDrug.create!(name: 'Seed Famille', final_source: false)
-sources3 = SourceDrug.create!(name: 'Seed Medecin de famille', final_source: false)
+sources2 = SourceDrug.create!(name: 'Famille', final_source: false)
+sources3 = SourceDrug.create!(name: 'Medecin de famille', final_source: false)
 # sources4 = SourceDrug.create!(name: "Seed Pharmacie d'officine", final_source: false)
 # sources5 = SourceDrug.create!(name: 'Seed Patient', final_source: false)
 # sources6 = SourceDrug.create!(name: 'BMO', final_source: true)
@@ -42,9 +42,9 @@ puts 'Finished sources!'
 
 # puts 'Creating drugs...'
 drugs1 = Drug.create!(name: 'Seed Doliprane', source: board_history_patient1.sources.find_by(name: 'BMO') , morning: '1', lunch: '1', evening: '1', night: '0', comment: 'Le patient ne le prend pas', position: 2)
-# drugs2 = Drug.create!(name: 'Seed Ibuprofene', source: sources3 , morning: '1.5', lunch: '1', evening: '2', night: '1', comment: '', position: 2)
+drugs2 = Drug.create!(name: 'Seed Ibuprofene', source: sources3 , morning: '1.5', lunch: '1', evening: '2', night: '1', comment: '', position: 2)
 # drugs3 = Drug.create!(name: 'Seed dafalgan', source: sources6 , morning: '1.5', lunch: '1', evening: '2', night: '1', comment: 'Le patient ne prend pas le matin', position: 2)
-# drugs4 = Drug.create!(name: 'Seed Levothyrox', source: sources5 , morning: '1.5', lunch: '1.5', evening: '2', night: '1', comment: '', position: 2)
+drugs4 = Drug.create!(name: 'Seed Levothyrox', source: sources2 , morning: '1.5', lunch: '1.5', evening: '2', night: '1', comment: '', position: 1)
 # drugs5 = Drug.create!(name: 'Seed Imodium', source: sources4 , morning: '1.5', lunch: '1', evening: '3', night: '1', comment: '', position: 3)
 # drugs6 = Drug.create!(name: 'Seed Kardegic', source: sources6 , morning: '1.5', lunch: '1', evening: '1', night: '1', comment: '', position: 3)
 # puts 'Finished drugs!'

@@ -22,37 +22,35 @@ class Patient < ApplicationRecord
 
   def create_historique_medicamenteux
     board = Board.create(patient: self, name: "Historique médicamenteux")
-    source = SourceDrug.create!(name: 'Patient', final_source: false)
-    final_source = SourceDrug.create!(name: 'BMO', final_source: true)
-    BoardSource.create!(board: board, source: source)
-    BoardSource.create!(board: board, source: final_source)
-    Drug.create!(source_id: source.id, morning: 1, lunch: 1, evening: 1, night: 0, position: 1)
+    create_sourcedrugs_with_array(["Patient", "BMO"], board)
+    Drug.create!(source_id: board.sources.find_by(name: "Patient").id, morning: 1, lunch: 1, evening: 1, night: 0, position: 1)
   end
 
   def create_conciliation_entree
     board = Board.create(patient: self, name: "Conciliation d'entrée")
-    bmo_source = SourceDrug.create!(name: 'BMO', final_source: false)
-    BoardSource.create!(board: board, source: bmo_source)
+    create_sourcedrugs_with_array(["BMO", "Ordonnance Hôpital", "Ordonnance Final"], board)
     divergence_source = SourceDivergence.create!(name: 'Divergences', final_source: false)
     BoardSource.create!(board: board, source: divergence_source)
-    final_source = SourceDrug.create!(name: 'Ordonnance Final', final_source: true)
-    BoardSource.create!(board: board, source: final_source)
   end
 
   def create_conciliation_sortie
     board = Board.create(patient: self, name: "Conciliation de sortie")
-    bmo_source = SourceDrug.create!(name: 'BMO', final_source: false)
-    BoardSource.create!(board: board, source: bmo_source)
+    create_sourcedrugs_with_array(["BMO", "Ordonnance Hôpital", "Ordonnance de sortie", "Ordonnance Final"], board)
     divergence_source = SourceDivergence.create!(name: 'Divergences', final_source: false)
     BoardSource.create!(board: board, source: divergence_source)
-    final_source = SourceDrug.create!(name: 'Ordonnance Final', final_source: true)
-    BoardSource.create!(board: board, source: final_source)
   end
 
   def update
-    bmo_hist = self.boards.where(name: "Historique médicamenteux").first.sources.where(name: 'BMO').first
-    self.boards.where(name: "Conciliation d'entrée").first.sources.where(name: 'BMO').first.equal(bmo_hist)
-    self.boards.where(name: "Conciliation de sortie").first.sources.where(name: 'BMO').first.equal(bmo_hist)
+    bmo_hist = self.boards.find_by(name: "Historique médicamenteux").sources.find_by(name: "Patient")
+    self.boards.find_by(name: "Conciliation d'entrée").sources.find_by(name: "BMO").equal(bmo_hist)
+    self.boards.find_by(name: "Conciliation de sortie").sources.find_by(name: "BMO").equal(bmo_hist)
+  end
+
+  def create_sourcedrugs_with_array(array, board)
+    array.each do |name|
+      source = SourceDrug.create!(name: name, final_source: name == 'Ordonnance Final')
+      BoardSource.create!(board: board, source: source)
+    end
   end
 end
 
