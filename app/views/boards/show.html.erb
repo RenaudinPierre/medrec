@@ -45,12 +45,11 @@
             </div>
           <% end %>
         </div>
-        <%= link_to "+", '', class: "btn-add-source" %>
       </div>
       <div class="col-xs-3 padding-none">
         <div class="board-container-divergence">
           <div class="card-source-divergence">
-            <p><%= @board.divergence.name %></p>
+           <a class='btn btn-treehouse-small btn-check-divergence'>Check</a>
             <div class="card-source-invisible-divergence">
               <% for p in (1..@board.height) %>
                 <div class="card-invisible-divergence">
@@ -85,7 +84,6 @@
         </div>
       </div>
       <div class="bouton-show">
-        <a class='btn btn-treehouse-small btn-check-divergence'>Check</a>
         <a class='btn btn-treehouse-small generer-pdf fa fa-file-pdf-o' target="_blank" href="<%= board_print_path(@board) %>"></a>
         <i class="fa fa-floppy-o btn btn-treehouse-small generer-pdf" aria-hidden="true" id="save-all" ></i>
         <%= link_to '', patients_path, class: 'btn btn-treehouse-small fa fa-sign-out generer-pdf' %>
