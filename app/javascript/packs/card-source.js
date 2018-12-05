@@ -21,7 +21,7 @@ function AddSource(sourceName) {
   const number = card_sources.length;
   const max_card_in_source = card_sources[0].querySelectorAll('.card-invisible').length;
   console.log(`${max_card_in_source}`);
-  const element_source = `<div class="card-source"><p class="source-name">${sourceName}</p><div class="card-source-invisible"></div><a class="btn-add-medicament" id="btn_source_${number + 1}" href="">+</a></div>`; //${number + 1}</div>`;
+  const element_source = `<div class="card-source"><p class="source-name source-title">${sourceName}</p><div class="card-source-invisible"></div><a class="btn-add-medicament" id="btn_source_${number + 1}" href="">+</a></div>`; //${number + 1}</div>`;
   card_sources[number - 1].insertAdjacentHTML("afterend", element_source);
   card_sources = document.querySelectorAll('.card-source');
   const last_card = card_sources[card_sources.length - 2];
