@@ -1,5 +1,6 @@
 import dragula from 'dragula';
 import "dragula/dist/dragula.css";
+import 'select2';
 
 var drake = null;
 
@@ -25,7 +26,6 @@ function InitDragula() {
     let card_number = 0;
     drake = dragula( {
       accepts: function (el, target, source, sibling) {
-        // console.log(sibling);
         if (sibling !== null){
           // console.log("entre dans if");
           return false;
@@ -39,6 +39,16 @@ function InitDragula() {
       el.className = el.className.replace('ex-moved', '');
     }).on('drop', function (el) {
       el.className += ' ex-moved';
+      $('.api-card-drugs').select2({
+        ajax: {
+          url: '/drugs/search',
+          dataType: 'json'
+        }
+      });
+    }).on('cloned', function (clone, original, type) {
+      clone.querySelector('.select2').remove();
+      clone.querySelector('.api-card-drugs').classList.remove('select2-hidden-accessible');
+      clone.querySelector('.api-card-drugs').removeAttribute('data-select2-id');
     }).on('over', function (el, container) {
       container.className += ' ex-over';
     }).on('out', function (el, container) {
