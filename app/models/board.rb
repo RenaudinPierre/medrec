@@ -16,6 +16,10 @@ class Board < ApplicationRecord
     return height
   end
 
+  def bmo
+    return self.sources.find_by(name: "BMO")
+  end
+
   def final
     return self.sources.find_by(final_source: true)
   end
