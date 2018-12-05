@@ -17,7 +17,7 @@ class Board < ApplicationRecord
   end
 
   def final
-    return self.sources.where(final_source: true).first
+    return self.sources.find_by(final_source: true)
   end
 
   def divergence

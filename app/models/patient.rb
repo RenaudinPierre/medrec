@@ -28,27 +28,27 @@ class Patient < ApplicationRecord
 
   def create_conciliation_entree
     board = Board.create(patient: self, name: "Conciliation d'entrée")
-    create_sourcedrugs_with_array(["BMO", "Ordonnance Hôpital", "Ordonnance Final"], board)
+    create_sourcedrugs_with_array(["BMO", "Ordonnance Hôpital", "Ordonnance Finale"], board)
     divergence_source = SourceDivergence.create!(name: 'Divergences', final_source: false)
     BoardSource.create!(board: board, source: divergence_source)
   end
 
   def create_conciliation_sortie
     board = Board.create(patient: self, name: "Conciliation de sortie")
-    create_sourcedrugs_with_array(["BMO", "Ordonnance Hôpital", "Ordonnance de sortie", "Ordonnance Final"], board)
+    create_sourcedrugs_with_array(["BMO", "Ordonnance Hôpital", "Ordonnance de sortie", "Ordonnance Finale"], board)
     divergence_source = SourceDivergence.create!(name: 'Divergences', final_source: false)
     BoardSource.create!(board: board, source: divergence_source)
   end
 
   def update
-    bmo_hist = self.boards.find_by(name: "Historique médicamenteux").sources.find_by(name: "Patient")
+    bmo_hist = self.boards.find_by(name: "Historique médicamenteux").sources.find_by(name: "BMO")
     self.boards.find_by(name: "Conciliation d'entrée").sources.find_by(name: "BMO").equal(bmo_hist)
     self.boards.find_by(name: "Conciliation de sortie").sources.find_by(name: "BMO").equal(bmo_hist)
   end
 
   def create_sourcedrugs_with_array(array, board)
     array.each do |name|
-      source = SourceDrug.create!(name: name, final_source: name == 'Ordonnance Final')
+      source = SourceDrug.create!(name: name, final_source: name == array.last)
       BoardSource.create!(board: board, source: source)
     end
   end
