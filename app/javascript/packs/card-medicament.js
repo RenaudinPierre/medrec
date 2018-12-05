@@ -28,8 +28,10 @@ const AddMedicaments = (event) => {
     console.log(`${element}`);
     card_drugs_sources[pas - 1].insertAdjacentHTML("beforeend", element);
   }
-  const card_divergence = document.querySelector('.card-source-invisible-divergence');
-  card_divergence.insertAdjacentHTML("beforeend", '<div class="card-invisible-divergence"></div>');
+  if (document.querySelector('.board-container-divergence')) {
+    const card_divergence = document.querySelector('.card-source-invisible-divergence');
+    card_divergence.insertAdjacentHTML("beforeend", '<div class="card-invisible-divergence"></div>');
+  }
   $('.api-card-drugs').select2({
     ajax: {
       url: '/drugs/search',
