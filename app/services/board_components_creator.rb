@@ -34,6 +34,16 @@ class BoardComponentsCreator
           evening: drug_params[:evening],
           night: drug_params[:night],
           position: drug_params[:position],
+          source: source,
+          comment: drug_params[:comment]
+        )
+      end
+      source_params[:divergences].each do |divergences_params|
+        Divergence.create!(
+          error_type: divergences_params[:error_type],
+          character: divergences_params[:character],
+          correction: divergences_params[:correction],
+          position: divergences_params[:position],
           source: source
         )
       end

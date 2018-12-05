@@ -6,7 +6,7 @@ var drake = null;
 function InitDragula() {
   const card_drugs_sources = document.querySelectorAll('.card-source-invisible');
   const number_sources = card_drugs_sources.length ;
-  console.log(card_drugs_sources)
+  // console.log(card_drugs_sources)
   if (card_drugs_sources.length !== 0) {
    const max_card_source = card_drugs_sources[0].querySelectorAll('.card-invisible').length;
    createSelectors(number_sources, max_card_source);
@@ -27,7 +27,7 @@ function InitDragula() {
       accepts: function (el, target, source, sibling) {
         // console.log(sibling);
         if (sibling !== null){
-          console.log("entre dans if");
+          // console.log("entre dans if");
           return false;
         } else {
           return true;

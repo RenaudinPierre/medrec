@@ -26,7 +26,7 @@
       </div>
     <% else %>
       <div class="col-xs-6 padding-none">
-        <div class="board-container" >
+        <div class="board-container" data-id="<%= @board.id %>">
           <% @board.sourcedrugs.each_with_index do |source, index| %>
             <div class="card-source" id="source_<%= index + 1 %>"  >
               <p class="source-name"><%= source.name %></p>
@@ -45,7 +45,6 @@
             </div>
           <% end %>
         </div>
-        <%= link_to "+", '', class: "btn-add-source" %>
       </div>
       <div class="col-xs-3 padding-none">
         <div class="board-container-divergence">
@@ -85,7 +84,6 @@
         </div>
       </div>
       <div class="bouton-show">
-
         <a class='btn btn-treehouse-small generer-pdf fa fa-file-pdf-o' target="_blank" href="<%= board_print_path(@board) %>"></a>
         <i class="fa fa-floppy-o btn btn-treehouse-small generer-pdf" aria-hidden="true" id="save-all" ></i>
         <%= link_to '', patients_path, class: 'btn btn-treehouse-small fa fa-sign-out generer-pdf' %>
