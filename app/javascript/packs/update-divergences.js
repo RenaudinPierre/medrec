@@ -1,5 +1,7 @@
 function InitDivergences() {
-  document.querySelector('.btn-check-divergence').addEventListener("click", CheckDrugs);
+  if (document.querySelector('.board-container-divergence')) {
+    document.querySelector('.btn-check-divergence').addEventListener("click", CheckDrugs);
+  }
 }
 
 function isUniq(a) {
