@@ -52,13 +52,13 @@ const CheckDrugs = (event) => {
         drugs.push([drugName, drugMorning, drugLunch, drugEvening, drugNight, position]);
       }
     });
+    console.log(drugs)
+    console.log(drugs.length)
     let element = "";
-    if (drugs.length == 0 || isUniq(drugs)) {
+    if (drugs.length === 0 || isUniq(drugs)) {
       card_divergences[pas_vertical].classList.add('no-divergence');
       element = `<p>Pas de divergence</p>`;
-    }
-    else {
-      console.log(drugs);
+    } else {
       card_divergences[pas_vertical].classList.add('divergence');
       const template = require('./../templates/new_divergence.ejs');
       element = template();

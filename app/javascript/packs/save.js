@@ -61,7 +61,6 @@ const saveSource = (allSources) => {
       })
     };
     data.sources.push({ name: sourceName, final_source: sourceFinal, type: sourceType, drugs: drugs, divergences: divergences });
-    console.log(data)
   })
   const boardId = document.querySelector('.board-container').dataset.id;
   fetch(`/boards/${boardId}/syncs`, {

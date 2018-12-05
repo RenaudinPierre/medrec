@@ -29,7 +29,7 @@
           <div class="board-container" data-id="<%= @board.id %>">
             <% @board.sourcedrugs.each_with_index do |source, index| %>
               <div class="card-source" id="source_<%= index + 1 %>"  >
-                <p class="source-name"><%= source.name %></p>
+                <p class="source-name source-title"><%= source.name %></p>
                 <div class="card-source-invisible">
                   <% for p in (1..@board.height) %>
                     <div class="card-invisible" id="source_<%= index + 1 %>_card_<%= p %>">
