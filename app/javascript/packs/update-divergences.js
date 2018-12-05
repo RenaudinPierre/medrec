@@ -5,18 +5,21 @@ function InitDivergences() {
 }
 
 function isUniq(a) {
-  { return true } if (a.first.length == 1);
-  const height = a.first.length;
-  for(var i = 0; i <= a.length; i++) {
-      for(var j = i; j <= a.length; j++) {
-          for(var h = 0; h <= height; h++) {
-            if(i != j && a[i][h] != a[j][h]) {
-                return false;
-            }
-          }
+  // console.log(a);
+  if (a.length == 0 || a[0].length == 1) {
+    return true;
+  } else {
+    const height = a[0].length;
+    for(var h = 0; h <= height; h++) {
+      for(var i = 1; i < a.length; i++) {
+        if(a[0][h] != a[i][h]) {
+          console.log(i);
+            return false;
+        }
       }
+    }
+    return true;
   }
-  return true;
 }
 
 
@@ -32,8 +35,11 @@ const CheckDrugs = (event) => {
     // Selecting elements
     let drugs = [];
     // let invisibleCards = card_sources.querySelectorAll('.card-invisible');
-    let invisibleCards = document.querySelectorAll(`div[id$='_card_${pas_vertical}']`);
+    let invisibleCards = document.querySelectorAll(`div[id$='_card_${pas_vertical + 1}']`);
+    // console.log(invisibleCards);
     invisibleCards.forEach((invisibleCard, i) => {
+      console.log((document.querySelector('.sortie') && i!= 1) || (document.querySelector('.entree')));
+    if ((document.querySelector('.sortie') && i!= 1) || (document.querySelector('.entree'))) {
       let medicamentCard = invisibleCard.querySelector('.card-medicament');
       // console.log(i);
       if (medicamentCard && i!= invisibleCards.length - 1) {
@@ -51,11 +57,12 @@ const CheckDrugs = (event) => {
         // console.log([drugName, drugMorning, drugLunch, drugEvening, drugNight, position]);
         drugs.push([drugName, drugMorning, drugLunch, drugEvening, drugNight, position]);
       }
+      }
     });
-    console.log(drugs)
-    console.log(drugs.length)
+    // console.log(drugs)
+    // console.log(drugs.length)
     let element = "";
-    if (drugs.length === 0 || isUniq(drugs)) {
+    if (isUniq(drugs)) {
       card_divergences[pas_vertical].classList.add('no-divergence');
       element = `<p>Pas de divergence</p>`;
     } else {

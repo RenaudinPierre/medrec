@@ -39,4 +39,9 @@ class Board < ApplicationRecord
       return self.sources.length - 1
     end
   end
+
+  def type_conciliation
+    return "entree" if self.name == "Conciliation d'entrée"
+    return "sortie" if self.name == "Conciliation de sortie"
+  end
 end
