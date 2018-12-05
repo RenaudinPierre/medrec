@@ -25,7 +25,7 @@
         <%= link_to "+", '', class: "btn-add-source" %>
       </div>
     <% else %>
-      <div class="col-xs-8 padding-none">
+      <div class="col-xs-7 padding-none">
           <div class="board-container" data-id="<%= @board.id %>">
             <% @board.sourcedrugs.each_with_index do |source, index| %>
               <div class="card-source" id="source_<%= index + 1 %>"  >
@@ -66,7 +66,7 @@
         </div>
       </div>
     <% end %>
-    <div class="col-xs-2 padding-none">
+    <div class="col-xs-3 padding-none">
       <div class="board-container-final">
         <div class="card-source" id="source_<%= @board.nb_source_final %>" >
           <p class="card-final source-title"><%= @board.final.name %></p>
