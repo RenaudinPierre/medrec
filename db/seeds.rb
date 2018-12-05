@@ -25,10 +25,15 @@ patient1 = Patient.create!(first_name: 'John', last_name: 'Doe', birthdate: '195
 # patient7 = Patient.create!(first_name: 'Alexandre', last_name: 'Astier', birthdate: '2001-11-01', entrancedate: '2018-11-18')
 # patient8 = Patient.create!(first_name: 'Mark', last_name: 'Hamil', birthdate: '1991-08-21', entrancedate: '2018-11-24')
 # patient9 = Patient.create!(first_name: 'Carrie', last_name: 'Fisher', birthdate: '1977-11-14', entrancedate: '2018-11-26')
+patient10 = Patient.create!(first_name: 'Anne', last_name: 'Parisien', birthdate: '1945-04-12', entrancedate: '2018-11-25')
+patient11 = Patient.create!(first_name: 'Hugo', last_name: 'Lapierre', birthdate: '1975-06-14', entrancedate: '2018-11-27')
 
 
 board_history_patient1 = patient1.boards.find_by(name: "Historique médicamenteux")
+board_history_patient10 = patient10.boards.find_by(name: "Historique médicamenteux")
 board_conciliation_open = patient1.boards.find_by(name: "Conciliation d'entrée")
+board_conciliation_sortie_patient11 = patient11.boards.first
+board_ordonnance_hopital_sortie = patient11.boards.find_by(name: "Conciliation de sortie")
 puts 'Finished patients!'
 
 puts 'Creating sources...'
@@ -38,16 +43,62 @@ sources3 = SourceDrug.create!(name: 'Medecin de famille', final_source: false)
 # sources4 = SourceDrug.create!(name: "Seed Pharmacie d'officine", final_source: false)
 # sources5 = SourceDrug.create!(name: 'Seed Patient', final_source: false)
 # sources6 = SourceDrug.create!(name: 'BMO', final_source: true)
+sources7 = SourceDrug.create!(name: 'Mari', final_source: false)
+sources8 = SourceDrug.create!(name: 'Pharmacie de ville', final_source: false)
+# sources9 = SourceDrug.create!(name: 'BMO', final_source: true)
+
 puts 'Finished sources!'
 
-# puts 'Creating drugs...'
+puts 'Creating drugs...'
 drugs1 = Drug.create!(name: 'Seed Doliprane', source: board_history_patient1.sources.find_by(name: 'BMO') , morning: '1', lunch: '1', evening: '1', night: '0', comment: 'Le patient ne le prend pas', position: 2)
 drugs2 = Drug.create!(name: 'Seed Ibuprofene', source: sources3 , morning: '1.5', lunch: '1', evening: '2', night: '1', comment: '', position: 2)
 # drugs3 = Drug.create!(name: 'Seed dafalgan', source: sources6 , morning: '1.5', lunch: '1', evening: '2', night: '1', comment: 'Le patient ne prend pas le matin', position: 2)
 drugs4 = Drug.create!(name: 'Seed Levothyrox', source: sources2 , morning: '1.5', lunch: '1.5', evening: '2', night: '1', comment: '', position: 1)
 # drugs5 = Drug.create!(name: 'Seed Imodium', source: sources4 , morning: '1.5', lunch: '1', evening: '3', night: '1', comment: '', position: 3)
 # drugs6 = Drug.create!(name: 'Seed Kardegic', source: sources6 , morning: '1.5', lunch: '1', evening: '1', night: '1', comment: '', position: 3)
-# puts 'Finished drugs!'
+
+
+# seed pour la patiente de création de l'historique médicamenteux
+drugs7 = Drug.create!(name: 'BISOPROLOL QUIVER 1,25 mg, comprimé', source: board_history_patient10.sources.find_by(name: 'Patient') , morning: '1', lunch: '0', evening: '0', night: '0', comment: '', position: 2)
+drugs8 = Drug.create!(name: 'BISOPROLOL QUIVER 1,25 mg, comprimé', source: sources7 , morning: '1', lunch: '0', evening: '0', night: '0', comment: '', position: 2)
+# drugs9 = Drug.create!(name: 'BISOPROLOL QUIVER 1,25 mg, comprimé', source: sources8 , morning: '1', lunch: '0', evening: '0', night: '0', comment: '', position: 2)
+
+drugs10 = Drug.create!(name: 'ATORVASTATINE MYLAN PHARMA 10 mg, comprimé pelliculé', source: board_history_patient10.sources.find_by(name: 'Patient') , morning: '1', lunch: '0', evening: '0', night: '0', comment: '', position: 3)
+drugs11 = Drug.create!(name: 'ATORVASTATINE MYLAN PHARMA 10 mg, comprimé pelliculé', source: sources7 , morning: '1', lunch: '0', evening: '0', night: '0', comment: '', position: 3)
+# drugs12 = Drug.create!(name: 'ATORVASTATINE MYLAN PHARMA 10 mg, comprimé pelliculé', source: sources8 , morning: '1', lunch: '0', evening: '0', night: '0', comment: '', position: 3)
+
+# drugs13 = Drug.create!(name: 'PREVISCAN 20 mg, comprimé quadrisécable', source: sources8 , morning: '1', lunch: '0', evening: '0', night: '0', comment: '', position: 3)
+
+drugs14 = Drug.create!(name: 'KARDEGIC 75 mg, poudre pour solution buvable en sachet-dose', source: board_history_patient10.sources.find_by(name: 'Patient') , morning: '0', lunch: '1', evening: '0', night: '0', comment: '', position: 5)
+drugs15 = Drug.create!(name: 'KARDEGIC 75 mg, poudre pour solution buvable en sachet-dose', source: sources7 , morning: '0', lunch: '1', evening: '0', night: '0', comment: '', position: 5)
+# drugs16 = Drug.create!(name: 'KARDEGIC 75 mg, poudre pour solution buvable en sachet-dose', source: sources8 , morning: '0', lunch: '1', evening: '0', night: '0', comment: '', position: 5)
+
+drugs17 = Drug.create!(name: 'ENALAPRIL EG 5 mg, comprimé sécable', source: sources7 , morning: '1', lunch: '0', evening: '0', night: '0', comment: '', position: 6)
+
+drugs18 = Drug.create!(name: 'ALLOPURINOL ARROW 100 mg, comprimé', source: board_history_patient10.sources.find_by(name: 'Patient') , morning: '1', lunch: '0', evening: '0', night: '0', comment: '', position: 4)
+
+# seed pour la conciliation de sortie
+drugs20 = Drug.create!(name: 'ATORVASTATINE MYLAN PHARMA 10 mg, comprimé pelliculé', source: board_conciliation_sortie_patient11.sources.find_by(name: "BMO") , morning: '1', lunch: '0', evening: '0', night: '0', comment: '', position: 1)
+drugs21 = Drug.create!(name: 'PREVISCAN 20 mg, comprimé quadrisécable', source: board_conciliation_sortie_patient11.sources.find_by(name: "BMO") , morning: '1', lunch: '0', evening: '0', night: '0', comment: '', position: 2)
+drugs22 = Drug.create!(name: 'KARDEGIC 75 mg, poudre pour solution buvable en sachet-dose', source: board_conciliation_sortie_patient11.sources.find_by(name: "BMO") , morning: '0', lunch: '1', evening: '0', night: '0', comment: '', position: 3)
+drugs23 = Drug.create!(name: 'ENALAPRIL EG 5 mg, comprimé sécable', source: board_conciliation_sortie_patient11.sources.find_by(name: "BMO") , morning: '1', lunch: '0', evening: '0', night: '0', comment: '', position: 4)
+drugs24 = Drug.create!(name: 'ALLOPURINOL ARROW 100 mg, comprimé', source: board_conciliation_sortie_patient11.sources.find_by(name: "BMO") , morning: '1', lunch: '0', evening: '0', night: '0', comment: '', position: 5)
+
+drugs25 = Drug.create!(name: 'ATORVASTATINE MYLAN PHARMA 10 mg, comprimé pelliculé', source: board_ordonnance_hopital_sortie.sources.find_by(name: "Ordonnance Hôpital") , morning: '1', lunch: '0', evening: '0', night: '0', comment: '', position: 1)
+drugs26 = Drug.create!(name: 'PREVISCAN 20 mg, comprimé quadrisécable', source: board_ordonnance_hopital_sortie.sources.find_by(name: "Ordonnance Hôpital") , morning: '1', lunch: '0', evening: '0', night: '0', comment: '', position: 2)
+drugs27 = Drug.create!(name: 'KARDEGIC 75 mg, poudre pour solution buvable en sachet-dose', source: board_ordonnance_hopital_sortie.sources.find_by(name: "Ordonnance Hôpital") , morning: '0', lunch: '1', evening: '0', night: '0', comment: '', position: 3)
+drugs28 = Drug.create!(name: 'ENALAPRIL EG 5 mg, comprimé sécable', source: board_ordonnance_hopital_sortie.sources.find_by(name: "Ordonnance Hôpital") , morning: '1', lunch: '0', evening: '0', night: '0', comment: '', position: 4)
+drugs29 = Drug.create!(name: 'BISOPROLOL QUIVER 1,25 mg, comprimé', source: board_ordonnance_hopital_sortie.sources.find_by(name: "Ordonnance Hôpital"), morning: '1', lunch: '0', evening: '0', night: '0', comment: '', position: 6)
+
+drugs30 = Drug.create!(name: 'ATORVASTATINE MYLAN PHARMA 10 mg, comprimé pelliculé', source: board_ordonnance_hopital_sortie.sources.find_by(name: "Ordonnance de sortie") , morning: '1', lunch: '0', evening: '0', night: '0', comment: '', position: 1)
+drugs31 = Drug.create!(name: 'PREVISCAN 20 mg, comprimé quadrisécable', source: board_ordonnance_hopital_sortie.sources.find_by(name: "Ordonnance de sortie") , morning: '1', lunch: '0', evening: '0', night: '0', comment: '', position: 2)
+drugs32 = Drug.create!(name: 'KARDEGIC 75 mg, poudre pour solution buvable en sachet-dose', source: board_ordonnance_hopital_sortie.sources.find_by(name: "Ordonnance de sortie") , morning: '0', lunch: '1', evening: '0', night: '0', comment: '', position: 3)
+drugs33 = Drug.create!(name: 'ENALAPRIL EG 5 mg, comprimé sécable', source: board_ordonnance_hopital_sortie.sources.find_by(name: "Ordonnance de sortie") , morning: '1', lunch: '0', evening: '0', night: '0', comment: '', position: 4)
+drugs34 = Drug.create!(name: 'ALLOPURINOL ARROW 100 mg, comprimé', source: board_ordonnance_hopital_sortie.sources.find_by(name: "Ordonnance de sortie") , morning: '1', lunch: '0', evening: '0', night: '0', comment: '', position: 5)
+drugs35 = Drug.create!(name: 'BISOPROLOL QUIVER 1,25 mg, comprimé', source: board_ordonnance_hopital_sortie.sources.find_by(name: "Ordonnance de sortie"), morning: '1', lunch: '0', evening: '0', night: '0', comment: '', position: 6)
+
+puts 'Finished drugs!'
+
 
 puts 'Creating boards...'
 # board1 = Board.create!(name: "Historique médicamenteux", patient: patient1)
@@ -65,6 +116,11 @@ board_sources2 = BoardSource.create!(board: board_history_patient1, source: sour
 # board_sources3 = BoardSource.create!(board: patient1.boards.first, source: sources4)
 # board_sources4 = BoardSource.create!(board: patient1.boards.first, source: sources5)
 # board_sources5 = BoardSource.create!(board: patient1.boards.first, source: sources6)
+board_sources6 = BoardSource.create!(board: board_history_patient10, source: sources7)
+board_sources6 = BoardSource.create!(board: board_history_patient10, source: sources8)
+board_sources8 = BoardSource.create!(board: board_conciliation_sortie_patient11, source: board_conciliation_sortie_patient11.sources.find_by(name: "BMO"))
+board_sources9 = BoardSource.create!(board: board_ordonnance_hopital_sortie, source: board_ordonnance_hopital_sortie.sources.find_by(name: "Ordonnance Hôpital"))
+board_sources10 = BoardSource.create!(board: board_ordonnance_hopital_sortie, source: board_ordonnance_hopital_sortie.sources.find_by(name: "Ordonnance de sortie"))
 
 puts 'Finished board_sources!'
 

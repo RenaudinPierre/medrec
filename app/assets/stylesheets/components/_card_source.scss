@@ -3,6 +3,7 @@
   border-radius: 8px;
   min-height: 80vh;
   min-width: 17vw;
+  max-width: 17vw;
   margin: 0px 5px;
   z-index: 1;
 }
@@ -29,4 +30,8 @@
   min-width: 17vw;
   margin: 0;
   z-index: 1;
+}
+
+.board-container-final .card-source {
+  background-color: $green;
 }
