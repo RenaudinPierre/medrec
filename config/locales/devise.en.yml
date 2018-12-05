@@ -7,14 +7,14 @@ en:
       send_instructions: "You will receive an email with instructions for how to confirm your email address in a few minutes."
       send_paranoid_instructions: "If your email address exists in our database, you will receive an email with instructions for how to confirm your email address in a few minutes."
     failure:
-      already_authenticated: "Vous êtes deja connecté."
+      already_authenticated: ""
       inactive: "Your account is not activated yet."
       invalid: "Adresse %{authentication_keys} ou Password invalide."
       locked: "Your account is locked."
       last_attempt: "You have one more attempt before your account is locked."
       not_found_in_database: "Invalid %{authentication_keys} or password."
       timeout: "Session expirée, reconnectez vous pour continuer."
-      unauthenticated: "Vous avez besoin de vous connecter pour poursuivre."
+      unauthenticated: ""
       unconfirmed: "You have to confirm your email address before continuing."
     mailer:
       confirmation_instructions:

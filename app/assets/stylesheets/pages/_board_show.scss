@@ -97,7 +97,7 @@
 .container-board-show {
   position: relative;
   margin-left: 60px !important;
-  width: 100% !important;
+  width: calc(100% - 80px);
 }
 
 .bouton-show {
