@@ -2,9 +2,9 @@ import ejs from 'ejs';
 import 'select2';
 
 function InitDivergences() {
-  // if (document.querySelector('.board-container-divergence')) {
+   if (document.querySelector('.card-final') != null) {
     document.querySelector('.btn-check-divergence').addEventListener("click", CheckDrugs);
-  // }
+   }
 }
 
 function isUniq(a) {

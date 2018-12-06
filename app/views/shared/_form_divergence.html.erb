@@ -1,11 +1,11 @@
 <div class="form-medicament form-divergence">
-  <%= simple_form_for(@divergence) do |f| %>
+  <%= simple_form_for(div) do |f| %>
     <%= f.error_notification %>
     <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
     <div class="form-inputs">
-        <%= f.input :error_type, as: :select, collection: @collection_error_type , selected: @collection_error_type.index(f.object.error_type) || 0 %>
-        <%= f.input :correction, as: :select, collection: [['', 0], ['Divergence intentionnelle', 1], ['Erreur médicamenteuse', 2]], selected: [['Divergence intentionnelle',1], ['Erreur médicamenteuse',2]].index(f.object.correction) || 0 %>
+        <%= f.input :error_type, as: :select, collection: @collection_error_type , selected: @collection_error_type.index(f.object.error_type) %>
+        <%= f.input :correction, as: :select, collection: [['', 0], ['Divergence intentionnelle', 1], ['Erreur médicamenteuse', 2]], selected: [['Divergence intentionnelle',1], ['Erreur médicamenteuse',2]].index(f.object.correction) %>
         <%= f.input :character, as: :select, collection: [['Pris en compte et corrigé',true], ['Non pris en compte', false]], selected: f.object.character == 'Pris en compte et corrigé' %>
     </div>
   <% end %>

@@ -56,7 +56,7 @@
                 <div class="card-invisible-divergence">
                   <% if @board.divergence.have_divergence?(p) %>
                     <div class="card-medicament" data-id="<%= @board.divergence.find_divergence_id(p) %>">
-                      <%= render "shared/form_divergence", divergence: @board.divergence.find_divergence(p) %>
+                      <%= render "shared/form_divergence", div: @board.divergence.find_divergence(p) %>
                     </div>
                   <% end %>
                 </div>
