@@ -13,7 +13,9 @@ const toogleNavbar = (e) => {
 
 
 const initNavbar = ()  => {
-  toogleSizeElem.addEventListener('click', toogleNavbar);
+  if (!document.getElementById('toogle-size-navbar') === null) {
+    toogleSizeElem.addEventListener('click', toogleNavbar);
+  }
 };
 
 export default initNavbar;
