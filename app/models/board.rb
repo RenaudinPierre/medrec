@@ -43,5 +43,6 @@ class Board < ApplicationRecord
   def type_conciliation
     return "entree" if self.name == "Conciliation d'entrée"
     return "sortie" if self.name == "Conciliation de sortie"
+    return "historique" if self.name == "Historique médicamenteux"
   end
 end

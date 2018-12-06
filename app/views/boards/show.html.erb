@@ -21,6 +21,7 @@
               <%= link_to "+", "", class: "btn-add-medicament", id:"btn_source_#{index + 1}" %>
             </div>
           <% end %>
+          <a class='btn btn-check-divergence source-title <%= @board.type_conciliation %>'>Analyse des divergences</a>
         </div>
         <%= link_to "+", '', class: "btn-add-source" %>
       </div>
