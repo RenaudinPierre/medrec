@@ -2,7 +2,7 @@
   text-decoration: none;
   color: $black;
   background-color: white;
-  border: 1px solid $blue;
+  border: 1px solid $black;
   padding: 3px 14px;
   border-radius: 50px;
   font-weight: lighter;
@@ -13,4 +13,5 @@
     background-color: $blue;
     color: white;
     font-weight: bold;
+    border: none;
   }
