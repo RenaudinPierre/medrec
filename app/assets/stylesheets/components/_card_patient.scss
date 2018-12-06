@@ -24,12 +24,10 @@
 
 .gray-resize {
   color: $gray;
-  font-size: 0.8em;
+  font-size: 1em;
 }
 
-.padding-card-patient {
-  padding-top: 15px;
-}
+
 
 
 .padding-none {
@@ -44,8 +42,10 @@
 
 
 .padding-card-patient {
-  height:100%;
-  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
   align-items: center;
   text-align: center;
 }
