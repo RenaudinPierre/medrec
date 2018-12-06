@@ -56,7 +56,7 @@
                 <div class="card-invisible-divergence">
                   <% if @board.divergence.have_divergence?(p) %>
                     <div class="card-medicament" data-id="<%= @board.divergence.find_divergence_id(p) %>">
-                      <%= render "shared/form_divergence", divergence: @board.divergence.find_divergence(p) %>
+                      <%= render "shared/form_divergence", div: @board.divergence.find_divergence(p) %>
                     </div>
                   <% end %>
                 </div>
@@ -70,7 +70,7 @@
       <div class="board-container-final">
         <div class="card-source" id="source_<%= @board.nb_source_final %>" >
           <% if @board.final.name == "BMO" %>
-            <a class='btn btn-creation-bmo source-title <%= @board.type_conciliation %>'><%= @board.final.name %></a>
+            <a class='card-final btn btn-creation-bmo source-title btn-check-divergence <%= @board.type_conciliation %>'><%= @board.final.name %></a>
           <% else %>
             <p class="card-final source-title"><%= @board.final.name %></p>
           <% end %>

@@ -25,7 +25,7 @@ class Board < ApplicationRecord
   end
 
   def divergence
-    return self.sources.where(type: "SourceDivergence").first
+    return self.sources.find_by(type: "SourceDivergence")
   end
 
   def sourcedrugs
