@@ -5,18 +5,24 @@
     display: flex;
     justify-content: space-between;
     text-align: center;
+    align-items: center;
 }
 
 .haut-page-right {
+  width: 80%;
   text-align: center;
+}
 
+.haut-page-left {
+  width: 20%;
+  text-align: center;
 }
 
 .container-print {
   margin: 50px auto;
   width: 80vw;
-  min-height: 90vh;
-  border: 1px solid red;
+  min-height: 40vh;
+  // border: 1px solid red;
 }
 
 .card-medicament-print {
@@ -54,7 +60,7 @@
 .bas-page {
   display: flex;
   justify-content: space-between;
-  position: fixed;
+
   bottom: 50px;
   width: 60%;
   margin: 0 10%;
@@ -66,4 +72,43 @@
 
 .bas-page-right {
   text-align: left;
+}
+
+
+.border-container-medicament-print {
+  margin-top: 50px;
+}
+
+.tableau-medicament-print {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid black;
+  justify-content: space-between;
+  font-size: 0.8em;
+
+  p {
+    margin: 5px 0;
+  }
+}
+
+.dose-medicament {
+  display: flex;
+  flex-direction: row;
+  width: 20%;
+  justify-content: space-between;
+}
+
+.nom-medicament-print {
+  width: 50%;
+  font-weight: bold;
+  padding-left: 10px;
+}
+
+.medicament-commentaire-print {
+  width: 30%;
+  margin: 0 20px;
+}
+
+.presentation-patient {
+  margin-top: 50px;
 }
