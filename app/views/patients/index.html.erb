@@ -17,15 +17,14 @@
           <div class="row">
             <div class="col-xs-12 col-sm-6 col-ml-6 padding-card-patient">
                 <i class="fa fa-user"></i>
-                <span class="bold-resize"><%= patient.first_name %> <%= patient.last_name %></span>
+                <p class="bold-resize"><%= patient.first_name %> <%= patient.last_name %></p>
                 <div class="in-line-naissance">
                   <p>Né le :</p>
                   <p class="gray-resize"><%= l(patient.birthdate, format: '%d / %m / %Y') %></p>
                 </div>
-                <div class="in-line">
-                  <p>Date d'hospitalisation :</p>
-                  <p><span class="blue-resize"><%= l(patient.entrancedate, format: '%A %d %B %Y') %></span></p>
-                </div>
+                <p>Date d'hospitalisation :</p>
+                <p class="blue-resize"><%= l(patient.entrancedate, format: '%A %d %B %Y') %></p>
+
             </div>
             <div class="col-xs-12 col-sm-6 padding-card-patient">
               <% patient.boards.each do |board| %>
