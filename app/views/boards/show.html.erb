@@ -66,11 +66,12 @@
         </div>
       </div>
     <% end %>
+    <% debugger %>
     <div class="col-xs-3 padding-none">
       <div class="board-container-final">
         <div class="card-source" id="source_<%= @board.nb_source_final %>" >
           <% if @board.final.name == "BMO" %>
-            <a class='btn btn-check-divergence source-title <%= @board.type_conciliation %>'><%= @board.final.name %></a>
+            <a class='btn btn-creation-bmo source-title <%= @board.type_conciliation %>'><%= @board.final.name %></a>
           <% else %>
             <p class="card-final source-title"><%= @board.final.name %></p>
           <% end %>
@@ -85,7 +86,7 @@
               </div>
             <% end %>
           </div>
-          <%= link_to "+", "", class: "btn-add-medicament", id:"btn_source_#{ @board.nb_source_final }" %>
+
         </div>
       </div>
       <div class="bouton-show">

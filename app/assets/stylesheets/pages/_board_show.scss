@@ -1,12 +1,15 @@
 .board-container {
   display:flex;
   overflow-x:scroll;
+  overflow-y: hidden;
   justify-content: left;
+  min-height:calc(100vh - 50px);
 }
 
 .board-container-final {
   display:flex;
   justify-content: center;
+  min-height:calc(100vh - 50px);
 }
 .board-container-divergence {
   background-color: white;
@@ -17,6 +20,9 @@
 }
 
 .btn-add-source {
+  position: absolute;
+  bottom: 15px;
+  right: 0px;
   background-color: $blue;
   color: white;
   padding: 1px 6px;
@@ -24,6 +30,7 @@
   margin: 5px;
   text-decoration: none;
   border: 1px solid $blue;
+  z-index:5;
 }
 
 .btn-add-source:hover {
@@ -37,6 +44,8 @@
 }
 
 .btn-add-medicament {
+
+
   background-color: $purple;
   color: white;
   padding: 1px 6px;
@@ -103,6 +112,7 @@
   position: relative;
   margin-left: 60px !important;
   width: calc(100% - 80px);
+
 }
 
 .bouton-show {
@@ -126,11 +136,11 @@
   padding: 0px 10px;
   width: 100%;
   margin: 0;
-  color: white;
+  color: $black;
   border-radius: 4px;
-  font-weight: regular;
+  font-weight: bold;
   text-align: left;
-  background: $blue;
+  // background: $purple;
   opacity: 1;
   transition: background 0.3s ease;
   text-align: center;
@@ -143,9 +153,9 @@
   margin: 0;
   color: white;
   border-radius: 4px;
-  font-weight: regular;
+  font-weight: bold;
   text-align: left;
-  background: $blue;
+  // background: $blue;
   opacity: 1;
   transition: background 0.3s ease;
   text-align: center;
