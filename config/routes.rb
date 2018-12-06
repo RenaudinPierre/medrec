@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
-  root to: 'pages#home'
 
+  authenticated :user do
+    root :to => "patients#index"
+  end
+
+  root to: 'pages#home'
 
   devise_for :users
 
-  resources :patients, except: [ :show, :edit, :update, :destroy ]
+  resources :patients, except: [ :show, :edit, :update, :destroy, :index ]
   resources :boards, only: [ :show ] do
     get 'print'
     resources :sources, only: [ :create]
