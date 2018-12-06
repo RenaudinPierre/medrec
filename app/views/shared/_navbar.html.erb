@@ -1,17 +1,18 @@
-<% if user_signed_in? %>
+--<%= @hide_navbar %>--
+<% if user_signed_in? && !@hide_navbar %>
   <div class="navbar-wagon navbar-fixed-left navbar-fixed-top navbar-small" id="main-nav">
     <div class="logo">
-      <%= link_to patients_path, class: "navbar-wagon-brand resize-navbar-small" do %>
+      <%= link_to root_path, class: "navbar-wagon-brand resize-navbar-small" do %>
         <%= image_tag "icon.svg", height: 50 %>
       <% end %>
     </div>
     <div class="liens remove-puces">
       <div>
         <div class="align-navbar-card">
-          <%= link_to patients_path do   %>
+          <%= link_to root_path do   %>
           <i class="fa fa-user"></i>
           <% end %>
-          <p id="toogle-font-user" class="hidden"><%= link_to "Patients", patients_path %></p>
+          <p id="toogle-font-user" class="hidden"><%= link_to "Patients", root_path %></p>
         </div>
         <div class="align-navbar-card">
           <%= link_to destroy_user_session_path, method: :delete do  %>
