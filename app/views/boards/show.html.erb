@@ -70,7 +70,7 @@
       <div class="board-container-final">
         <div class="card-source" id="source_<%= @board.nb_source_final %>" >
           <% if @board.final.name == "BMO" %>
-            <a class='btn btn-creation-bmo source-title btn-check-divergence<%= @board.type_conciliation %>'><%= @board.final.name %></a>
+            <a class='card-final btn btn-creation-bmo source-title btn-check-divergence <%= @board.type_conciliation %>'><%= @board.final.name %></a>
           <% else %>
             <p class="card-final source-title"><%= @board.final.name %></p>
           <% end %>
