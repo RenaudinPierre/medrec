@@ -1,4 +1,4 @@
-
+import swal from 'sweetalert';
 // const boardId = () => {
 //   document.querySelector('.board-container').dataset.id;
 // };
@@ -73,6 +73,7 @@ const saveSource = (allSources) => {
      })
      .then((data) => {
       console.log(data)
+      swal(` ${document.querySelector('.name-board').innerText} sauvegardé!`);
       // alert(`${document.querySelector('.name-board').innerText} sauvegardé`)
      });
 }
