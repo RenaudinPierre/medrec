@@ -9,7 +9,7 @@ const saveSource = (allSources) => {
   let allDrugs = document.querySelectorAll(".card-medicament");
   allSources.forEach((sourceElem) => {
     let sourceType = sourceElem.querySelector('.source-title').innerText;
-    if (sourceType === "Analyse des divergences") {
+    if (sourceType === "Divergences") {
       sourceType = "SourceDivergence"
     } else {
       sourceType = "SourceDrug"
@@ -72,7 +72,8 @@ const saveSource = (allSources) => {
      body: JSON.stringify(data)
      })
      .then((data) => {
-      // console.log(data)
+      console.log(data)
+      // alert(`${document.querySelector('.name-board').innerText} sauvegardé`)
      });
 }
 

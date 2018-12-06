@@ -19,6 +19,10 @@ class BoardComponentsCreator
 
   def create_sources_with_cards
     params[:sources].each do |source_params|
+      puts "
+
+      je suis dans la boucle"
+      p source_params
       source = Source.create!(
         name: source_params[:name],
         final_source: source_params[:final_source],
