@@ -1,10 +1,9 @@
 <div class="form-medicament form-divergence">
-  <p>Divergence</p>
   <form class="simple_form new_divergence" novalidate="novalidate" action="/divergences" accept-charset="UTF-8" method="post">
     <!-- <input name="utf8" type="hidden" value="✓"> -->
     <!-- <input type="hidden" name="authenticity_token" value="DNbiHRmyW55hpdo84q4BP2h1SbJXQNJwAaeB1ZsVepyYpvIMfhVPFb6bJ4rkA9eZChJwKgjidJdm6ACjsPEzzw=="> -->
     <div class="form-inputs">
-      <div class="form-group select optional divergence_error_type"><label class="form-control-label select optional" for="divergence_error_type">Status</label>
+      <div class="form-group select optional divergence_error_type">
         <select class="form-control select optional" name="divergence[error_type]" id="divergence_error_type">
           <option selected="selected" value="0"></option>
           <option value="1">poursuivi</option>
@@ -19,17 +18,18 @@
           <option value="10">médicament ajouté non documenté</option>
         </select>
       </div>
-      <div class="form-group select optional divergence_correction"><label class="form-control-label select optional" for="divergence_correction">Divergence</label>
+      <div class="form-group select optional divergence_correction">
         <select class="form-control select optional" name="divergence[correction]" id="divergence_correction">
           <option selected="selected" value="0"></option>
           <option value="1">Divergence intentionnelle</option>
           <option value="2">Erreur médicamenteuse</option>
         </select>
       </div>
-      <div class="form-group select required divergence_character"><label class="form-control-label select required" for="divergence_character">Décision <abbr title="required">*</abbr></label>
+      <div class="form-group select required divergence_character">
         <select class="form-control select required" name="divergence[character]" id="divergence_character">
+          <option selected="selected" value="0"></option>
           <option value="true">Pris en compte et corrigé</option>
-          <option selected="selected" value="false">Non pris en compte</option>
+          <option value="false">Non pris en compte</option>
         </select>
       </div>
     </div>
