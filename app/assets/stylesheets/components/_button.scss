@@ -57,23 +57,43 @@
   width: 100%;
   margin: 0;
   color: white;
-  border-radius: 4px;
-  font-weight: regular;
+  border-radius: 8px;
+  font-weight: bold;
   text-align: left;
-  background: $blue;
+  // background: $blue;
   opacity: 1;
   transition: background 0.3s ease;
   text-align: center;
 
   &:hover {
     opacity: 1;
-    background: white;
+    background-color: white;
     text-decoration: none;
-    color: $blue;
-    border-color: $blue;
+    color: $orange;
+    border-color: $orange;
   }
-
-
-
 }
 
+
+.btn-creation-bmo {
+  padding: 0px 10px;
+  font-size: 1em;
+  width: 100%;
+  margin: 0;
+  color: white;
+  border-radius: 8px;
+  font-weight: bold;
+  text-align: left;
+  // background: $blue;
+  opacity: 1;
+  transition: background 0.3s ease;
+  text-align: center;
+
+  &:hover {
+    opacity: 1;
+    background-color: white;
+    text-decoration: none;
+    color: $green;
+    border-color: $green;
+  }
+}

@@ -1,5 +1,5 @@
 .card-medicament {
-  background-color: $gray-light;
+  background-color: $white;
   color: white;
   opacity: 1;
   border-radius: 8px;
@@ -8,6 +8,7 @@
   margin: auto;
   font-size: 10px;
   z-index: 4;
+  border: 1px solid $gray;
 }
 
 .card-medicament-final {
@@ -28,46 +29,51 @@
   border-radius: 8px;
   box-shadow: none;
   border-color: $gray;
+  background-color: $white;
 }
 
 #drug_morning {
-  width: 35px;
+  width: 40px;
   margin: 0 0.2em;
   font-size: 10px;
   height: 2.5em;
   border-radius: 8px;
   box-shadow: none;
   border-color: $gray;
+  background-color: $white;
 }
 
 #drug_lunch {
-  width: 35px;
+  width: 40px;
   margin: 0 0.2em;
   font-size: 10px;
   height: 2.5em;
   border-radius: 8px;
   box-shadow: none;
   border-color: $gray;
+  background-color: $white;
 }
 
 #drug_evening {
-  width: 35px;
+  width: 40px;
   margin: 0 0.2em;
   font-size: 10px;
   height: 2.5em;
   border-radius: 8px;
   box-shadow: none;
   border-color: $gray;
+  background-color: $white;
 }
 
 #drug_night {
-  width: 35px;
+  width: 40px;
   margin: 0 0.2em;
   font-size: 10px;
   height: 2.5em;
   border-radius: 8px;
   box-shadow: none;
   border-color: $gray;
+  background-color: $white;
 }
 
 .inline-medicament {
@@ -75,6 +81,8 @@
   flex-direction: row;
   height: 3em;
   align-items: center;
+  justify-content: space-between;
+
 
 }
 
@@ -83,6 +91,8 @@
   border-radius: 8px;
   box-shadow: none;
   border-color: $gray;
+  border: none;
+  background-color: $white;
 }
 
 .form-group {
@@ -154,8 +164,8 @@
 }
 
 
-
-
+// bouton ajout de médicament source final
+// <%= link_to "+", "", class: "btn-add-medicament", id:"btn_source_#{ @board.nb_source_final }" %>
 
 
 
