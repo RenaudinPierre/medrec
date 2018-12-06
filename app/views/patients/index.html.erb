@@ -1,5 +1,4 @@
 <div class="container">
-
   <div class="recherche">
       <span class="glyphicon glyphicon-search"></span>
       <span>
@@ -11,28 +10,28 @@
         <% end %>
       </span>
   </div>
-
   <div class="row ">
+    <h3 >Mes Patients</p></h3>
     <% @patients.sort_by{ |patient| patient.entrancedate }.reverse.each do |patient| %>
       <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 padding-none">
         <div class="card-patient">
           <div >
             <i class="fa fa-user"></i>
-            <span id="bold-resize"><%= patient.first_name %> <%= patient.last_name %>     </span>
-            <span id="gray-resize"><%= l(patient.birthdate, format: '%d / %m / %Y') %></span>
+            <span class="bold-resize"><%= patient.first_name %> <%= patient.last_name %>     </span>
+            <span class="gray-resize"><%= l(patient.birthdate, format: '%d / %m / %Y') %></span>
           </div>
           <div class="row">
             <div class="col-xs-12 col-sm-6 col-ml-6 padding-card-patient">
               <div >
                 <p> Date d'hospitalisation</p>
-                <p id="blue-resize"><%= l(patient.entrancedate, format: '%A %d %B %Y') %></p>
+                <p class="blue-resize"><%= l(patient.entrancedate, format: '%A %d %B %Y') %></p>
               </div>
             </div>
             <% patient.boards.each do |board| %>
               <div class="col-xs-12 col-sm-6 padding-card-patient">
                 <div class="board-name">
                   <p><%= link_to board.name, board %></p>
-                  <p id="blue-resize"><%= l(board.updated_at, format: ' %A %d %B %Y') %></p>
+                  <p class="blue-resize"><%= l(board.updated_at, format: ' %A %d %B %Y') %></p>
                 </div>
               </div>
             <% end %>
