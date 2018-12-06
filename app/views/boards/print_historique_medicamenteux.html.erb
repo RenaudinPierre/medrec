@@ -13,14 +13,34 @@
     <p>Votre patient(e) <%= @board.patient.first_name %> <%= @board.patient.last_name %>, née le <%= @board.patient.birthdate %>, a été hospitalisé dans le service de traumatologie. Nous avons établi la liste des médicaments pris en routine à son domicile. Vous trouverez ci-dessous les modifications de traitements instauré par l'équipe médicale hospitalières ainsi que d'éventuelles explications.</p>
   </div>
 
-  <% @board.final.drugs.each do |drug| %>
-    <div class="toto">
-      <p><%= drug.name %></p>
-      <p><%= drug.morning %></p>
+    <div class="border-container-medicament-print">
+      <% @board.final.drugs.each do |drug| %>
+        <div class="tableau-medicament-print">
+          <div class="nom-medicament-print">
+            <p><%= drug.name %></p>
+          </div>
+          <div class="dose-medicament">
+            <p><%= drug.morning %></p>
+            <p> - <%= drug.lunch %></p>
+            <p> - <%= drug.evening %></p>
+            <p> - <%= drug.night %></p>
+          </div>
+          <div class="medicament-commentaire-print">
+            <p><%= drug.comment %></p>
+          </div>
+        </div>
+      <% end %>
     </div>
-  <% end %>
 
-  <div class="bas-page">
+
+
+  <div class="bouton-show">
+    <a onclick='window.print(); return false;' class='btn btn-treehouse-small generer-pdf fa fa-file-pdf-o'></a>
+    <%= link_to '', root_path, class: 'btn btn-treehouse-small fa fa-sign-out generer-pdf' %>
+  </div>
+</div>
+
+<div class="bas-page">
     <div class="bas-page-gauche">
       <p>Docteur Bernard Roy</p>
       <p>Service de Traumatologie</p>
@@ -31,7 +51,6 @@
     </div>
 
   </div>
-
   <div class="bouton-show">
     <a onclick='window.print(); return false;' class='btn btn-treehouse-small generer-pdf fa fa-file-pdf-o'></a>
   </div>
