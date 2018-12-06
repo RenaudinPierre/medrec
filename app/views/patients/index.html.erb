@@ -19,10 +19,10 @@
                 <i class="fa fa-user"></i>
                 <p class="bold-resize"><%= patient.first_name %> <%= patient.last_name %></p>
                 <div class="in-line-naissance">
-                  <p>Né le :</p>
+                  <p>Né le :&nbsp</p>
                   <p class="gray-resize"><%= l(patient.birthdate, format: '%d / %m / %Y') %></p>
                 </div>
-                <p>Date d'hospitalisation :</p>
+                <p>Date d'hospitalisation</p>
                 <p class="blue-resize"><%= l(patient.entrancedate, format: '%A %d %B %Y') %></p>
 
             </div>

@@ -4,6 +4,17 @@
   <title>La page que vous cherchez n'existe pas (404)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
+  body {
+    height: -webkit-fill-available;
+  }
+
+  .aside {
+      height: -webkit-fill-available;
+      display: flex;
+      justify-content: center;
+      flex-direction: row;
+      align-items: center;
+  }
 
   </style>
  </head>
@@ -13,14 +24,15 @@
 <html>
   <body>
     <div class="404-page">
-  <div class="aside">
-    <div class="aside-logo">
-        <img height="80" src="/assets/logo-90570030fb910cf0416e1366b8b52d3a63a607d2f62305e8285f30fdc4794f8c.svg" />
+      <div class="aside">
+        <div class="aside-logo">
+            <img height="80" src="/assets/logo-90570030fb910cf0416e1366b8b52d3a63a607d2f62305e8285f30fdc4794f8c.svg" />
+        </div>
+        <div>
+          <p>La page que vous cherchez n'est plus ici !</p>
+          <p>Vous n'etes peut etre pas sur la bonne page.</p>
+        </div>
+      </div>
     </div>
-  </div>
-  <div>
-    <p>La page que vous cherchez n'est plus ici !</p>
-    <p>Vous n'etes peut etre pas sur la bonne page.</p>
-  </div>
   </body>
 </html>
