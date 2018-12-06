@@ -54,8 +54,8 @@
 .btn-check-divergence {
   padding: 0px 10px;
   font-size: 1em;
-  width: 100%;
-  margin: 0;
+  width: calc(100% - 10px);
+  margin: 5px 5px;
   color: white;
   border-radius: 8px;
   font-weight: bold;
@@ -69,8 +69,8 @@
     opacity: 1;
     background-color: white;
     text-decoration: none;
-    color: $orange;
-    border-color: $orange;
+    color: #87BFFF;
+    // border-color: $orange;
   }
 }
 

@@ -99,6 +99,10 @@ const CheckDrugs = (event) => {
           dataType: 'json'
         }
       });
+      card_final[pas_vertical].classList.add('card');
+      card_final.forEach((card) => {
+        card.classList.add('card');
+      });
     } else {
       // card_divergences[pas_vertical].classList.add('divergence');
       if (document.querySelector('.historique') === null) {

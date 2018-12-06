@@ -13,25 +13,12 @@
     <p>Votre patient(e) <%= @board.patient.first_name %> <%= @board.patient.last_name %>, née le <%= @board.patient.birthdate %>, a été hospitalisé dans le service de traumatologie. Nous avons établi la liste des médicaments pris en routine à son domicile. Vous trouverez ci-dessous les modifications de traitements instauré par l'équipe médicale hospitalières ainsi que d'éventuelles explications.</p>
   </div>
 
-
-
-
-
-
-  <% for p in (1..@board.height) %>
-    <div class="card-invisible-print" id="source_<%= @board.sources.length %>_card_<%= p %>">
-      <% if @board.final.have_drug?(p) %>
-        <div class="card-medicament-print">
-          <%= render "shared/form_medicament", drug: @board.final.find_drug(p) %>
-        </div>
-      <% end %>
+  <% @board.final.drugs.each do |drug| %>
+    <div class="toto">
+      <p><%= drug.name %></p>
+      <p><%= drug.morning %></p>
     </div>
   <% end %>
-
-
-
-
-
 
   <div class="bas-page">
     <div class="bas-page-gauche">
@@ -46,7 +33,7 @@
   </div>
 
   <div class="bouton-show">
-        <a onclick='window.print(); return false;' class='btn btn-treehouse-small generer-pdf fa fa-file-pdf-o'></a>
-        <%= link_to '', root_path, class: 'btn btn-treehouse-small fa fa-sign-out generer-pdf' %>
-      </div>
+    <a onclick='window.print(); return false;' class='btn btn-treehouse-small generer-pdf fa fa-file-pdf-o'></a>
+    <%= link_to '', root_path, class: 'btn btn-treehouse-small fa fa-sign-out generer-pdf' %>
+  </div>
 </div>

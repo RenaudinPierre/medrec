@@ -1,6 +1,6 @@
 .card-source {
   background-color: $gray-light;
-  border-radius: 8px;
+  border-radius: $base-border-radius;
   min-height: 80vh;
   min-width: 17vw;
   max-width: 17vw;
@@ -10,7 +10,7 @@
 
 .card-source-final {
   background-color: $green;
-  border-radius: 8px;
+  border-radius: $base-border-radius;
   min-height: 80vh;
   width: 17vw;
   margin: 0px 2px;
@@ -24,8 +24,9 @@
 }
 
 .card-source-divergence {
-  background-color: #FFBC86;
-  border-radius: 8px;
+  // background-color: #FFBC86;
+  background-color: #87BFFF;
+  border-radius: $base-border-radius;
   min-height: 80vh;
   min-width: 17vw;
   margin: 0;

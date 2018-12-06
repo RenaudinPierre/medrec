@@ -75,8 +75,7 @@
 .card-invisible {
   background-color: $gray-light;
   opacity: 1;
-  border-radius: 8px;
-  height: 15vh;
+  border-radius: $base-border-radius;
   margin: 5px;
   z-index: 3;
   // display: flex;
@@ -88,10 +87,11 @@
 .card-invisible-divergence {
   background-color: $gray-light;
   opacity: 1;
-  border-radius: 8px;
-  height: 15vh;
+  border-radius: $base-border-radius;;
+  height: $card-height;
   margin: 5px;
   z-index: 3;
+  padding: 5px;
   // display: flex;
   // align-items: center;
   // justify-content: center;
@@ -100,7 +100,7 @@
 .card-invisible-final {
   background-color: $black;
   opacity: 1;
-  border-radius: 8px;
+  border-radius: $base-border-radius;;
   height: 15vh;
   margin: 5px;
   z-index: 3;
@@ -131,14 +131,13 @@
 
 .source-name {
   text-align: center;
+  margin: 5px 0;
   padding: 0px 10px;
   width: 100%;
-  margin: 0;
   color: $black;
   border-radius: 4px;
   font-weight: bold;
   text-align: left;
-  // background: $purple;
   opacity: 1;
   transition: background 0.3s ease;
   text-align: center;
@@ -148,7 +147,7 @@
   text-align: center;
   padding: 0px 10px;
   width: 100%;
-  margin: 0;
+  margin: 5px 0;
   color: white;
   border-radius: 4px;
   font-weight: bold;

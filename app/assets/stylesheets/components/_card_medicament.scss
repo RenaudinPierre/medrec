@@ -1,10 +1,10 @@
 .card-medicament {
-  background-color: $white;
+  background-color: white;
   color: white;
   opacity: 1;
-  border-radius: 8px;
-  padding: 2px;
-  height: 15vh;
+  border-radius: $base-border-radius;
+  height: 100%;
+  padding: $card-inner-padding;
   margin: auto;
   font-size: 10px;
   z-index: 4;
@@ -15,8 +15,9 @@
   background-color: $gray-light;
   color: white;
   opacity: 1;
-  border-radius: 8px;
-  padding: 2px;
+  height: 100%;
+  border-radius: $base-border-radius;
+  padding: $card-inner-padding;
   height: 15vh;
   margin: auto;
   font-size: 10px;
@@ -25,78 +26,67 @@
 
 #drug_name {
   font-size: 10px;
-  height: 2.5em;
-  border-radius: 8px;
   box-shadow: none;
   border-color: $gray;
-  background-color: $white;
 }
 
 #drug_morning {
   width: 90%;
   margin: 0 2px;
-  font-size: 10px;
-  height: 2.5em;
-  border-radius: 8px;
   box-shadow: none;
   border-color: $gray;
-  background-color: $white;
   text-align: center;
 }
 
 #drug_lunch {
   width: 90%;
   margin: 0 2px;
-  font-size: 10px;
-  height: 2.5em;
-  border-radius: 8px;
   box-shadow: none;
   border-color: $gray;
-  background-color: $white;
   text-align: center;
 }
 
 #drug_evening {
   width: 90%;
   margin: 0 2px;
-  font-size: 10px;
-  height: 2.5em;
-  border-radius: 8px;
   box-shadow: none;
   border-color: $gray;
-  background-color: $white;
   text-align: center;
 }
 
 #drug_night {
   width: 90%;
   margin: 0 2px;
-  font-size: 10px;
-  height: 2.5em;
-  border-radius: 8px;
   box-shadow: none;
   border-color: $gray;
-  background-color: $white;
   text-align: center;
 }
 
 .inline-medicament {
   display: flex;
   flex-direction: row;
-  height: 3em;
   align-items: center;
   justify-content: space-between;
+  margin: 7px 0;
+  font-size: 14px !important;
+}
 
-
+.form-medicament .form-control {
+  font-size: inherit;
+  padding: 0;
+  height: 25px;
+  color: #666;
+  border-radius: $base-border-radius;
+  background: white;
 }
 
 #drug_comment {
-  font-size: 10px;
-  border-radius: 8px;
+  border-radius: $base-border-radius;
   box-shadow: none;
   border-color: $gray;
   border: none;
-  background-color: $white;
+  font-size: 14px;
+  height: 50px;
 }
 
 .form-group {
@@ -107,9 +97,7 @@
 // CSS pour le formulaire new-medicament en JS
 
 #drug_name {
-  font-size: 10px;
-  height: 2.5em;
-  border-radius: 8px;
+  border-radius: $base-border-radius;
   box-shadow: none;
   border-color: $gray;
   color: black;
@@ -118,9 +106,6 @@
 #morning {
   width: 35px;
   margin: 0 0.2em;
-  font-size: 10px;
-  height: 2.5em;
-  border-radius: 8px;
   box-shadow: none;
   border-color: $gray;
   color: black;
@@ -129,9 +114,6 @@
 #lunch {
   width: 35px;
   margin: 0 0.2em;
-  font-size: 10px;
-  height: 2.5em;
-  border-radius: 8px;
   box-shadow: none;
   border-color: $gray;
   color: black;
@@ -141,8 +123,6 @@
   width: 35px;
   margin: 0 0.2em;
   font-size: 10px;
-  height: 2.5em;
-  border-radius: 8px;
   box-shadow: none;
   border-color: $gray;
   color: black;
@@ -152,8 +132,6 @@
   width: 35px;
   margin: 0 0.2em;
   font-size: 10px;
-  height: 2.5em;
-  border-radius: 8px;
   box-shadow: none;
   border-color: $gray;
   color: black;
@@ -161,7 +139,6 @@
 
 #comment {
   font-size: 10px;
-  border-radius: 8px;
   box-shadow: none;
   border-color: $gray;
   color: black;

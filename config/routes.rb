@@ -18,7 +18,7 @@ Rails.application.routes.draw do
     resources :drugs, only: [ :create ]
   end
 
-  resources :divergences, only: [ :create ]
+  resources :divergences, only: [ :create, :update ]
 
   resources :drugs, only: [ :update ]
 
