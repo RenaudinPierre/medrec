@@ -1,22 +1,17 @@
 <!-- <script type="text/javascript" src="../components/select2"></script> -->
 
-<div class="card card-invisible" id="source_<%= pas %>_card_<%= max_card_in_source + 1 %>">
+<div class="card-invisible card " id="source_<%= pas %>_card_<%= max_card_in_source + 1 %>">
   <div class="card-medicament" style="background-color: $gray;">
     <div class="form-medicament">
 
       <div class="form-inputs">
         <select class="api-card-drugs name-medicament" style="width: 100%"></select>
         <div class="inline-medicament">
-          <label for="morning"></label>
           <input class="form-control" type="text" value="0" id="drug_morning">
-          <label for="lunch"></label>
           <input class="form-control" type="text" value="0" id="drug_lunch">
-          <label for="evening"></label>
           <input class="form-control" type="text" value="0" id="drug_evening">
-          <label for="nigth"></label>
           <input class="form-control" type="text" value="0" id="drug_night">
         </div>
-        <label for="comment"></label>
         <textarea class="form-control" id="drug_comment" rows="2" placeholder="Commentaire..."></textarea>
 
       </div>

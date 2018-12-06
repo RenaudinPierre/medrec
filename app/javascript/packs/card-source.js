@@ -33,7 +33,7 @@ function AddSource(sourceName) {
   last_button.setAttribute("id", `btn_source_${number + 2}`);
   let pas =0;
   for (pas = 0; pas < max_card_in_source ; pas++) {
-    let element = `<div class="card-invisible" id="source_${number + 1}_card_${pas + 1}"></div>`;
+    let element = `<div class="card-invisible card" id="source_${number + 1}_card_${pas + 1}"></div>`;
     last_card.querySelector('.card-source-invisible').insertAdjacentHTML("beforeend", element);
     final_card.querySelectorAll('.card-invisible')[pas].setAttribute("id", `source_${number + 2}_card_${pas + 1}`);
   }

@@ -23,14 +23,14 @@ const AddMedicaments = (event) => {
       });
       // element = `<div class="card-invisible" id="source_${pas}_card_${max_card_in_source + 1}"><div class="card-medicament" style="background-color: blue;">Medicament</div></div>`;
     } else {
-      element = `<div class="card-invisible" id="source_${pas}_card_${max_card_in_source + 1}"></div>`;
+      element = `<div class="card-invisible card" id="source_${pas}_card_${max_card_in_source + 1}"></div>`;
     }
     console.log(`${element}`);
     card_drugs_sources[pas - 1].insertAdjacentHTML("beforeend", element);
   }
   if (document.querySelector('.board-container-divergence')) {
     const card_divergence = document.querySelector('.card-source-invisible-divergence');
-    card_divergence.insertAdjacentHTML("beforeend", '<div class="card-invisible-divergence"></div>');
+    card_divergence.insertAdjacentHTML("beforeend", '<div class="card-invisible-divergence card"></div>');
   }
   $('.api-card-drugs').select2({
     ajax: {
