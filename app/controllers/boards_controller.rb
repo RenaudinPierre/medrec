@@ -1,5 +1,6 @@
 class BoardsController < ApplicationController
   before_action :new_patient, only: [:show, :print]
+  before_action :hide_navbar, only: :print
 
   def show
     @board = Board.find(params[:id])
@@ -22,6 +23,19 @@ class BoardsController < ApplicationController
   end
 
   def print
+    @collection_error_type = [
+      ['', 0],
+      ['poursuivi', 1],
+      ['suspendu', 2],
+      ['médicament arrêté documenté', 3],
+      ['médicament modifié documenté', 4],
+      ['médicament substitué documenté', 5],
+      ['médicament ajouté documenté', 6],
+      ['médicament arrêté non documenté', 7],
+      ['médicament modifié non documenté', 8],
+      ['médicament substitué non documenté', 9],
+      ['médicament ajouté non documenté', 10]
+    ]
     @board = Board.find(params[:board_id])
     @drug = Drug.new
     @divergence = Divergence.new

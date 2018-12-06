@@ -20,7 +20,7 @@ class PatientsController < ApplicationController
     @patient = Patient.new(patient_params)
 
     if @patient.save
-      redirect_to patients_path
+      redirect_to root_path
     else
       render :new
     end

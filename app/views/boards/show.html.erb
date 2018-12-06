@@ -70,7 +70,7 @@
       <div class="board-container-final">
         <div class="card-source" id="source_<%= @board.nb_source_final %>" >
           <% if @board.final.name == "BMO" %>
-            <a class='btn btn-creation-bmo source-title <%= @board.type_conciliation %>'><%= @board.final.name %></a>
+            <a class='btn btn-creation-bmo source-title btn-check-divergence<%= @board.type_conciliation %>'><%= @board.final.name %></a>
           <% else %>
             <p class="card-final source-title"><%= @board.final.name %></p>
           <% end %>
@@ -91,7 +91,7 @@
       <div class="bouton-show">
         <a class='btn btn-treehouse-small generer-pdf fa fa-file-pdf-o' target="_blank" href="<%= board_print_path(@board) %>"></a>
         <i class="fa fa-floppy-o btn btn-treehouse-small generer-pdf" aria-hidden="true" id="save-all" ></i>
-        <%= link_to '', patients_path, class: 'btn btn-treehouse-small fa fa-sign-out generer-pdf' %>
+        <%= link_to '', root_path, class: 'btn btn-treehouse-small fa fa-sign-out generer-pdf' %>
       </div>
     </div>
   </div>
