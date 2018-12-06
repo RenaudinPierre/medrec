@@ -9,7 +9,6 @@ const saveSource = (allSources) => {
   let allDrugs = document.querySelectorAll(".card-medicament");
   allSources.forEach((sourceElem) => {
     let sourceType = sourceElem.querySelector('.source-title').innerText;
-    console.log(sourceType)
     if (sourceType === "Analyse des divergences") {
       sourceType = "SourceDivergence"
     } else {
@@ -49,15 +48,16 @@ const saveSource = (allSources) => {
         }
       });
     } else {
-      let invisibleCards = sourceElem.querySelectorAll(".card-invisible");
+      let invisibleCards = sourceElem.querySelectorAll(".card-invisible-divergence");
       invisibleCards.forEach((invisibleCard, i) => {
-        let medicamentCard = invisibleCard.querySelector('.card-medicament');
-        if (medicamentCard) {
+        let divergenceCard = invisibleCard.querySelector('.form-divergence');
+        if (divergenceCard) {
           let position = (i + 1);
-          let divErrorType = medicamentCard.querySelector('#divergence_error_type').innerText;
-          let divCorrection = medicamentCard.querySelector('#divergence_correction').innerText;
-          let divCharacter = medicamentCard.querySelector('#divergence_character').innerText;
+          let divErrorType = divergenceCard.querySelector('#divergence_error_type').options[divergenceCard.querySelector('#divergence_error_type').selectedIndex].text;
+          let divCorrection = divergenceCard.querySelector('#divergence_correction').options[divergenceCard.querySelector('#divergence_correction').selectedIndex].text;;
+          let divCharacter = divergenceCard.querySelector('#divergence_character').options[divergenceCard.querySelector('#divergence_character').selectedIndex].text;;
           divergences.push({ error_type: divErrorType, correction: divCorrection, character: divCharacter, position: position })
+          console.log(divergences)
         }
       })
     };
@@ -72,7 +72,7 @@ const saveSource = (allSources) => {
      body: JSON.stringify(data)
      })
      .then((data) => {
-      console.log(data)
+      // console.log(data)
      });
 }
 
