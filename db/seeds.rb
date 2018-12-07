@@ -57,6 +57,7 @@ puts 'Finished sources!'
 
 puts 'Creating drugs...'
 # seed pour la patiente de création de l'historique médicamenteux
+drugs6 = Drug.update(name: 'BISOPROLOL QUIVER 1,25 mg, comprimé', source: board_history_patient10.sources.find_by(name: 'Patient') , morning: '1', lunch: '0', evening: '0', night: '0', comment: '', position: 1)
 drugs7 = Drug.create!(name: 'BISOPROLOL QUIVER 1,25 mg, comprimé', source: board_history_patient10.sources.find_by(name: 'Patient') , morning: '1', lunch: '0', evening: '0', night: '0', comment: '', position: 2)
 drugs8 = Drug.create!(name: 'BISOPROLOL QUIVER 1,25 mg, comprimé', source: sources7 , morning: '1', lunch: '0', evening: '0', night: '0', comment: '', position: 2)
 # drugs9 = Drug.create!(name: 'BISOPROLOL QUIVER 1,25 mg, comprimé', source: sources8 , morning: '1', lunch: '0', evening: '0', night: '0', comment: '', position: 2)
