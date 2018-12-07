@@ -5,8 +5,32 @@
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+<<<<<<< Updated upstream
 
     <title>MedRec</title>
+=======
+     <!-- Use the title from a page's frontmatter if it has one -->
+    <title>MedRec</title>
+    <meta name="Description" content="Outil d'aide à la réalisation de la conciliation médicamenteuse.">
+    <%= render 'application/favicon' %>
+
+<!--    meta facebook -->
+    <meta property="og:title" content="MedRec">
+    <meta property="og:url" content="https://medicationreconciliation.herokuapp.com">
+    <meta property="og:site_name" content="MedRec">
+    <meta property="og:description" content="Outil d'aide à la réalisation de la conciliation médicamenteuse.">
+    <meta property="og:image" content="<%= asset_url('logo.svg') %>">
+
+
+
+
+<!-- meta twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="MedRec">
+    <meta name="twitter:url" content="https://medicationreconciliation.herokuapp.com">
+    <meta name="twitter:description" content="Outil d'aide à la réalisation de la conciliation médicamenteuse.">
+    <meta name="twitter:image" content="<%= asset_url('logo.svg') %>">
+>>>>>>> Stashed changes
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'screen' %>
