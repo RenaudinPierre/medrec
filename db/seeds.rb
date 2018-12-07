@@ -75,22 +75,22 @@ drugs18 = Drug.create!(name: 'ALLOPURINOL ARROW 100 mg, comprimé', source: boar
 # seed pour la conciliation de sortie
 drugs20 = Drug.create!(name: 'ATORVASTATINE MYLAN PHARMA 10 mg, comprimé pelliculé', source: board_conciliation_sortie_patient11.sources.find_by(name: "BMO") , morning: '1', lunch: '0', evening: '0', night: '0', comment: '', position: 1)
 drugs21 = Drug.create!(name: 'PREVISCAN 20 mg, comprimé quadrisécable', source: board_conciliation_sortie_patient11.sources.find_by(name: "BMO") , morning: '1', lunch: '0', evening: '0', night: '0', comment: '', position: 2)
-drugs22 = Drug.create!(name: 'KARDEGIC 75 mg, poudre pour solution buvable en sachet-dose', source: board_conciliation_sortie_patient11.sources.find_by(name: "BMO") , morning: '0', lunch: '1', evening: '0', night: '0', comment: '', position: 3)
-drugs23 = Drug.create!(name: 'ENALAPRIL EG 5 mg, comprimé sécable', source: board_conciliation_sortie_patient11.sources.find_by(name: "BMO") , morning: '1', lunch: '0', evening: '0', night: '0', comment: '', position: 4)
-drugs24 = Drug.create!(name: 'ALLOPURINOL ARROW 100 mg, comprimé', source: board_conciliation_sortie_patient11.sources.find_by(name: "BMO") , morning: '1', lunch: '0', evening: '0', night: '0', comment: '', position: 5)
+drugs22 = Drug.create!(name: 'METFORMINE ACTAVIS 500 mg, comprimé', source: board_conciliation_sortie_patient11.sources.find_by(name: "BMO") , morning: '1', lunch: '1', evening: '1', night: '0', comment: '', position: 3)
+# drugs23 = Drug.create!(name: 'ENALAPRIL EG 5 mg, comprimé sécable', source: board_conciliation_sortie_patient11.sources.find_by(name: "BMO") , morning: '1', lunch: '0', evening: '0', night: '0', comment: '', position: 4)
+drugs24 = Drug.create!(name: 'GLICLAZIDE RPG 80 mg, comprimé sécable', source: board_conciliation_sortie_patient11.sources.find_by(name: "BMO") , morning: '1', lunch: '0', evening: '1', night: '0', comment: '', position: 4)
 
 drugs25 = Drug.create!(name: 'ATORVASTATINE MYLAN PHARMA 10 mg, comprimé pelliculé', source: board_ordonnance_hopital_sortie.sources.find_by(name: "Ordonnance Hôpital") , morning: '1', lunch: '0', evening: '0', night: '0', comment: '', position: 1)
 drugs26 = Drug.create!(name: 'PREVISCAN 20 mg, comprimé quadrisécable', source: board_ordonnance_hopital_sortie.sources.find_by(name: "Ordonnance Hôpital") , morning: '1', lunch: '0', evening: '0', night: '0', comment: '', position: 2)
-drugs27 = Drug.create!(name: 'KARDEGIC 75 mg, poudre pour solution buvable en sachet-dose', source: board_ordonnance_hopital_sortie.sources.find_by(name: "Ordonnance Hôpital") , morning: '0', lunch: '1', evening: '0', night: '0', comment: '', position: 3)
-drugs28 = Drug.create!(name: 'ENALAPRIL EG 5 mg, comprimé sécable', source: board_ordonnance_hopital_sortie.sources.find_by(name: "Ordonnance Hôpital") , morning: '1', lunch: '0', evening: '0', night: '0', comment: '', position: 4)
-drugs29 = Drug.create!(name: 'BISOPROLOL QUIVER 1,25 mg, comprimé', source: board_ordonnance_hopital_sortie.sources.find_by(name: "Ordonnance Hôpital"), morning: '1', lunch: '0', evening: '0', night: '0', comment: '', position: 6)
+drugs27 = Drug.create!(name: 'METFORMINE ACTAVIS 500 mg, comprimé', source: board_ordonnance_hopital_sortie.sources.find_by(name: "Ordonnance Hôpital") , morning: '1', lunch: '1', evening: '1', night: '0', comment: '', position: 3)
+# drugs28 = Drug.create!(name: 'ENALAPRIL EG 5 mg, comprimé sécable', source: board_ordonnance_hopital_sortie.sources.find_by(name: "Ordonnance Hôpital") , morning: '1', lunch: '0', evening: '0', night: '0', comment: '', position: 4)
+drugs29 = Drug.create!(name: 'JANUVIA 50 mg, comprimé pelliculé', source: board_ordonnance_hopital_sortie.sources.find_by(name: "Ordonnance Hôpital"), morning: '1', lunch: '0', evening: '0', night: '0', comment: '', position: 5)
 
 drugs30 = Drug.create!(name: 'ATORVASTATINE MYLAN PHARMA 10 mg, comprimé pelliculé', source: board_ordonnance_hopital_sortie.sources.find_by(name: "Ordonnance de sortie") , morning: '1', lunch: '0', evening: '0', night: '0', comment: '', position: 1)
 drugs31 = Drug.create!(name: 'PREVISCAN 20 mg, comprimé quadrisécable', source: board_ordonnance_hopital_sortie.sources.find_by(name: "Ordonnance de sortie") , morning: '1', lunch: '0', evening: '0', night: '0', comment: '', position: 2)
-drugs32 = Drug.create!(name: 'KARDEGIC 75 mg, poudre pour solution buvable en sachet-dose', source: board_ordonnance_hopital_sortie.sources.find_by(name: "Ordonnance de sortie") , morning: '0', lunch: '1', evening: '0', night: '0', comment: '', position: 3)
-drugs33 = Drug.create!(name: 'ENALAPRIL EG 5 mg, comprimé sécable', source: board_ordonnance_hopital_sortie.sources.find_by(name: "Ordonnance de sortie") , morning: '1', lunch: '0', evening: '0', night: '0', comment: '', position: 4)
-drugs34 = Drug.create!(name: 'ALLOPURINOL ARROW 100 mg, comprimé', source: board_ordonnance_hopital_sortie.sources.find_by(name: "Ordonnance de sortie") , morning: '1', lunch: '0', evening: '0', night: '0', comment: '', position: 5)
-drugs35 = Drug.create!(name: 'BISOPROLOL QUIVER 1,25 mg, comprimé', source: board_ordonnance_hopital_sortie.sources.find_by(name: "Ordonnance de sortie"), morning: '1', lunch: '0', evening: '0', night: '0', comment: '', position: 6)
+drugs32 = Drug.create!(name: 'METFORMINE ACTAVIS 500 mg, comprimé', source: board_ordonnance_hopital_sortie.sources.find_by(name: "Ordonnance de sortie") , morning: '1', lunch: '1', evening: '1', night: '0', comment: '', position: 3)
+# drugs33 = Drug.create!(name: 'ENALAPRIL EG 5 mg, comprimé sécable', source: board_ordonnance_hopital_sortie.sources.find_by(name: "Ordonnance de sortie") , morning: '1', lunch: '0', evening: '0', night: '0', comment: '', position: 4)
+# drugs34 = Drug.create!(name: 'GLICLAZIDE RPG 80 mg, comprimé sécable', source: board_ordonnance_hopital_sortie.sources.find_by(name: "Ordonnance de sortie") , morning: '1', lunch: '0', evening: '1', night: '0', comment: '', position: 4)
+drugs35 = Drug.create!(name: 'JANUVIA 50 mg, comprimé pelliculé', source: board_ordonnance_hopital_sortie.sources.find_by(name: "Ordonnance de sortie"), morning: '1', lunch: '0', evening: '0', night: '0', comment: '', position: 5)
 puts 'Finished drugs!'
 
 puts 'Creating board_sources...'
