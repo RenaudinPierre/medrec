@@ -30,7 +30,7 @@ function AddSource(sourceName) {
   final_card.setAttribute("id", `source_${number + 2}`);
   const all_buttons = document.querySelectorAll('.btn-add-medicament');
   const last_button = all_buttons[all_buttons.length - 1];
-  last_button.setAttribute("id", `btn_source_${number + 2}`);
+  last_button.setAttribute("id", `btn_source_${number + 1}`);
   let pas =0;
   for (pas = 0; pas < max_card_in_source ; pas++) {
     let element = `<div class="card-invisible card" id="source_${number + 1}_card_${pas + 1}"></div>`;
