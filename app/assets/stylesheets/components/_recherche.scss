@@ -40,7 +40,7 @@ body:not(.user-is-tabbing) textarea:focus {
   border: none;
   width: 350px;
   height: 30px;
-  background-color: #F4F4F4;
+  background-color: $body;
 }
 
 .recherche input:hover {
@@ -49,10 +49,10 @@ body:not(.user-is-tabbing) textarea:focus {
   box-shadow: none;
   width: 350px;
   height: 30px;
-  background-color: #F4F4F4;
+  background-color: $body;
 }
 .query {
-  background-color: #F4F4F4;
+  background-color: $body;
 }
 
 .glyphicon {
