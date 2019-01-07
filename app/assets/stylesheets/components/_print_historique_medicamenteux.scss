@@ -112,3 +112,25 @@
 .presentation-patient {
   margin-top: 50px;
 }
+
+
+.gauche-droite {
+  display: flex;
+  justify-content: space-around;
+  text-align: left;
+  background-color: $gray-light;
+  border-radius: 4px;
+  margin: 10px 0;
+  padding: 10px;
+}
+
+.gauche {
+  display: flex;
+  vertical-align: center;
+}
+
+.un {
+  justify-content: space-between;
+  margin: 0 40px 0 0px;
+}
+

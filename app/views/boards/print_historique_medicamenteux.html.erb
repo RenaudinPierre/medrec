@@ -1,16 +1,48 @@
 <div class="container-print">
 
-  <div class="haut-page">
+  <div class="haut">
+    <h2>Fiche de recueil des traitements</h2>
+  </div>
+
+  <div class="gauche-droite">
+    <div class="gauche">
+      <div class="un">
+        <%= image_tag "aphm.png", height: 100 %>
+      </div>
+      <div class="deux">
+        <p>Pharmacie de la valette</p>
+        <p>1 rue des frênes</p>
+        <p>13008 Marseille</p>
+      </div>
+    </div>
+    <div class="droite">
+      <p>Tel : 05 62 33 88 99</p>
+      <p>Fax : 05 62 33 88 99</p>
+      <p>tdauvet@gmail.com</p>
+    </div>
+  </div>
+
+
+<!--   <div class="haut-page">
     <div class="haut-page-left">
       <%= image_tag "aphm.png", height: 100 %>
     </div>
     <div class="haut-page-right">
+      <p>Pharmacie de la valette</p>
+      <p>1 rue des frênes</p>
+      <p>13008 Marseille</p>
+      <br>
       <p>Fiche de recueil des traitements</p>
     </div>
-  </div>
+  </div> -->
+<div class="presentation">
+  <p>A l’attention des pharmaciens de la pharmacie de l'hôpital de la Timone à Marseille</p>
+  <p>Marseille, le 18 juin 2019</p>
+</div>
+
   <div class="presentation-patient">
     <p>Cher confrère</p>
-    <p>Votre patient(e) <%= @board.patient.first_name %> <%= @board.patient.last_name %>, née le <%= @board.patient.birthdate %>, a été hospitalisé dans le service de traumatologie. Nous avons établi la liste des médicaments pris en routine à son domicile. Vous trouverez ci-dessous les modifications de traitements instauré par l'équipe médicale hospitalières ainsi que d'éventuelles explications.</p>
+    <p>Votre patient(e) <%= @board.patient.first_name %> <%= @board.patient.last_name %>, née le <%= @board.patient.birthdate %>, va être hospitalisé dans le service de traumatologie de l'hôpital de la timone. Nous avons établi la liste des médicaments pris en routine à son domicile.</p>
   </div>
 
     <div class="border-container-medicament-print">
@@ -40,13 +72,9 @@
 </div>
 
 <div class="bas-page">
-    <div class="bas-page-gauche">
-      <p>Docteur Bernard Roy</p>
-      <p>Service de Traumatologie</p>
-    </div>
     <div class="bas-page-right">
       <p>Docteur Pierre Renaudin</p>
-      <p>Service Pharmacie</p>
+      <p>Pharmacien</p>
     </div>
 
   </div>
